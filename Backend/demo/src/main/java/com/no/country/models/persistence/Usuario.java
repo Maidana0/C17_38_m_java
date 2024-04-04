@@ -1,6 +1,5 @@
-package com.nocountry.apirest.models.persistence;
+package com.no.country.models.persistence;
 
-import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,12 +18,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "usuario")
-public class Usuario implements Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+public class Usuario {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "usuario_id")
@@ -47,8 +41,5 @@ public class Usuario implements Serializable{
 
     @Column(name = "estado")
     private byte estado;
-    
-    @Column(name = "password")
-    private String password;
 
 }

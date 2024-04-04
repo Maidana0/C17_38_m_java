@@ -1,6 +1,4 @@
-package com.nocountry.apirest.models.persistence;
-
-import java.io.Serializable;
+package com.no.country.models.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,12 +17,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "roles")
-public class Rol implements Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+public class Rol  {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "roles_id")
