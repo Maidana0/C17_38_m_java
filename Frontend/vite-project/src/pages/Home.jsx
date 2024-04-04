@@ -1,7 +1,14 @@
+import { Link } from "react-router-dom";
+
+
+
 const Home = () => {
   return (
     <>
-      <h1>Hola xd</h1>
+      
+      <Link to="/solicitud-prestamo">
+        <button>Solicitar Préstamo</button>
+      </Link>
     </>
   );
 };
