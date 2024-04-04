@@ -1,7 +1,8 @@
-package com.nocountry.apirest.models.persistence;
+package com.no.country.models.persistence;
 
-import java.io.Serializable;
+
 import java.util.Date;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,34 +22,34 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "pagos")
-public class Pago implements Serializable{
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@Table(name = "movimientos")
+public class Movimiento  {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pagos_id")
-    private int pagoId;
+    @Column(name = "movimiento_id")
+    private int movimientoId;
 
     @ManyToOne
-    @JoinColumn(name = "movimientos_id")
-    private Movimiento movimiento;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
-    @Column(name = "monto_pagado")
-    private Double montoPagado;
+    @Column(name = "tipo_operacion")
+    private String tipoOperacion;
 
-    @Column(name = "fecha_pago")
-    private Date fechaPago;
+    @Column(name = "monto")
+    private Double monto;
 
-    @Column(name = "metodo_pago")
-    private String metodoPago;
+    @Column(name = "tasa_interes")
+    private Double tasaInteres;
 
-    @Column(name = "descripcion")
-    private String descripcion;
+    @Column(name = "fecha_inicio")
+    private Date fechaInicio;
+
+    @Column(name = "fecha_vencimiento")
+    private Date fechaVencimiento;
 
     @Column(name = "estado")
     private byte estado;
+
 }
