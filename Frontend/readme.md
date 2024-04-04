@@ -1,7 +1,7 @@
 # Frontend Team
     -- Franco Maidana
     -- Walter Sanchez
-    -- Edivaldo Gomez
+    -- Edivaldo Gomes
     -- Daniel Sanabria Rivera 
 
 

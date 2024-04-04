@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
+
+
 
 const Home = () => {
+  return (
+    <>
+      
+      <Link to="/solicitud-prestamo">
+        <button>Solicitar Préstamo</button>
+      </Link>
+    </>
+  );
+};
 
-    return (
-        <> 
-        <h1>Hola xd</h1>
-        </>
-    )
-}
-
-export default Home
+export default Home;
