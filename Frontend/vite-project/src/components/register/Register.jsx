@@ -47,8 +47,8 @@ export function Register() {
   };
 
   return (
-    <>
-      <div className="register">
+    <div className="register">
+      <div className="registerCont">
         <h1>Registo de usuario</h1>
         <p>Crear una cuenta nueva</p>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -150,6 +150,6 @@ export function Register() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }

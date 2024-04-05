@@ -1,20 +1,14 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+  .login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  body {
-    font-family: "Fira Sans", sans-serif;
-    color: #1b1f24;
-    font-size: 1rem;
-  
-    p {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  }
-  .login {
+  .loginCont {
     background-color: #ffffff;
+    color: black;
     box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.15);
     border-radius: 2rem;
     width: 400px;

@@ -15,8 +15,8 @@ function Login() {
   };
 
   return (
-    <>
-      <div className="login">
+    <div className="login">
+      <div className="loginCont">
         <h1>Iniciar Sesión</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
@@ -50,7 +50,7 @@ function Login() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

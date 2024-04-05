@@ -1,8 +1,9 @@
 header {
-    position: sticky;
-    height: 4rem;
-    background-color: #1b1b1f;
-    color: #fff;
+    width: 100%;
+    position: fixed;
+    height: 120px;
+    background-color: white;
+    color: black;
     display: flex;
     justify-content: space-between;
 }
@@ -51,6 +52,7 @@ header>div {
 .backdrop {
     display: none;
 }
+
 
 @media (max-width: 760px) {
     .hamburger-react {
@@ -119,8 +121,8 @@ header>div {
 
 /* FOOTER */
 footer {
-    background-color: #1b1b1f;
-    height: 4rem;
+    background-color: white;
+    height: 18rem;
     display: flex;
     align-items: center;
     justify-content: center;
