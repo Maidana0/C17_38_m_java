@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const paths = Object.freeze([
-  { name: "home", path: "/" },
-  { name: "login" },
-  { name: "register" }
+  { name: "inicio", path: "/" },
+  { name: "iniciar sesión", path: "login" },
+  { name: "registrarme", path: "register" }
 ])
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
       <div className='title-app'>
         <img alt="vite-icon" src="/vite.svg" width={25} height={25} />
         <Link to={"/"}>
-          Animo Equipo!
+          CashFly
         </Link>
       </div>
 
@@ -27,21 +27,27 @@ const Header = () => {
           {
             paths.map(({ name, path }, i) => (
               <li key={i} className='nav-link'>
-                <Link to={path ? path : `/${name}`}>{name}</Link>
+                <Link onClick={setOpen} to={path ? path : `/${name}`}>{name}</Link>
               </li>
             ))
           }
         </ul>
       </nav>
 
+      <div className='nav-buttons'>
 
-      <Hamburger
-        distance="lg"
-        toggled={isOpen}
-        toggle={setOpen}
-      />
+        <Link onClick={setOpen} to={"/register"} className='link-signup'>
+          registrarme
+        </Link>
 
-      <div className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
+        <Hamburger
+          distance="lg"
+          toggled={isOpen}
+          toggle={setOpen}
+        />
+      </div>
+
+      <div onClick={setOpen} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
     </header>
   )
 }

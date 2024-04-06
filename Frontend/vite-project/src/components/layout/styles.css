@@ -1,7 +1,7 @@
 header {
     width: 100%;
     position: fixed;
-    height: 120px;
+    height: 4rem;
     background-color: white;
     color: black;
     display: flex;
@@ -26,11 +26,10 @@ header>div {
     margin-right: .5rem;
 }
 
-.hamburger-react {
+.nav-buttons {
     margin-right: 1rem;
     display: none;
 }
-
 
 
 .nav-items {
@@ -38,13 +37,27 @@ header>div {
     align-items: center;
     list-style: none;
     height: 100%;
-    gap: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 1.1em;
-    text-transform: capitalize;
-    letter-spacing: 1px;
+    gap: .2rem;
+    padding: 0 1rem;
 }
 
+.nav-buttons a,
+.nav-items li {
+    font-size: 1.1em;
+    padding: .65rem 1.3rem;
+    text-transform: capitalize;
+
+}
+
+
+.nav-buttons a,
+.nav-items li:nth-child(3) {
+    background-color: black;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.nav-buttons a:hover,
 .nav-items a:hover {
     color: #9499ff;
 }
@@ -55,23 +68,32 @@ header>div {
 
 
 @media (max-width: 760px) {
-    .hamburger-react {
-        display: block;
+    .nav-items li:nth-child(3) {
+    display: none;
+    }
+    .title-app,.nav-buttons{
+        z-index: 6;
+    }
+    
+    .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: .65rem;
     }
 
     .navbar {
         position: fixed;
         right: -100%;
-        min-height: calc(100vh - 4rem);
+        min-height: 100vh;
         width: 60%;
-        margin-top: 4rem;
-        padding: 1rem;
+        padding: 5rem 0 3rem;
         background-color: inherit;
-        transition: ease 0.3s;
+        transition: right ease 0.3s;
     }
 
     .nav-items {
         flex-direction: column;
+        padding: 0;
     }
 
     .nav-active {
@@ -103,7 +125,11 @@ header>div {
 }
 
 
-
+@media (max-width: 480px) {
+    .navbar {
+        width: 70%;
+    }
+}
 
 
 
@@ -122,7 +148,7 @@ header>div {
 /* FOOTER */
 footer {
     background-color: white;
-    height: 18rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
