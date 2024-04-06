@@ -11,6 +11,7 @@ const paths = Object.freeze([
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const setOpen = () => setIsOpen(!isOpen)
+  const closeNavbar = () => isOpen && setIsOpen(false)
 
   return (
     <header>
@@ -27,7 +28,7 @@ const Header = () => {
           {
             paths.map(({ name, path }, i) => (
               <li key={i} className='nav-link'>
-                <Link onClick={setOpen} to={path ? path : `/${name}`}>{name}</Link>
+                <Link onClick={closeNavbar} to={path ? path : `/${name}`}>{name}</Link>
               </li>
             ))
           }
@@ -36,7 +37,7 @@ const Header = () => {
 
       <div className='nav-buttons'>
 
-        <Link onClick={setOpen} to={"/register"} className='link-signup'>
+        <Link onClick={closeNavbar} to={"/register"} className='link-signup'>
           registrarme
         </Link>
 
@@ -47,7 +48,7 @@ const Header = () => {
         />
       </div>
 
-      <div onClick={setOpen} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
+      <div onClick={closeNavbar} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
     </header>
   )
 }
