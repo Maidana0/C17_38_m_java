@@ -31,24 +31,24 @@ public class Pay implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pagos_id")
-    private int pagoId;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "movimientos_id")
-    private Motion movimiento;
+    private Motion motion;
 
     @Column(name = "monto_pagado")
-    private Double montoPagado;
+    private Double amountPaid;
 
     @Column(name = "fecha_pago")
-    private Date fechaPago;
+    private Date PaymentDate;
 
     @Column(name = "metodo_pago")
-    private String metodoPago;
+    private String paymentMethod;
 
     @Column(name = "descripcion")
-    private String descripcion;
+    private String description;
 
     @Column(name = "estado")
-    private byte estado;
+    private byte status;
 }

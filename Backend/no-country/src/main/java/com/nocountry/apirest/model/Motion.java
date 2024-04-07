@@ -32,28 +32,28 @@ public class Motion implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movimiento_id")
-    private int movimientoId;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private User usuario;
+    private User user;
 
     @Column(name = "tipo_operacion")
-    private String tipoOperacion;
+    private String typeOperation;
 
     @Column(name = "monto")
-    private Double monto;
+    private Double amount;
 
     @Column(name = "tasa_interes")
-    private Double tasaInteres;
+    private Double interestRate;
 
     @Column(name = "fecha_inicio")
-    private Date fechaInicio;
+    private Date starDate;
 
     @Column(name = "fecha_vencimiento")
-    private Date fechaVencimiento;
+    private Date dueDate;
 
     @Column(name = "estado")
-    private byte estado;
+    private byte status;
 
 }
