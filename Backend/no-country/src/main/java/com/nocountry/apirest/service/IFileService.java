@@ -12,5 +12,4 @@ public interface IFileService {
 	public Optional<File> getFile(int id);
 	public void saveUser(File File);
 	public void delete (String id);
-	public boolean exists(int id);
 }

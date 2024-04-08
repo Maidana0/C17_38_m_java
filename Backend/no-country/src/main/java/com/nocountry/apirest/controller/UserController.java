@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,6 +28,9 @@ import jakarta.validation.Valid;
 public class UserController {
 	@Autowired
     private IUserService userServi;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
     //Get users
     @GetMapping("/get")
@@ -55,6 +59,8 @@ public class UserController {
         }
 
         // If there are no validation errors, the user is saved in the database
+        String passwordEncoded=passwordEncoder.encode(user.getPassword());
+        user.setPassword(passwordEncoded);
         userServi.saveUser(user);
         return new ResponseEntity<>("User created successfully", HttpStatus.CREATED);
     }
