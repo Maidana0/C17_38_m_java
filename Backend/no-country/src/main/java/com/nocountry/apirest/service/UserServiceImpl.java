@@ -28,20 +28,23 @@ public class UserServiceImpl implements IUserService{
 
 	@Override
 	public void saveUser(User user) {
-		System.out.println("Received user data:");
+		System.out.println("Datos del usuario:");
         System.out.println("Name: " + user.getName());
         System.out.println("Surname: " + user.getSurname());
         System.out.println("DNI: " + user.getDni());
         System.out.println("Email: " + user.getEmail());
         System.out.println("Cellphone: " + user.getCellphone());
+        System.out.println("Password: " + user.getPassword());
+        System.out.println("State: " + user.isState());
+        System.out.println("Esta eliminado: " + user.isDeleted());
 
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         Set<ConstraintViolation<User>> violations = validator.validate(user);
 
         if (!violations.isEmpty()) {
-            StringBuilder errorMessage = new StringBuilder("Invalid user data provided:");
+            StringBuilder errorMessage = new StringBuilder("Datos del usuario no válidos:");
             for (ConstraintViolation<User> violation : violations) {
-                errorMessage.append(" Field '").append(violation.getPropertyPath()).append("': ").append(violation.getMessage());
+                errorMessage.append(" Campo '").append(violation.getPropertyPath()).append("': ").append(violation.getMessage());
             }
             throw new InvalidUserDataException(errorMessage.toString());
         }
@@ -51,33 +54,45 @@ public class UserServiceImpl implements IUserService{
 	}
 
 	@Override
-	public void editUser(int id, User user) {
+	public void editUser(int id, User u) {
 		//I look for the user in the database
-        User userr = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException("User not found with id:" + id));
+        User user = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException("Usuario con el id:" + id + " no encontrado"));
 
         //set your date
-        userr.setId(user.getId());
-        userr.setName(user.getName());
-        userr.setSurname(user.getSurname());
-        userr.setDni(user.getDni());
-        userr.setEmail(user.getEmail());
-        userr.setCellphone(user.getCellphone());
+        user.setId(u.getId());
+        user.setName(u.getName());
+        user.setSurname(u.getSurname());
+        user.setDni(u.getDni());
+        user.setEmail(u.getEmail());
+        user.setCellphone(u.getCellphone());
+        user.setState(u.isState());
 
         //I save the edited data
-        userRepo.save(userr);
+        userRepo.save(user);
 		
 	}
 
 	@Override
 	public void deleteUser(int id) {
-		// TODO Auto-generated method stub
+	//// Check if the user exists before deleting it
+        if(!userRepo.existsById(id)){
+            throw new UserNotFoundException("Usuario no encontrado con el id:" + id );
+        }
+
+        User u = this.findUser(id);
+        u.setDeleted(true);
+        //remove the user
+        userRepo.save(u);
 		
 	}
 
 	@Override
-	public User findUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public User findUser(int id) throws UserNotFoundException {
+
+        User user = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException("Usuario no encontrado con el id:" + id ));
+
+
+        return user;
+    }
 
 }
