@@ -18,10 +18,13 @@ import jakarta.validation.Validator;
 @Service
 public class UserServiceImpl implements IUserService{
 	
-	@Autowired
-	private IUserRepository userRepo;
+	private final IUserRepository userRepo;
 
-	@Override
+    public UserServiceImpl(IUserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
+
+    @Override
 	public List<User> getUsers() {
 		return userRepo.findAll();
 	}
