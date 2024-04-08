@@ -3,6 +3,7 @@ package com.nocountry.apirest.services;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,9 +11,13 @@ import com.cloudinary.Cloudinary;
 
 @Configuration
 public class CloudinaryConfig {
-	private final String CLOUD_NAME="dfriioer3";
-	private final String API_KEY="541963931288892";
-	private final String API_SECRET="bpBwqs7NnowLDxCVmGZgzU6drYQ";
+	
+	@Value("${cloudinary.cloud_name}")
+	private String CLOUD_NAME;
+	@Value("${cloudinary.api_key}")
+	private String API_KEY;
+	@Value("${cloudinary.api_secret}")
+	private String API_SECRET;
 	
 	@Bean
 	public Cloudinary cloudinary() {
