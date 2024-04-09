@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nocountry.apirest.exception.MotionNotFoundException;
 import com.nocountry.apirest.model.Motion;
+import com.nocountry.apirest.service.FileServiceImp;
 import com.nocountry.apirest.service.IMotionService;
+import com.nocountry.apirest.services.FileUpload;
+
+import lombok.AllArgsConstructor;
 
 @Controller
 @RequestMapping("/motion")
+@AllArgsConstructor
 public class MotionController {
 	
-	@Autowired
     private IMotionService motionService;
 	
 	@PostMapping("/save") 

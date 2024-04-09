@@ -22,17 +22,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/upload")
+@AllArgsConstructor
 public class FileUploadController {
 	
-	@Autowired
+	
 	private FileUpload fileUpload;
 	
-	@Autowired
 	private FileServiceImp fileService;
 
 	@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
