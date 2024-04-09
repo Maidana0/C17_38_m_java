@@ -7,7 +7,7 @@ import { Register } from "./components/register/Register";
 import Login from "./components/Login/Login";
 import SolicitudPrestamo from "./components/PrestamoSoli/SolicitudPrestamo";
 import ValidateDatePrest from "./components/ValidateDate/ValidateDatePrest";
-
+import Solicitud from "./pages/SolucitudPrestamo"
 function App() {
   return (
     <ContextProvider>
@@ -19,6 +19,8 @@ function App() {
             <Route path="/solicitud-prestamo" element={<SolicitudPrestamo />} />
             <Route path="/login" element={<Login />} />
             <Route path="/Validate-Date" element={<ValidateDatePrest/>} />
+            <Route path="/solicitud" element={<Solicitud/>} />
+
           </Routes>
         </Layout>
       </BrowserRouter>
