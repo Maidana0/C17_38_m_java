@@ -6,6 +6,7 @@ import Layout from "./components/layout/Layout";
 import { Register } from "./components/register/Register";
 import Login from "./components/Login/Login";
 import SolicitudPrestamo from "./components/PrestamoSoli/SolicitudPrestamo";
+import ValidateDatePrest from "./components/ValidateDate/ValidateDatePrest";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/solicitud-prestamo" element={<SolicitudPrestamo />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/Validate-Date" element={<ValidateDatePrest/>} />
           </Routes>
         </Layout>
       </BrowserRouter>
