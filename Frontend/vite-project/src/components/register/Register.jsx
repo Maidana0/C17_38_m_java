@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./register.css";
 import { useForm } from "react-hook-form";
 
@@ -9,38 +8,6 @@ export function Register() {
     formState: { errors },
   } = useForm();
 
-  /*const [full_name, setFull_name] = useState("");
-  const [dni, setDni] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
-  const [doc, setDoc] = useState();*/
-
-  /*const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    console.log(
-      "Name: ",
-      full_name,
-      " DNI: ",
-      dni,
-      " Email: ",
-      email,
-      " Phone: ",
-      phone,
-      " PASSWORD: ",
-      password,
-      " Re-password: ",
-      password2,
-      " CHECKED: ",
-      isChecked,
-      " FILE: ",
-      doc
-    );
-  };*/
-
   const onSubmit = (data) => {
     console.log("Datos del formulario:", data);
     // Realiza acciones adicionales, como enviar datos al servidor
@@ -49,10 +16,11 @@ export function Register() {
   return (
     <div className="register">
       <div className="registerCont">
-        <h1>Registo de usuario</h1>
+        <h1>Información personal </h1>
         <p>Crear una cuenta nueva</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
+            className="quit-border"
             type="text"
             placeholder="Nombre completo"
             {...register("full_name", {
@@ -65,6 +33,15 @@ export function Register() {
               * Este campo es obligatorio y solo deebe contener letras
             </span>
           )}
+          <input
+            type="date"
+            placeholder="Fecha de nacimiento"
+            {...register("birthday", {
+              required: true,
+              pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Expresión regular para validar el correo
+            })}
+          />
+          {errors.email && <span>Ingresa una fecha válida</span>}
 
           <input
             type="email"

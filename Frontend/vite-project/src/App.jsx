@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import { Register } from "./components/register/Register";
-import Login from "./components/Login/Login"
+import Login from "./components/Login/Login";
 import SolicitudPrestamo from "./components/PrestamoSoli/SolicitudPrestamo";
 
 function App() {
