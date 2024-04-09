@@ -61,15 +61,16 @@ public class User implements Serializable{
 	@Column(name = "password")
     private String password;
 	
-	@NotNull(message = "El número de teléfono móvil no puede estar vacío")
-    @Positive(message = "El número de teléfono celular debe ser positivo")
-    @Size(min = 8, max = 50, message = "El celular debe tener entre 8 y 30 caracteres")
-    @Column(name = "celular")
-    private Integer cellphone;
+	@NotNull(message = "El número de celular no puede estar vacío")
+    @Size(min = 8, max = 50, message = "El número de celular debe tener entre 8 y 30 caracteres")
+    @Column(name="celular")
+    private String cellphone;
 
-	@JsonIgnore
-    @Column(name = "estado")
-    private byte state;
+	@Column(name = "estado")
+    private boolean state;
+
+    @Column(name = "eliminado")
+    private boolean deleted=false;
     
 
 }

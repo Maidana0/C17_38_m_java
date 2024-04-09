@@ -34,15 +34,8 @@ public class FileUploadController {
 	
 	@Autowired
 	private FileServiceImp fileService;
-	
-	/*@PostMapping("/upload")
-    public String uploadFile(@RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
-        String imageURL = fileUpload.uploadFile(multipartFile);
-        model.addAttribute("imageURL", imageURL);
-        return "gallery";
-    }*/
-	
-	@PostMapping(value = "/upload1", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+
+	@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> upload(@RequestParam("image") MultipartFile multipartFile, Model model) {
         try {
         	Map upload=fileUpload.uploadFile(multipartFile);
@@ -66,10 +59,12 @@ public class FileUploadController {
 	@DeleteMapping("/upload")
 	public ResponseEntity<String> delete(@RequestParam String id) {
 	    try {
+	    	//borra el archivo de cloudinary
 	        Map result = fileUpload.deleteFile(id);
 	        if (result.isEmpty() || result.get("result").equals("not found")) {
 	            return new ResponseEntity<>("Archivo no encontrado!", HttpStatus.NOT_FOUND);
 	        }
+	        //borra el archivo en la base de datos
 	        fileService.delete(id);
 	        return new ResponseEntity<>("Archivo eliminado con éxito!", HttpStatus.OK);
 	    } catch (IOException e) {

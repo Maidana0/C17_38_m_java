@@ -9,7 +9,7 @@ import com.nocountry.apirest.model.File;
 
 @Repository
 public interface IFileRepository extends JpaRepository<File, Integer>{
-	@Modifying
-	@Query(value = "delete from archivos where archivo_public_id=:id",nativeQuery = true)
-	public void deleteByFileId (String id);
+
+	@Query(value = "SELECT*FROM archivos WHERE archivo_public_id= :id",nativeQuery = true)
+	public File finByPublicId (String id);
 }

@@ -34,15 +34,11 @@ public class FileServiceImp implements IFileService{
 
 	@Override
 	public void delete(String id) {
-		fileRepository.deleteByFileId(id);
+		///verifica si el archivo existe
+		File file=fileRepository.finByPublicId(id);
+		//elimina el archivo en la base de datos
+		fileRepository.deleteById(file.getId());
 		
 	}
-
-	@Override
-	public boolean exists(int id) {
-		fileRepository.existsById(id);
-		return false;
-	}
-
 	
 }
