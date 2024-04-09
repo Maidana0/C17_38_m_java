@@ -48,12 +48,11 @@ public class Motion implements Serializable{
     private Double interestRate;
 
     @Column(name = "fecha_inicio")
-    private Date starDate;
+    private Date startDate;
 
     @Column(name = "fecha_vencimiento")
     private Date dueDate;
 
     @Column(name = "estado")
     private byte status;
-
 }
