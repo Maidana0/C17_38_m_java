@@ -59,8 +59,9 @@ function FormularioPrestamo() {
     navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
   };
   return (
-    <div className="Prestamo">
-      
+    
+      <div className="Prestamo">
+        
       <div className="loan-amount-slider">
       <p className="p1">Elige el monto que necesitas, y elige una opción de pago.</p>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
