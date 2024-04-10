@@ -16,7 +16,7 @@ import com.nocountry.apirest.repository.IUserRepository;
 import jakarta.transaction.Transactional;
 
 @Service
-public class MotionServiceImpl {
+public class MotionServiceImpl implements IMotionService{
 	
 	@Autowired
 	private IMotionRepository motionRepository;
