@@ -8,7 +8,7 @@ function ValidateDatePrest(){
     const [banco, setBanco] = useState('');
     const [cbu, setCbu] = useState('');
     const [archivoDNI, setArchivoDNI] = useState(null);
-    const bancos = ["Banco 1", "Banco 2", "Banco 3", "Banco 4"];
+    const bancos = ["Santander Rio", "Galicia", "Nacion", "Banco Patagonia"];
     const handleBancoChange = (event) => {
         setBanco(event.target.value);
       };

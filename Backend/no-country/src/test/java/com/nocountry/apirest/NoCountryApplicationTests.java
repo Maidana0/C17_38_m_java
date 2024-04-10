@@ -1,4 +1,4 @@
-package com.no.country;
+package com.nocountry.apirest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
