@@ -35,7 +35,7 @@ public class Pay implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "movimientos_id")
-    private Motion motion;
+    private Loan motion;
 
     @Column(name = "monto_pagado")
     private Double amountPaid;

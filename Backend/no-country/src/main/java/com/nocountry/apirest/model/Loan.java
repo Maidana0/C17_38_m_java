@@ -22,8 +22,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "movimientos")
-public class Motion implements Serializable{
+@Table(name = "loan")
+public class Loan implements Serializable{
     /**
 	 * 
 	 */
@@ -31,7 +31,7 @@ public class Motion implements Serializable{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "movimiento_id")
+    @Column(name = "prestamo_id")
     private int id;
 
     @ManyToOne

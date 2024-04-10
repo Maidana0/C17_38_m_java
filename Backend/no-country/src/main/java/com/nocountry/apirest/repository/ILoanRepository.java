@@ -7,13 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.nocountry.apirest.model.Motion;
+import com.nocountry.apirest.model.Loan;
 
 @Repository
-public interface IMotionRepository extends JpaRepository<Motion, Integer> {
+public interface ILoanRepository extends JpaRepository<Loan, Integer> {
 	
 	//Find By User
-	@Query ("SELECT m FROM Motion m WHERE m.user.name = :name")
-	public List<Motion> findByUser(@Param ("name") String name);
+	@Query ("SELECT l FROM Loan l WHERE l.user.name = :name")
+	public List<Loan> findByUser(@Param ("name") String name);
 	
 }
