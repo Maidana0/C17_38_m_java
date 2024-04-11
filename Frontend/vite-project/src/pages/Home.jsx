@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 import styles from "../pages/Home.module.css";
+import React, { useState, useRef } from "react";
+import { useInView } from "framer-motion";
 
 const Home = () => {
+
+  const [currentTip, setCurrentTip] = useState(0);
+  const ref0 = useRef(null);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const inView0 = useInView(ref0)
+  const inView1 = useInView(ref1)
+  const inView2 = useInView(ref2)
+  const inView3 = useInView(ref3)
+
   return (
     <div className={styles.Home}>
       <section className={styles.seccion0}>
@@ -28,11 +41,27 @@ const Home = () => {
       <section className={styles.seccion1}>
         <div className={styles.articulo1}>
           <h4 className={styles.titulo1}>¿Cómo sacar tu primer préstamo?</h4>
-          <div className={styles.carrucel1}>
-            <div className={styles.tipCont}></div>
-            <div className={styles.tipCont}></div>
-            <div className={styles.tipCont}></div>
-            <div className={styles.tipCont}></div>
+          <div className={styles.carrucelCont}>
+            <div className={styles.carrucel1}>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={ref0}></div>
+              </div>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={ref1}></div>
+              </div>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={ref2}></div>
+              </div>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={ref3}></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.paginaCont}>
+            <div className={styles.pagina} style={inView0 ? {backgroundColor: "black"} : {backgroundColor: "rgb(189, 189, 189)"}}></div>
+            <div className={styles.pagina} style={inView1 ? {backgroundColor: "black"} : {backgroundColor: "rgb(189, 189, 189)"}}></div>
+            <div className={styles.pagina} style={inView2 ? {backgroundColor: "black"} : {backgroundColor: "rgb(189, 189, 189)"}}></div>
+            <div className={styles.pagina} style={inView3 ? {backgroundColor: "black"} : {backgroundColor: "rgb(189, 189, 189)"}}></div>
           </div>
         </div>
       </section>
