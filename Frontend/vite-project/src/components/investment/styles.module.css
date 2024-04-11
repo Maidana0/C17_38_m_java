@@ -1,0 +1,15 @@
+.investment_contain{
+    margin: 4rem auto;
+    width: 80%;
+}
+
+.step_contain{
+    margin: 3rem auto;
+}
+
+
+@media (max-width:760px) {
+    .investment_contain{
+        width: 95%;
+    }
+}

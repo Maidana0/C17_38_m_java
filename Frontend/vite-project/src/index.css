@@ -8,8 +8,6 @@
 }
 
 :root {
-  color-scheme: light dark;
-
   /* VARIABLES */
   --color1: rgb(198, 198, 198);
   --fira: "Fira Sans", sans-serif;
@@ -47,7 +45,7 @@ footer{
   margin-top: auto;
 }
 /* Navegador modo oscuro*/
-@media (prefers-color-scheme: dark) {}
+/* @media (prefers-color-scheme: dark) {} */
 
 /* Navegador modo claro */
-@media (prefers-color-scheme: light) {}
+/* @media (prefers-color-scheme: light) {} */

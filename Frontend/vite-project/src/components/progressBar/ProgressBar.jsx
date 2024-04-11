@@ -50,11 +50,14 @@ const ProgressBar = ({
 
       <div className={styles.progress_bar}>{steps}</div>
 
+<<<<<<< HEAD
       {/*  BORRAR ESTO EN CASO DE USARSE, ES SOLO DE MUESTRA  */}
       <h4 style={{ color: "black", textAlign: "center", margin: "1rem auto" }}>
         Este será el paso: {currentStep}
       </h4>
       {/* ------------------------  */}
+=======
+>>>>>>> e5e963b7f3eba3718944123114f6a3801b6c28c7
 
       {children}
 
