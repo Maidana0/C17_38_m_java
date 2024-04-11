@@ -1,0 +1,43 @@
+.Finalprest-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff; /* o cualquier otro color de fondo que necesites */
+    height: 100vh; /* Asegura que tome toda la altura de la pantalla */
+    text-align: center;
+  }
+  
+  .Finalprest-container h1 {
+    font-size: 2em; /* ajusta el tamaño como lo necesites */
+    color: #000000; /* color del texto */
+    margin-bottom: 0.5em; /* espacio debajo del título */
+  }
+  
+  .Finalprest-container h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 1em;
+  }
+  
+  .Finalprest-container p {
+    color: #000000;
+    margin-bottom: 2em;
+  }
+  
+  .inicio-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #000000; /* Color de fondo del botón */
+    color: #ffffff; /* Color de texto del botón */
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  /* Añade estilos adicionales para hover, focus, etc., si es necesario */
+  .inicio-button:hover {
+    background-color: #333333; /* Color más oscuro para el hover */
+  }
+  
