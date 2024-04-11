@@ -92,22 +92,55 @@
     text-align: center;
     font-size: 3.2rem;
 }
-.carrucel1{
+.carrucelCont{
     width: 90%;
     height: 70%;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: scroll;
+}
+.carrucelCont::-webkit-scrollbar{
+    display: none; 
+}
+.carrucel1{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+}
+.paginaCont{
+    width: 100%;
+    height: 3%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.pagina{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(189, 189, 189);
+    transition: all 0.5s ease-in-out;
 }
 .tipCont{
     width: 22%;
     height: auto;
     aspect-ratio: 9/12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tip{
+    width: 95%;
+    height: 95%;
     border-radius: 30px;
     background-color: var(--color1);
     border: solid 1px var(--colorLine1);
-    min-width: 210px;
 }
 /*----------- Seccion 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -182,11 +215,6 @@
         justify-content: center;
         align-items: center;
     }
-    .carrucel1{
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 5%;
-    }
 }
 
 @media screen and (width < 800px) {
@@ -214,5 +242,30 @@
     .articulo0Cont{
         width: calc(100% - 5vh);
         height: calc(100% - 5vh);
+    }
+}
+
+@media screen and (aspect-ratio < 1) {
+    .carrucelCont{
+        width: 320px;
+        height: 70%;
+        display: block;
+        scroll-behavior: smooth;  
+        scroll-snap-type: x mandatory;
+    }
+    .carrucel1{
+        width: 400%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .paginaCont{
+        display: flex;
+    }
+    .tipCont{
+        width: 100%;
+        height: auto;
+        scroll-snap-align: center;
     }
 }
