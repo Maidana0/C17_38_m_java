@@ -20,22 +20,16 @@ const Solucitud= () => {
     <div style={{backgroundColor:"#fff", marginTop:"3rem"}}>
         <ProgressBar currentStep={step} totalSteps={4} setStep={setStep} >
 
-        step = 1
-        componente 1
         {
             step == 1 &&
             <FormularioPrestamo amount={amount} setAmount={setAmount} options={options} selectedOption={selectedOption} setSelectedOption={setSelectedOption} startDate={startDate} setStartDate={setStartDate}/>
         }
 
-        step = 2
-        componente 2
         {
             step == 2 &&
             <ValidateDatePrest />
         }
 
-        step = 3
-        componente 3
 
         {
             step == 3 &&
@@ -43,8 +37,6 @@ const Solucitud= () => {
         
         }
 
-        step = 4
-        componente 4 
         {
             step == 4 &&
             <Finalprest/>
