@@ -1,0 +1,113 @@
+.Prestamo{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.botonsoli{
+    display: flex;
+    justify-content: center;
+}
+
+
+.Prestamo{
+  background-color: #ffffff;
+}
+
+.loan-amount-slider {
+    
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 30px;
+    width: 400px;
+    min-height: 400px;
+    padding: 0.5rem;
+    margin: 0 auto;
+    color: black;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.amount-input{
+  display: block; /* O `display: flex;` si quieres mantener el estilo Flexbox */
+  margin: 20px auto; /* Centrar el campo de texto */
+  padding: 10px;
+  font-size: 1.5em;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  width: 100%; /* Puede que quieras un ancho específico o porcentaje */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  text-align: center; /* Alinea el texto al centro */
+}
+.amount-display {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin: 20px 0;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: auto;
+  
+  
+}
+
+.labels {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+
+}
+
+.p1{
+  font-weight: 600;
+  font-size: 1.55rem;
+}
+.p2{
+  font-weight: 600;
+  font-size: 1.65rem;
+  margin: 10px 5px 0;
+}
+.textos{
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.p3{
+  display: flex;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background-color: gainsboro;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 6px 19px;
+}
+
+.rangebar{
+  width: 60%;
+  margin-bottom: 0rem;
+  
+} 
+
+
+@media (max-width: 430px) {
+  .formulario {
+    min-width: 40%; /* Más ancho en pantallas pequeñas para usar más espacio */
+    padding: 1rem;
+  }
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+

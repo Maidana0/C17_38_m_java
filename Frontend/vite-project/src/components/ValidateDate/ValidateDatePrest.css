@@ -1,0 +1,101 @@
+.validate{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFF;
+    color: black;
+  
+}
+.opciones-validate{
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.titulo-validate{
+    font-weight: 600;
+    margin: 10px 20px;
+    width: 400px;
+    padding: 0 10px;
+}
+.p3Validate{
+    padding-top: 10px;
+    opacity: 0.6;
+}
+.p4Validate img{
+    display: flex;
+    justify-content: center; /* Centra el SVG horizontalmente */
+    align-items: center; /* Centra el SVG verticalmente */
+    width: 15%; /* O un ancho fijo, si prefieres */
+    height: 100%; /* O una altura fija, si prefieres */
+    padding: 10px; /* Espacio alrededor del SVG, ajusta según necesites */
+  }
+
+  .p4Validate{
+    display: flex;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #454342;
+    opacity: 0.5 ;
+    margin: 20px;
+    padding: 6px 19px;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .titulo{
+    font-size: 1.55rem;
+  }
+
+  .listabancos{
+    
+    padding: 17px;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    background-color: #dadee1;
+    color: #1b1f24;
+    opacity: 0.5;
+    width: 100%;
+    margin-bottom: 1rem;
+
+  }
+
+  .inp{
+    
+    padding: 17px;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    background-color: #dadee1;
+    color: #1b1f24;
+    opacity: 0.5;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+.banco-select{
+    appearance: none;
+    background-image: url(images/icons/flechaderecha.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-position-y: 14px;
+    background-size: 20px;
+    padding: 17px;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    background-color: #dadee1;
+    color: #1b1f24;
+    opacity: 0.4;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 17px;
+}
+
+.botonContinueValidate{
+    display: flex;
+    width: 96%;
+    margin-top: 9%;
+}

@@ -1,0 +1,155 @@
+header {
+    width: 100%;
+    position: fixed;
+    height: 4rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header>div {
+    margin: auto 0;
+}
+
+.title-app {
+    font-size: 1.5em;
+    padding-left: 1rem;
+}
+
+.title-app img {
+    margin-right: .5rem;
+}
+
+.nav-buttons {
+    margin-right: 1rem;
+    display: none;
+}
+
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    gap: .2rem;
+    padding: 0 1rem;
+}
+
+.nav-buttons a,
+.nav-items li {
+    font-size: 1.1em;
+    padding: .65rem 1.3rem;
+    text-transform: capitalize;
+
+}
+
+
+.nav-buttons a,
+.nav-items li:nth-child(3) {
+    background-color: black;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.nav-buttons a:hover,
+.nav-items a:hover {
+    color: #9499ff;
+}
+
+.backdrop {
+    display: none;
+}
+
+
+@media (max-width: 760px) {
+    .nav-items li:nth-child(3) {
+    display: none;
+    }
+    .title-app,.nav-buttons{
+        z-index: 6;
+    }
+    
+    .nav-buttons {
+        display: flex;
+        align-items: center;
+        gap: .65rem;
+    }
+
+    .navbar {
+        position: fixed;
+        right: -100%;
+        min-height: 100vh;
+        width: 60%;
+        padding: 5rem 0 3rem;
+        background-color: inherit;
+        transition: right ease 0.3s;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .nav-active {
+        z-index: 5;
+        right: 0;
+        bottom: 0;
+    }
+
+    .backdrop {
+        display: block;
+        position: fixed;
+        min-height: calc(100vh - 4rem);
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        margin-top: 4rem;
+    }
+
+    .hidden {
+        opacity: 0;
+        display: none;
+        z-index: -4;
+    }
+
+    .bd-active {
+        z-index: 4;
+        opacity: 1;
+        display: block;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 70%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer {
+    background-color: white;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

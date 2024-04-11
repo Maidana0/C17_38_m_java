@@ -1,0 +1,49 @@
+.progress_contain{
+    margin: 1rem auto;
+    padding: 1rem 0;
+}
+.progress_header{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    color: black;
+    gap:.5rem;
+    letter-spacing: 1px;
+    width: 98%;
+    margin: auto;
+}
+
+.progress_bar {
+    display: flex;
+    gap: .6rem;
+    margin: auto;
+    width: 96%;
+
+}
+
+.step {
+    height: 6px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.363);
+    transition: background-color ease .3s;
+}
+
+.step_active {
+    background-color: black;
+
+}
+
+.previous_btn{
+    background-color: transparent!important;
+    padding: 0!important;
+}
+
+
+.progress_footer{
+    width: fit-content;
+    margin: 2rem auto;
+}
+
+.invisible{
+    visibility: hidden;
+}

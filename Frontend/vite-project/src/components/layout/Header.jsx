@@ -1,16 +1,54 @@
+import { Turn as Hamburger } from 'hamburger-react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+const paths = Object.freeze([
+  { name: "inicio", path: "/" },
+  { name: "iniciar sesión", path: "login" },
+  { name: "registrarme", path: "register" }
+])
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const setOpen = () => setIsOpen(!isOpen)
+  const closeNavbar = () => isOpen && setIsOpen(false)
+
   return (
     <header>
 
-      <nav>
+      <div className='title-app'>
+        <img alt="vite-icon" src="/vite.svg" width={25} height={25} />
+        <Link to={"/"}>
+          CashFly
+        </Link>
+      </div>
 
+      <nav className={`navbar ${isOpen ? "nav-active" : ""}`}>
+        <ul className='nav-items'>
+          {
+            paths.map(({ name, path }, i) => (
+              <li key={i} className='nav-link'>
+                <Link onClick={closeNavbar} to={path ? path : `/${name}`}>{name}</Link>
+              </li>
+            ))
+          }
+        </ul>
       </nav>
 
-      {/* IN PROGRESS... */}
-      <span style={{ textAlign: "center" }}>
-        Este es el header, por el momento...
-      </span>
+      <div className='nav-buttons'>
+
+        <Link onClick={closeNavbar} to={"/register"} className='link-signup'>
+          registrarme
+        </Link>
+
+        <Hamburger
+          distance="lg"
+          toggled={isOpen}
+          toggle={setOpen}
+        />
+      </div>
+
+      <div onClick={closeNavbar} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
     </header>
   )
 }
