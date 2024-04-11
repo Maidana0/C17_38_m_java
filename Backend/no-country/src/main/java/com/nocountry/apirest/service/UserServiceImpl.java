@@ -113,4 +113,17 @@ public class UserServiceImpl implements IUserService{
         return user;
     }
 
+    // Método para autenticar un usuario por su correo electrónico y contraseña
+    @Override
+    public boolean autenticarUsuario(User user) {
+        if (user.getEmail() == null || user.getPassword() == null) {
+            return false;
+            }
+
+        User usuarioEncontrado = userRepo.findByEmail(user.getEmail());
+
+        return usuarioEncontrado != null && usuarioEncontrado.getPassword().equals(user.getPassword());
+        }
+
+
 }

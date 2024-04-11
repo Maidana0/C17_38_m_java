@@ -127,4 +127,22 @@ public class UserController {
         }
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
+
+    // Endpoint para la autenticación (login) de un usuario
+    @PostMapping("/login")
+    public ResponseEntity<?> autenticarUsuario(@RequestBody User user) {
+        String email = user.getEmail();
+        String password = user.getPassword();
+
+        if (email == null || password == null || email.isEmpty() || password.isEmpty()) {
+            return ResponseEntity.badRequest().body("El correo electrónico y la contraseña son obligatorios.");
+        }
+
+        // Autenticar al usuario utilizando el servicio UserService
+        if (userServi.autenticarUsuario(user)) {
+            return ResponseEntity.ok("Inicio de sesión exitoso");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales incorrectas");
+        }
+    }
 }
