@@ -17,8 +17,7 @@ public class FileServiceImp implements IFileService{
 	
 	@Override
 	public List<File> getFiles() {
-		fileRepository.findAll();
-		return null;
+		return fileRepository.findAll();
 	}
 
 	@Override
@@ -30,6 +29,15 @@ public class FileServiceImp implements IFileService{
 	public void saveUser(File file) {
 		fileRepository.save(file);
 		
+	}
+	
+	@Override
+	public void editUser(File file) {
+		File newFile=fileRepository.finByPublicId(file.getFileId());
+		newFile.setName(file.getName());
+		newFile.setUrl(file.getUrl());
+		
+		fileRepository.save(newFile);
 	}
 
 	@Override
