@@ -18,19 +18,13 @@ header>div {
 }
 
 .title-app {
-    font-size: 1.5em;
     padding-left: 1rem;
+    font-size: 1.5em;
 }
 
 .title-app img {
     margin-right: .5rem;
 }
-
-.nav-buttons {
-    margin-right: 1rem;
-    display: none;
-}
-
 
 .nav-items {
     display: flex;
@@ -49,6 +43,10 @@ header>div {
 
 }
 
+
+.hamburger-react, .nav-buttons {
+    display: none;
+}
 
 .nav-buttons a,
 .nav-items li:nth-child(5) {
@@ -71,14 +69,20 @@ header>div {
     .nav-items li:nth-child(5) {
     display: none;
     }
-    .title-app,.nav-buttons{
+    .title-app,.nav-buttons, .hamburger-react{
         z-index: 6;
     }
-    
+    .hamburger-react{
+        display: block;
+        padding-left: 1rem;
+    }
+    .title-app{
+        padding-left: 0;
+    }
     .nav-buttons {
         display: flex;
         align-items: center;
-        gap: .65rem;
+        padding-right: .5rem;
     }
 
     .navbar {

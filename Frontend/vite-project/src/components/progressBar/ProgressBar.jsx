@@ -1,31 +1,17 @@
-import styles from "./styles.module.css";
+import styles from "./styles.module.css"
 
-const ProgressBar = ({
-  currentStep,
-  setStep,
-  totalSteps,
-  showStepIndex = true,
-  children,
-}) => {
-  const steps = [];
-  const stepwidth = 100 / totalSteps;
+const ProgressBar = ({ currentStep, setStep, totalSteps, showStepIndex=true, children }) => {
+  const steps = []
+  const stepwidth = 100 / totalSteps
 
   for (let i = 1; i <= totalSteps; i++) {
-    const isActive = i <= currentStep ? styles.step_active : "";
-    steps.push(
-      <div
-        key={i}
-        style={{ width: `${stepwidth}%` }}
-        className={`${styles.step} ${isActive}`}
-        title={"Paso: " + i}
-      ></div>
-    );
+    const isActive = i <= currentStep ? styles.step_active : ""
+    steps.push(<div key={i} style={{ width: `${stepwidth}%` }} className={`${styles.step} ${isActive}`} title={"Paso: " + i}></div>)
   }
 
-  const handleNextStep = () =>
-    setStep((prevStep) => (prevStep < totalSteps ? prevStep + 1 : prevStep));
-  const handlePreviousStep = () =>
-    setStep((prevStep) => (prevStep > 1 ? prevStep - 1 : prevStep));
+  const handleNextStep = () => setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
+  const handlePreviousStep = () => setStep(prevStep => prevStep > 1 ? prevStep - 1 : prevStep);
+
 
   return (
     <div className={styles.progress_contain}>
@@ -42,9 +28,6 @@ const ProgressBar = ({
       </div>
 
 
-      {/*  BORRAR ESTO EN CASO DE USARSE, ES SOLO DE MUESTRA  */}
-      <h4 style={{ color: "black", textAlign: "center", margin: "1rem auto" }}>Este será el paso: {currentStep}</h4>
-      {/* ------------------------  */}
 
 
       {children}
@@ -57,7 +40,7 @@ const ProgressBar = ({
         </button>}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProgressBar;
+export default ProgressBar

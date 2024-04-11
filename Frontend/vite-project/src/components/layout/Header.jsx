@@ -18,13 +18,12 @@ const Header = () => {
 
   return (
     <header>
-      <div className='nav-buttons'>
         <Hamburger
           distance="lg"
           toggled={isOpen}
           toggle={setOpen}
         />
-      </div>
+
       <div className='title-app'>
         <img alt="vite-icon" src="/vite.svg" width={25} height={25} />
         <Link to={"/"}>
@@ -45,8 +44,7 @@ const Header = () => {
       </nav>
 
       <div className='nav-buttons'>
-
-        <Link onClick={closeNavbar} to={"/register"} className='link-signup'>
+        <Link onClick={closeNavbar} to={"/registrarme"} className='link-signup'>
           registrarme
         </Link>
       </div>
