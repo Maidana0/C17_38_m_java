@@ -4,6 +4,7 @@ import com.nocountry.apirest.exception.InvalidUserDataException;
 import com.nocountry.apirest.exception.UserNotFoundException;
 import com.nocountry.apirest.model.User;
 import com.nocountry.apirest.repository.IUserRepository;
+import com.nocountry.apirest.repository.IUserRoleRepository;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -28,12 +29,15 @@ class UserServiceImplTest {
     @Mock
     private IUserRepository userRepository;
 
+    @Mock
+    private IUserRoleRepository userRoleRepo;
+
     @InjectMocks
     private UserServiceImpl underTest;
 
     @BeforeEach
     void setUp(){
-        underTest = new UserServiceImpl(userRepository);
+        underTest = new UserServiceImpl(userRepository, userRoleRepo);
     }
 
     @DisplayName("Check if it's able to list all the users")

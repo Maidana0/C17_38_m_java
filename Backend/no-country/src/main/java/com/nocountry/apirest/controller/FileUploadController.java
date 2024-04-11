@@ -1,12 +1,13 @@
 package com.nocountry.apirest.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/upload")
+@RequestMapping("/file")
 public class FileUploadController {
 	
 	@Autowired
@@ -35,10 +36,15 @@ public class FileUploadController {
 	@Autowired
 	private FileServiceImp fileService;
 
-	@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> upload(@RequestParam("image") MultipartFile multipartFile, Model model) {
+	@GetMapping(value="/files")
+	public List<File>getFiles(){
+		return fileService.getFiles();
+	}
+	
+	@PostMapping(value = "", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> upload(@RequestParam("archivo") MultipartFile multipartFile) {
         try {
-        	Map upload=fileUpload.uploadFile(multipartFile);
+        	Map<?, ?> upload=fileUpload.uploadFile(multipartFile);
             String url = (String) upload.get("url");
             String publicId=(String) upload.get("public_id");
             if (url == null) {
@@ -56,11 +62,11 @@ public class FileUploadController {
     }
 	
 	
-	@DeleteMapping("/upload")
+	@DeleteMapping("")
 	public ResponseEntity<String> delete(@RequestParam String id) {
 	    try {
 	    	//borra el archivo de cloudinary
-	        Map result = fileUpload.deleteFile(id);
+	        Map<?, ?> result = fileUpload.deleteFile(id);
 	        if (result.isEmpty() || result.get("result").equals("not found")) {
 	            return new ResponseEntity<>("Archivo no encontrado!", HttpStatus.NOT_FOUND);
 	        }
@@ -70,6 +76,25 @@ public class FileUploadController {
 	    } catch (IOException e) {
 	        return new ResponseEntity<>("Error al eliminar el archivo!", HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
+	}
+	
+	@PutMapping(value = "",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<String> update(@RequestParam String public_id,@RequestParam("archivo")MultipartFile multipartFile){
+		try {
+			Map update=fileUpload.updateFile(multipartFile, public_id);
+			String url=(String) update.get("url");
+			if(url == null) {
+				return new ResponseEntity<>("Error al actualizar el archivo!", HttpStatus.INTERNAL_SERVER_ERROR);
+			}
+			File file=new File();
+			file.setFileId(public_id);
+			file.setName(multipartFile.getOriginalFilename());
+			file.setUrl(url);
+			fileService.editUser(file);
+			return new ResponseEntity<>("Archivo actualizado correctamente", HttpStatus.OK);
+		} catch(IOException e) {
+			return new ResponseEntity<>("Error al subir el archivo", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
 	

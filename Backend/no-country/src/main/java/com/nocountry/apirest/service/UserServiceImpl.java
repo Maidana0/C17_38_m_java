@@ -3,28 +3,36 @@ package com.nocountry.apirest.service;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nocountry.apirest.exception.InvalidUserDataException;
 import com.nocountry.apirest.exception.UserNotFoundException;
+import com.nocountry.apirest.model.Role;
 import com.nocountry.apirest.model.User;
+import com.nocountry.apirest.model.UserRole;
 import com.nocountry.apirest.repository.IUserRepository;
+import com.nocountry.apirest.repository.IUserRoleRepository;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 
 @Service
+
 public class UserServiceImpl implements IUserService{
 	
 	private final IUserRepository userRepo;
+    private final IUserRoleRepository userRoleRepo;
 
-    public UserServiceImpl(IUserRepository userRepo) {
+
+    public UserServiceImpl(IUserRepository userRepo, IUserRoleRepository userRoleRepo) {
         this.userRepo = userRepo;
+        this.userRoleRepo = userRoleRepo;
     }
 
-    @Override
+
+
+
 	public List<User> getUsers() {
 		return userRepo.findAll();
 	}
@@ -51,9 +59,16 @@ public class UserServiceImpl implements IUserService{
             }
             throw new InvalidUserDataException(errorMessage.toString());
         }
-
-        userRepo.save(user);
-		
+        //Se guarda el usuario
+        User userSave=userRepo.save(user);
+        //Se le asigna el rol al usuario
+        Role role=new Role();
+        role.setId(1);
+		UserRole newRole=new UserRole();
+		newRole.setRole(role);
+		newRole.setUser(userSave);
+		//Se guarda el rol del usuario
+		userRoleRepo.save(newRole);
 	}
 
 	@Override

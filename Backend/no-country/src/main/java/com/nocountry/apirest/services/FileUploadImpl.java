@@ -30,4 +30,11 @@ public class FileUploadImpl implements FileUpload {
 		return cloudinary.uploader().destroy(id, ObjectUtils.emptyMap());
 	}
 
+	//metodo para actualizar archivo de cloudinary
+	@Override
+	public Map updateFile(MultipartFile multipartFile, String id) throws IOException {
+		return cloudinary.uploader().upload(multipartFile.getBytes(), ObjectUtils.asMap("resource_type", "auto","public_id",id));
+
+	}
+
 }
