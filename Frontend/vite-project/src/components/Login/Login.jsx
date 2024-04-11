@@ -1,4 +1,3 @@
-import React from "react";
 import "./login.css";
 import { useForm } from "react-hook-form";
 
@@ -102,7 +101,10 @@ function Login() {
             <div className="logoLCont">CashFly</div>
             <div className="descripcionL">
               <h2 className="tituloL2">Crece con tus finanzas:</h2>
-              <p className="parrafoL2">La primera P2P en enseñarte a pedir tu primer préstamo personal y a hacer crecer tu dinero.</p>
+              <p className="parrafoL2">
+                La primera P2P en enseñarte a pedir tu primer préstamo personal
+                y a hacer crecer tu dinero.
+              </p>
             </div>
           </div>
         </div>

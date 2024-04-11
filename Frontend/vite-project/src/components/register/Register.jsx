@@ -16,7 +16,7 @@ export function Register() {
   return (
     <>
       <div className="register">
-        <div className="column">
+        <div className="column-1">
           <div className="registerCont">
             <h1>Información personal </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -30,8 +30,8 @@ export function Register() {
                 })}
               />
               {errors.name && (
-                <span>
-                  * Este campo es obligatorio y solo deebe contener letras
+                <span className="error">
+                  * El campo nombre es obligatorio y solo debe contener letras
                 </span>
               )}
               <input
@@ -43,7 +43,12 @@ export function Register() {
                   pattern: /^[A-Za-z\s]+$/,
                 })}
               />
-              {errors.surname && <span>Ingresa una fecha válida</span>}
+              {errors.surname && (
+                <span className="error">
+                  * El campo apellido es obligatorio y solo deebe contener
+                  letras
+                </span>
+              )}
 
               <input
                 type="text"
@@ -51,10 +56,15 @@ export function Register() {
                 placeholder="DNI/ ID"
                 {...register("dni", {
                   required: true,
-                  pattern: /^[a-zA-Z0-9]+$/,
+                  pattern: /^\d{8}$/,
                 })}
               />
-              {errors.dni && <span>* Este campo es obligatorio</span>}
+              {errors.dni && (
+                <span className="error">
+                  * El campo DNI es obligatorio y solo debe contener 8 dígitos
+                  númerico
+                </span>
+              )}
 
               <input
                 type="email"
@@ -65,7 +75,9 @@ export function Register() {
                   pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Expresión regular para validar el correo
                 })}
               />
-              {errors.email && <span>Ingresa un correo válido</span>}
+              {errors.email && (
+                <span className="error">* Ingresa un correo válido</span>
+              )}
 
               <input
                 type="text"
@@ -74,7 +86,9 @@ export function Register() {
                 {...register("phone", { required: true, pattern: /^[0-9]+$/ })}
               />
               {errors.phone && (
-                <span>* El contacto solo debe tener caracteres númericos</span>
+                <span className="error">
+                  * El contacto solo debe tener caracteres númericos
+                </span>
               )}
 
               <input
@@ -88,9 +102,11 @@ export function Register() {
                 })}
               />
               {errors.password && (
-                <span>
-                  * La contraseña debe ser de 8 a 15 dígitos y con distintos
-                  tipos de caracteres
+                <span className="error">
+                  * Al menos una letra minúscula <br />
+                  * Contener 8 o más caracteres <br />
+                  * Al menos una letra mayúscula <br />* Al menos un carácter
+                  numérico
                 </span>
               )}
 
@@ -104,7 +120,7 @@ export function Register() {
                   ¿Le gustaría guardar sus datos para un préstamo posterior?
                 </label>
                 {errors.consent && (
-                  <span>
+                  <span className="error">
                     * Este campo es obligatorio y debe de coincidir con la
                     primera
                   </span>
@@ -117,12 +133,14 @@ export function Register() {
           </div>
         </div>
 
-        <div className="column">
-          <h2 className="title-second-column">Crece con tus finanzas: </h2>
-          <p className="context-second-column">
-            La primera P2P en enseñarte a pedir tu primer préstamo personal y a
-            hacer crecer tu dinero.
-          </p>
+        <div className="column-2">
+          <div className="logoLeftSide">CashFly</div>
+          <div className="descriptionL">
+            <p className="contextL">
+              ¡Invierte en proyectos emocionantes y haz crecer tu dinero
+              mientras apoyas a otros!
+            </p>
+          </div>
         </div>
       </div>
     </>
