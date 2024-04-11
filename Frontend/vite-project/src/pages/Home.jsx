@@ -28,7 +28,7 @@ const Home = () => {
                   personal y a hacer crecer tu dinero.
                 </p>
                 <div className={styles.boton0Cont}>
-                  <Link to="/solicitud-prestamo">
+                  <Link to="/Solicitud">
                     <button>Solicita tu préstamo ahora</button>
                   </Link>
                 </div>

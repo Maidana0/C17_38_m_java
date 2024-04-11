@@ -8,6 +8,10 @@ import Login from "./components/Login/Login"
 import SolicitudPrestamo from "./components/PrestamoSoli/SolicitudPrestamo";
 import ValidateDatePrest from "./components/ValidateDate/ValidateDatePrest";
 import Solicitud from "./pages/SolucitudPrestamo"
+import ResumePrest from "./components/ConfirmPrest/ResumePrest";
+import okPrest from "./components/EndPrest/Finalprest";
+
+
 function App() {
   return (
     <ContextProvider>
@@ -20,7 +24,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/Validate-Date" element={<ValidateDatePrest/>} />
             <Route path="/solicitud" element={<Solicitud/>} />
-
+            <Route path="/Resume-prest" element={<ResumePrest/>} />
+            <Route path="/okprest" element={<okPrest/>} />
           </Routes>
         </Layout>
       </BrowserRouter>

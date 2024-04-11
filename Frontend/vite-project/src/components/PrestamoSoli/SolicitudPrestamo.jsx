@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import "./prestamo.css";
 import "./selectorprestamo.css";
-function FormularioPrestamo() {
-  let navigate = useNavigate();
-  const [amount, setAmount] = useState(70000);
+
+
+function FormularioPrestamo(props) {
+  //const [amount, setAmount] = useState(70000);
+  const {amount, setAmount} = props
   const [inputValue, setInputValue] = useState('70,000');
   const [errorMessage, setErrorMessage] = useState("");
-  const [startDate, setStartDate] = useState('');
+  const {startDate, setStartDate} = props
   const min = 70000;
   const max = 150000;
+  const {selectedOption, setSelectedOption} = props
+  const {options} = props
   useEffect(() => {
     // Calcula la fecha actual más diez días
     const date = new Date();
@@ -24,12 +27,7 @@ function FormularioPrestamo() {
     // Actualizar el valor del input cuando amount cambia
     setInputValue(amount.toLocaleString());
   }, [amount]);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const options = [
-    { id: 1, text: '12 cuotas', value: Math.round(amount / 12) },
-    { id: 2, text: '6 cuotas', value: Math.round(amount / 6) },
-    { id: 3, text: '3 cuotas', value: Math.round(amount / 3) },
-  ];
+  
 
   const handleInputChange = (e) => {
     const inputtedValue = e.target.value.replace(/[^0-9]/g, ''); // Solo permite números
@@ -55,6 +53,7 @@ function FormularioPrestamo() {
     setAmount(Number(e.target.value));
     setErrorMessage(""); // Limpia el mensaje de error cuando se ajusta el slider
   };
+  
   // const handleButtonClick = () => {
   //   navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
   // };
@@ -102,12 +101,13 @@ function FormularioPrestamo() {
             </div>
           ))}
         </div>
+        
         {/* <div className="botonContinue"><button
           onClick={handleButtonClick}>
 
           Continuar
         </button></div> */}
-
+        
       </div>
 
     </div>
