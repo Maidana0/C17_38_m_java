@@ -29,12 +29,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/file")
+@AllArgsConstructor
 public class FileUploadController {
 	
 	
-	@Autowired
 	private FileUpload fileUpload;
-	@Autowired
+
 	private FileServiceImp fileService;
 
 	@GetMapping(value="/files")

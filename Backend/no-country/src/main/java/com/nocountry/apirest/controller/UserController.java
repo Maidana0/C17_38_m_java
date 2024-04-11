@@ -19,17 +19,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nocountry.apirest.model.User;
+import com.nocountry.apirest.service.FileServiceImp;
 import com.nocountry.apirest.service.IUserService;
+import com.nocountry.apirest.services.FileUpload;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/users")
+@AllArgsConstructor
 public class UserController {
-	@Autowired
+
     private IUserService userServi;
 	
-	@Autowired
 	private PasswordEncoder passwordEncoder;
 
     //Get users
