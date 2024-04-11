@@ -16,50 +16,25 @@ const Solucitud = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
-      <ProgressBar currentStep={step} totalSteps={4} setStep={setStep}>
-        step = 1 componente 1
-        {step == 1 && (
-          <FormularioPrestamo
-            amount={amount}
-            setAmount={setAmount}
-            options={options}
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-            startDate={startDate}
-            setStartDate={setStartDate}
-          />
-        )}
-        step = 2 componente 2{step == 2 && <ValidateDatePrest />}
-        step = 3 componente 3
-        {step == 3 && (
-          <ResumePrest
-            amount={amount}
-            setAmount={setAmount}
-            options={options}
-            selectedOption={selectedOption}
-            setSelectedOption={setSelectedOption}
-            startDate={startDate}
-            setStartDate={setStartDate}
-          />
-        )}
-        step = 4 componente 4{step == 4 && <Finalprest />}
-      </ProgressBar>
-=======
     <div style={{backgroundColor:"#fff", marginTop:"3rem"}}>
         <ProgressBar currentStep={step} totalSteps={4} setStep={setStep} >
 
+        step = 1
+        componente 1
         {
             step == 1 &&
             <FormularioPrestamo amount={amount} setAmount={setAmount} options={options} selectedOption={selectedOption} setSelectedOption={setSelectedOption} startDate={startDate} setStartDate={setStartDate}/>
         }
 
+        step = 2
+        componente 2
         {
             step == 2 &&
             <ValidateDatePrest />
         }
 
+        step = 3
+        componente 3
 
         {
             step == 3 &&
@@ -67,6 +42,8 @@ const Solucitud = () => {
         
         }
 
+        step = 4
+        componente 4 
         {
             step == 4 &&
             <Finalprest/>
@@ -74,7 +51,6 @@ const Solucitud = () => {
 
         </ProgressBar>
 
->>>>>>> e5e963b7f3eba3718944123114f6a3801b6c28c7
     </div>
   );
 };
