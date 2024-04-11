@@ -3,7 +3,6 @@ package com.nocountry.apirest.service;
 import java.util.List;
 import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nocountry.apirest.exception.InvalidUserDataException;
@@ -19,15 +18,21 @@ import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 
 @Service
+
 public class UserServiceImpl implements IUserService{
 	
-	@Autowired
-	private IUserRepository userRepo;
+	private final IUserRepository userRepo;
+    private final IUserRoleRepository userRoleRepo;
 
-	@Autowired
-	private IUserRoleRepository userRoleRepo;
-	
-	@Override
+
+    public UserServiceImpl(IUserRepository userRepo, IUserRoleRepository userRoleRepo) {
+        this.userRepo = userRepo;
+        this.userRoleRepo = userRoleRepo;
+    }
+
+
+
+
 	public List<User> getUsers() {
 		return userRepo.findAll();
 	}
