@@ -7,4 +7,5 @@ import com.nocountry.apirest.model.User;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User, Integer> {
+    User findByEmail(String email);
 }

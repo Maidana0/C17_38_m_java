@@ -16,4 +16,6 @@ public interface IUserService {
     public void deleteUser(int id) throws UserNotFoundException;
 
     public User findUser(int id) throws UserNotFoundException;
+
+    boolean autenticarUsuario(User user);
 }
