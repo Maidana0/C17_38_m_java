@@ -17,5 +17,5 @@ public interface IUserService {
 
     public User findUser(int id) throws UserNotFoundException;
 
-    boolean autenticarUsuario(User user);
+    User autenticarUsuario(User user);
 }
