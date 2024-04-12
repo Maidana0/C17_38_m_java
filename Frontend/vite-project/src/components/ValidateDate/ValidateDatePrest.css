@@ -9,30 +9,30 @@
   
 }
 .opciones-validate{
-    display: flex;
-    flex-direction: column;
-    background: #FFF;
-    border-radius: 8px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  border-radius: 8px;
+  width: inherit;
+  padding: 0px 8px 0px;
 }
 
 .titulo-validate{
-    font-weight: 600;
-    margin: 10px 20px;
-    width: 400px;
-    padding: 0 10px;
+  font-weight: 600;
+  margin: 13px 4px;
+  width: 349px;
 }
 .p3Validate{
-    padding-top: 10px;
-    opacity: 0.6;
+  padding-top: 10px;
+  opacity: 0.6;
 }
 .p4Validate img{
-    display: flex;
-    justify-content: center; /* Centra el SVG horizontalmente */
-    align-items: center; /* Centra el SVG verticalmente */
-    width: 15%; /* O un ancho fijo, si prefieres */
-    height: 100%; /* O una altura fija, si prefieres */
-    padding: 10px; /* Espacio alrededor del SVG, ajusta según necesites */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13%;
+  height: 100%;
+  padding: 10px;
   }
 
   .p4Validate{
@@ -40,15 +40,15 @@
     font-weight: 600;
     font-size: 0.8rem;
     color: #454342;
-    opacity: 0.5 ;
-    margin: 20px;
-    padding: 6px 19px;
+    opacity: 0.5;
+    padding: 6px 0px;
     align-items: center;
-    gap: 9px;
+    justify-content: center;
   }
 
   .titulo{
     font-size: 1.55rem;
+    padding-bottom: 5px;
   }
 
   .listabancos{
@@ -94,8 +94,7 @@
     font-size: 17px;
 }
 
-.botonContinueValidate{
+.botonayudaValidate{
     display: flex;
-    width: 96%;
     margin-top: 9%;
 }

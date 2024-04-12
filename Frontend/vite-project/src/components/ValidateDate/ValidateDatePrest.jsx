@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./ValidateDatePrest.css";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ValidateDatePrest(){
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const [banco, setBanco] = useState('');
     const [cbu, setCbu] = useState('');
@@ -25,9 +25,9 @@ function ValidateDatePrest(){
           alert('Solo se aceptan imágenes.');
         }
       };
-      // const handleButtonClick = () => {
-      //   navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
-      // };
+       const handleButtonClick = () => {
+         navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
+       };
     
 return (
     <div className="validate">
@@ -66,11 +66,11 @@ return (
             accept="image/png, image/jpeg" 
         />
         </div>
-        {/* <div className="botonContinueValidate"><button
+        { <div className="botonayudaValidate"><button
             onClick={handleButtonClick}>
           
-            Continuar
-        </button></div> */}
+            Necesitas ayuda
+        </button></div> }
 
 
 

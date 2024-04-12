@@ -10,9 +10,9 @@ const Solucitud= () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [startDate, setStartDate] = useState('');
     const options = [
-        { id: 1, text: '12 cuotas', value: Math.round(amount / 12) },
-        { id: 2, text: '6 cuotas', value: Math.round(amount / 6) },
-        { id: 3, text: '3 cuotas', value: Math.round(amount / 3) },
+        { id: 1, text: '12 cuotas', value: Math.ceil(amount / 12) },
+        { id: 2, text: '6 cuotas', value: Math.ceil(amount / 6) },
+        { id: 3, text: '3 cuotas', value: Math.ceil(amount / 3) },
       ];
 
 
