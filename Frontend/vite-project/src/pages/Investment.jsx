@@ -1,9 +1,11 @@
 import { useState } from "react"
-import ProgressBar from "../components/progressBar/ProgressBar"
-import ChooseAmount from "../components/investment/ChooseAmount"
-import WhereInvert from "../components/investment/WhereInvert"
-import HowMuch from "../components/investment/HowMuch"
 import styles from "../components/investment/styles.module.css"
+import ProgressBar from "../components/progressBar/ProgressBar"
+import StepOne from "../components/investment/StepOne"
+import StepTwo from "../components/investment/StepTwo"
+import StepThree from "../components/investment/StepThree"
+
+
 const Investment = () => {
     const [currentStep, setCurrentStep] = useState(1)
     return (
@@ -13,24 +15,28 @@ const Investment = () => {
 
                     {
                         currentStep == 1
-                        && <ChooseAmount />
+                        && <StepOne styles={styles}/>
                     }
 
                     {
                         currentStep == 2
-                        && <WhereInvert />
+                        && <StepTwo styles={styles}/>
                     }
 
                     {
                         currentStep == 3
-                        && <HowMuch />
+                        && <StepThree styles={styles}/>
                     }
 
 
                     {
                         currentStep == 4
-                        && <div>
+                        && <div className={styles.success_step_four}>
+                            <h3>¡Listo!</h3>
+                            <p>Ahora te llegará un correo electrónico con la confirmación de tu inversión</p>
+                            <p><small>Este proceso puede tardar hasta 24hs.</small></p>
 
+                            <button>Volver al inicio</button>
                         </div>
 
                     }
