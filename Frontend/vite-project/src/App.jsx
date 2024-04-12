@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
-import { Register } from "./components/register/Register";
-import Login from "./components/Login/Login"
-import SolicitudPrestamo from "./components/PrestamoSoli/SolicitudPrestamo";
-import ValidateDatePrest from "./components/ValidateDate/ValidateDatePrest";
-import Solicitud from "./pages/SolucitudPrestamo"
-import ResumePrest from "./components/ConfirmPrest/ResumePrest";
-import okPrest from "./components/EndPrest/Finalprest";
 
+import { Register } from "./components/register/Register";
+import Login from "./components/Login/Login";
+
+import Solicitud from "./pages/SolucitudPrestamo";
+import Investment from "./pages/Investment";
+import Verification from "./components/register/verificationIdentity/Verification";
+import DoneRegister from "./components/register/registerDone/DoneRegister";
 
 function App() {
   return (
@@ -19,13 +19,14 @@ function App() {
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/solicitud-prestamo" element={<SolicitudPrestamo />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/Validate-Date" element={<ValidateDatePrest/>} />
-            <Route path="/solicitud" element={<Solicitud/>} />
-            <Route path="/Resume-prest" element={<ResumePrest/>} />
-            <Route path="/okprest" element={<okPrest/>} />
+            <Route path="/registrarme" element={<Register />} />
+            <Route path="/iniciar-sesion" element={<Login />} />
+
+            <Route path="/prestamos" element={<Solicitud />} />
+
+            <Route path="/inversiones" element={<Investment />} />
+            <Route path="/verifi" element={<Verification />} />
+            <Route path="/done-register" element={<DoneRegister />} />
           </Routes>
         </Layout>
       </BrowserRouter>

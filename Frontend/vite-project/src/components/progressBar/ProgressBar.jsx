@@ -28,9 +28,12 @@ const ProgressBar = ({ currentStep, setStep, totalSteps, showStepIndex=true, chi
       </div>
 
 
+<<<<<<< HEAD
       {/*  BORRAR ESTO EN CASO DE USARSE, ES SOLO DE MUESTRA  */}
       {/* <h4 style={{ color: "black", textAlign: "center", margin: "1rem auto" }}>Este será el paso: {currentStep}</h4> */}
       {/* ------------------------  */}
+=======
+>>>>>>> 9f793038f86c13274e45ca4bfae19583fab88e09
 
 
       {children}

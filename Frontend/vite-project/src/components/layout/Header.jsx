@@ -3,9 +3,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const paths = Object.freeze([
-  { name: "inicio", path: "/" },
-  { name: "iniciar sesión", path: "login" },
-  { name: "registrarme", path: "register" }
+  { name: "préstamos", path: "/prestamos" },
+  { name: "inversiones" },
+  { name: "configuración", path: "#" },
+
+  { name: "iniciar sesión", path: "iniciar-sesion" },
+  { name: "registrarme" }
 ])
 
 const Header = () => {
@@ -15,6 +18,11 @@ const Header = () => {
 
   return (
     <header>
+        <Hamburger
+          distance="lg"
+          toggled={isOpen}
+          toggle={setOpen}
+        />
 
       <div className='title-app'>
         <img alt="vite-icon" src="/vite.svg" width={25} height={25} />
@@ -36,16 +44,9 @@ const Header = () => {
       </nav>
 
       <div className='nav-buttons'>
-
-        <Link onClick={closeNavbar} to={"/register"} className='link-signup'>
+        <Link onClick={closeNavbar} to={"/registrarme"} className='link-signup'>
           registrarme
         </Link>
-
-        <Hamburger
-          distance="lg"
-          toggled={isOpen}
-          toggle={setOpen}
-        />
       </div>
 
       <div onClick={closeNavbar} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>

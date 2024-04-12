@@ -1,0 +1,139 @@
+.investment_contain {
+    margin: 4rem auto;
+    width: 93%;
+    text-align: center;
+}
+
+.step_contain {
+    margin: 1.5rem auto;
+    font-size: 1.3em;
+
+}
+
+/* PASO 1 */
+.amount_step_one {}
+
+.amount_step_one .amount {
+    padding: 1rem 2rem;
+    font-size: 2em;
+}
+
+.amount_step_one span {
+    margin-right: 10px;
+    font-weight: 700;
+
+}
+
+.card_contain,
+.amount_step_one .info {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount_step_one .info {
+    margin-top: 1rem;
+    padding: .6rem 1rem;
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.card_contain {
+    margin: 1.5rem auto 1rem;
+    padding: 1.2rem .8rem;
+    border: solid 1px #000;
+}
+
+
+.amount_step_one .suggestions {
+    text-align: start;
+}
+
+/* PASO 2 */
+.invert_step_two {
+    margin: 3rem auto;
+}
+
+.invert_step_two .card_contain_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 12px;
+
+    border: solid 1px #000;
+    padding: .8rem;
+}
+
+.card_content div,
+.card_header,
+.invert_step_two .btn_contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.invert_step_two .btn_contain button {
+    background-color: inherit;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: min-content;
+    padding: 1rem;
+}
+
+.all_cards_contain {
+    display: grid;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem;
+}
+.card_content div {
+    margin: 7px auto;
+}
+.card_footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_footer button{
+    padding: 1rem 1.5rem;
+}
+
+.card_footer button:first-child {
+    background-color: #fff;
+    border: solid 1px #000;
+    color: #000;
+}
+
+/* PASO 3 */
+
+.card_header div,
+.card_head {
+    display: flex;
+    gap: 7px;
+}
+
+
+/* PASO 4 FINAL */
+.success_step_four {
+    margin: 4rem auto 3rem;
+}
+
+h3,
+.success_step_four p {
+    margin-top: 1rem;
+    padding: 5px 1rem;
+    line-height: 1.4em;
+
+}
+
+.success_step_four button {
+    margin-top: 2.5rem;
+}
