@@ -145,7 +145,6 @@ button {
 /*  */
 
 @media (aspect-ratio < 12/10) {
-
   /*.column-2 {
     display: none;
   }*/
@@ -181,4 +180,8 @@ button {
 .checkbox-container {
   display: flex;
   margin: 0;
+}
+
+.checkbox-container {
+  justify-content: space-between;
 }

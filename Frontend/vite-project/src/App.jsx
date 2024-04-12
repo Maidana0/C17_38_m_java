@@ -5,11 +5,11 @@ import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 
 import { Register } from "./components/register/Register";
-import Login from "./components/Login/Login"
+import Login from "./components/Login/Login";
 
-import Solicitud from "./pages/SolucitudPrestamo"
+import Solicitud from "./pages/SolucitudPrestamo";
 import Investment from "./pages/Investment";
-
+import Verification from "./components/register/verificationIdentity/Verification";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
             <Route path="/prestamos" element={<Solicitud />} />
 
             <Route path="/inversiones" element={<Investment />} />
+            <Route path="/verifi" element={<Verification />} />
           </Routes>
         </Layout>
       </BrowserRouter>
