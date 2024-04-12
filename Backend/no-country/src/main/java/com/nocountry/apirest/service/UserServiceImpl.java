@@ -3,8 +3,11 @@ package com.nocountry.apirest.service;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.nocountry.apirest.exception.AutenticacionException;
 import com.nocountry.apirest.exception.InvalidUserDataException;
 import com.nocountry.apirest.exception.UserNotFoundException;
 import com.nocountry.apirest.model.Role;
@@ -16,21 +19,15 @@ import com.nocountry.apirest.repository.IUserRoleRepository;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
+import lombok.AllArgsConstructor;
 
 @Service
-
+@AllArgsConstructor
 public class UserServiceImpl implements IUserService{
 	
-	private final IUserRepository userRepo;
-    private final IUserRoleRepository userRoleRepo;
-
-
-    public UserServiceImpl(IUserRepository userRepo, IUserRoleRepository userRoleRepo) {
-        this.userRepo = userRepo;
-        this.userRoleRepo = userRoleRepo;
-    }
-
-
+	private IUserRepository userRepo;
+    private IUserRoleRepository userRoleRepo;
+    private PasswordEncoder passwordEncoder;
 
 
 	public List<User> getUsers() {
@@ -114,16 +111,20 @@ public class UserServiceImpl implements IUserService{
     }
 
     // Método para autenticar un usuario por su correo electrónico y contraseña
-    @Override
-    public boolean autenticarUsuario(User user) {
-        if (user.getEmail() == null || user.getPassword() == null) {
-            return false;
-            }
+	@Override
+	public User autenticarUsuario(User user) {
+	    if (user.getEmail() == null || user.getPassword() == null) {
+	        throw new AutenticacionException("El correo electrónico y la contraseña son obligatorios.");
+	    }
 
-        User usuarioEncontrado = userRepo.findByEmail(user.getEmail());
+	    User usuarioEncontrado = userRepo.findByEmail(user.getEmail());
+	    
+	    if (usuarioEncontrado != null && passwordEncoder.matches(user.getPassword(), usuarioEncontrado.getPassword())) {
+	        return usuarioEncontrado;
+	    }
 
-        return usuarioEncontrado != null && usuarioEncontrado.getPassword().equals(user.getPassword());
-        }
+	    throw new AutenticacionException("Credenciales incorrectas");
+	}
 
 
 }

@@ -3,7 +3,6 @@ package com.nocountry.apirest.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nocountry.apirest.DTO.LoginDTO;
+import com.nocountry.apirest.exception.AutenticacionException;
 import com.nocountry.apirest.model.User;
-import com.nocountry.apirest.service.FileServiceImp;
 import com.nocountry.apirest.service.IUserService;
-import com.nocountry.apirest.services.FileUpload;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -132,20 +131,31 @@ public class UserController {
     }
 
     // Endpoint para la autenticación (login) de un usuario
+ // Endpoint para la autenticación (login) de un usuario
     @PostMapping("/login")
-    public ResponseEntity<?> autenticarUsuario(@RequestBody User user) {
-        String email = user.getEmail();
-        String password = user.getPassword();
+    public ResponseEntity<?> autenticarUsuario(@RequestBody LoginDTO login) {
+        try {
+            String email = login.getEmail();
+            String password = login.getPassword();
 
-        if (email == null || password == null || email.isEmpty() || password.isEmpty()) {
-            return ResponseEntity.badRequest().body("El correo electrónico y la contraseña son obligatorios.");
-        }
+            if (email == null || password == null || email.isEmpty() || password.isEmpty()) {
+                return ResponseEntity.badRequest().body("El correo electrónico y la contraseña son obligatorios.");
+            }
 
-        // Autenticar al usuario utilizando el servicio UserService
-        if (userServi.autenticarUsuario(user)) {
-            return ResponseEntity.ok("Inicio de sesión exitoso");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales incorrectas");
+            // Autenticar al usuario utilizando el servicio UserService
+            User user = new User();
+            user.setEmail(email);
+            user.setPassword(password);
+            User devolverUsuario = userServi.autenticarUsuario(user);
+
+            if (devolverUsuario != null) {
+                return ResponseEntity.ok(devolverUsuario);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales incorrectas");
+            }
+        } catch (AutenticacionException ex) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ex.getMessage());
         }
     }
+
 }
