@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import Solicitud from "./pages/SolucitudPrestamo";
 import Investment from "./pages/Investment";
 import Verification from "./components/register/verificationIdentity/Verification";
+import DoneRegister from "./components/register/registerDone/DoneRegister";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
             <Route path="/inversiones" element={<Investment />} />
             <Route path="/verifi" element={<Verification />} />
+            <Route path="/done-register" element={<DoneRegister />} />
           </Routes>
         </Layout>
       </BrowserRouter>
