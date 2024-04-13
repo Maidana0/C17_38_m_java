@@ -22,11 +22,13 @@ public class LoanController {
 	
 	@PostMapping("/save") 
 	public void saveLoan(@RequestParam Integer userId,
-	                         @RequestParam String typeOperation,
-	                         @RequestParam Double amount,
-	                         @RequestParam Double interestRate) {
+	                     @RequestParam String bank,
+	                     @RequestParam String CBU,
+	                     @RequestParam Double amount,
+	                     @RequestParam Double interestRate) {
+
 		try {
-		    loanService.saveLoan(userId, typeOperation, amount, interestRate);
+		    loanService.saveLoan(userId, bank, CBU, amount, interestRate);
 		}catch (LoanNotFoundException e) {
 	        System.err.println("Error: " + e.getMessage());
 		}
@@ -37,17 +39,11 @@ public class LoanController {
 		return loanService.getLoans();
 	}
 	
-	@PostMapping("/edit")
-	public void editLoan(@RequestParam Integer id, 
-						   @RequestParam byte status) {
-		loanService.editLoan(id, status);
+	@PostMapping("/deactivateLoan")
+	public void deactivateLoan(@RequestParam Integer id) {
+		loanService.deactivateLoan(id);
 		
-	}
-	
-	
-			
-		
-			
+	}			
 	
 
 }
