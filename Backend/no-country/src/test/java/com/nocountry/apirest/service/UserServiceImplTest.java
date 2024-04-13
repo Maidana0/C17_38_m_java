@@ -17,6 +17,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.util.Optional;
 import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,12 +34,15 @@ class UserServiceImplTest {
     @Mock
     private IUserRoleRepository userRoleRepo;
 
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
     @InjectMocks
     private UserServiceImpl underTest;
 
     @BeforeEach
     void setUp(){
-        underTest = new UserServiceImpl(userRepository, userRoleRepo);
+        underTest = new UserServiceImpl(userRepository, userRoleRepo, passwordEncoder);
     }
 
     @DisplayName("Check if it's able to list all the users")

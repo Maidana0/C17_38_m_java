@@ -22,7 +22,13 @@ public class LoanServiceImpl implements ILoanService {
 	private ILoanRepository loanRepository;
 	@Autowired
 	private IUserRepository userRepository;
-	
+	@Autowired
+	private final EmailService emailService;
+
+	public LoanServiceImpl(EmailService emailService) {
+		this.emailService = emailService;
+	}
+
 	//saveLoan() method with automatic status assignment
 	@Transactional
 	public void saveLoan(Integer userId, String typeOperation, Double amount, Double interestRate) 
@@ -44,6 +50,9 @@ public class LoanServiceImpl implements ILoanService {
 		loan.setStatus(status);
 		
 		loanRepository.save(loan);
+
+		emailService.sendSimpleMailMessage(loan.getUser().getName(), loan.getUser().getSurname(), loan.getUser().getEmail());
+
 	}
 
 	//List 
