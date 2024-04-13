@@ -1,7 +1,7 @@
 package com.nocountry.apirest.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,8 +38,11 @@ public class Loan implements Serializable{
     @JoinColumn(name = "usuario_id")
     private User user;
 
-    @Column(name = "tipo_operacion")
-    private String typeOperation;
+    @Column(name = "banco")
+    private String bank;
+    
+    @Column(name = "CBU")
+    private String CBU;
 
     @Column(name = "monto")
     private Double amount;
@@ -48,11 +51,13 @@ public class Loan implements Serializable{
     private Double interestRate;
 
     @Column(name = "fecha_inicio")
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = "fecha_vencimiento")
-    private Date dueDate;
+    private LocalDate dueDate;
 
     @Column(name = "estado")
-    private byte status;
+    private boolean status;
+    
+    private File file;
 }
