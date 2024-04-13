@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nocountry.apirest.exception.LoanNotFoundException;
+import com.nocountry.apirest.model.File;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.service.ILoanService;
 import lombok.AllArgsConstructor;
@@ -25,10 +26,11 @@ public class LoanController {
 	                     @RequestParam String bank,
 	                     @RequestParam String CBU,
 	                     @RequestParam Double amount,
-	                     @RequestParam Double interestRate) {
+	                     @RequestParam Double interestRate,
+	                     @RequestParam File file) {
 
 		try {
-		    loanService.saveLoan(userId, bank, CBU, amount, interestRate);
+		    loanService.saveLoan(userId, bank, CBU, amount, interestRate, file);
 		}catch (LoanNotFoundException e) {
 	        System.err.println("Error: " + e.getMessage());
 		}

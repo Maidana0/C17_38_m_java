@@ -58,4 +58,6 @@ public class Loan implements Serializable{
 
     @Column(name = "estado")
     private boolean status;
+    
+    private File file;
 }

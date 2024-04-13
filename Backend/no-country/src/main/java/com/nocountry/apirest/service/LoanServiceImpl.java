@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nocountry.apirest.exception.LoanNotFoundException;
+import com.nocountry.apirest.model.File;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.model.User;
 import com.nocountry.apirest.repository.ILoanRepository;
@@ -25,10 +26,10 @@ public class LoanServiceImpl implements ILoanService {
 	
 	//Save Loan
 	@Transactional
-	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate) 
+	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file) 
 			throws LoanNotFoundException {
 		
-		validate(userId, bank, CBU, amount, interestRate);
+		validate(userId, bank, CBU, amount, interestRate, file);
 		
 		User user = userRepository.findById(userId).get();
 		Loan loan = new Loan();
@@ -44,6 +45,7 @@ public class LoanServiceImpl implements ILoanService {
 		loan.setStartDate(today);
 		loan.setDueDate(dueDate);
 		loan.setStatus(true);
+		loan.setFile(file);
 		
 		loanRepository.save(loan);
 	}
@@ -88,7 +90,7 @@ public class LoanServiceImpl implements ILoanService {
 	}
 	
 	//Validate
-	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate) {
+	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate, File file) {
 		if(userId == null) {
 			throw new LoanNotFoundException ("El id de usuario no puede ser nulo");
 		}
@@ -107,6 +109,9 @@ public class LoanServiceImpl implements ILoanService {
 		
 		if(interestRate == null) {
 			throw new LoanNotFoundException ("La tasa de interes no puede ser nula");
+		}
+		if(file == null) {
+			throw new LoanNotFoundException ("El documento no puede ser nula");
 		}
 	}
 	
