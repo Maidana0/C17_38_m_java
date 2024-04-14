@@ -1,4 +1,4 @@
-package com.nocountry.apirest.models.persistence;
+package com.nocountry.apirest.model;
 
 import java.io.Serializable;
 
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "roles")
-public class Rol implements Serializable{
+public class Role implements Serializable{
     /**
 	 * 
 	 */
@@ -28,9 +28,9 @@ public class Rol implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "roles_id")
-    private int rolId;
+    private int id;
 
     @Column(name = "nombre_rol")
-    private String nombreRol;
+    private String nameRol;
 
 }
