@@ -26,10 +26,10 @@ public class LoanServiceImpl implements ILoanService {
 	
 	//Save Loan
 	@Transactional
-	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file) 
+	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments) 
 			throws LoanNotFoundException {
 		
-		validate(userId, bank, CBU, amount, interestRate, file);
+		validate(userId, bank, CBU, amount, interestRate, file, numberInstallments);
 		
 		User user = userRepository.findById(userId).get();
 		Loan loan = new Loan();
@@ -78,19 +78,19 @@ public class LoanServiceImpl implements ILoanService {
 		
 		//Get current year or next year
 		int currentYear = today.getYear();
-		int nextYear = currentYear;
+		int year = currentYear;
 		if(nextMonth ==13) {
 			nextMonth = 1;
-			nextYear++;
+			year++;
 		}
 		
 		//Create due date
-		LocalDate dueDate = LocalDate.of(nextYear, nextMonth, 10);
+		LocalDate dueDate = LocalDate.of(year, nextMonth, 10);
 		return dueDate;
 	}
 	
 	//Validate
-	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate, File file) {
+	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments) {
 		if(userId == null) {
 			throw new LoanNotFoundException ("El id de usuario no puede ser nulo");
 		}
@@ -111,7 +111,10 @@ public class LoanServiceImpl implements ILoanService {
 			throw new LoanNotFoundException ("La tasa de interes no puede ser nula");
 		}
 		if(file == null) {
-			throw new LoanNotFoundException ("El documento no puede ser nula");
+			throw new LoanNotFoundException ("El documento no puede ser nulo");
+		}
+		if(numberInstallments == null) {
+			throw new LoanNotFoundException ("El numero de cuotas no puede ser nulo");
 		}
 	}
 	

@@ -60,4 +60,7 @@ public class Loan implements Serializable{
     private boolean status;
     
     private File file;
+    
+    @Column(name = "numero_cuotas")
+    private Integer numberInstallments;
 }
