@@ -1,7 +1,8 @@
-package com.nocountry.apirest.models.persistence;
+package com.nocountry.apirest.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,8 +24,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "movimientos")
-public class Movimiento implements Serializable{
+@Table(name = "prestamo")
+public class Loan implements Serializable{
     /**
 	 * 
 	 */
@@ -31,29 +33,42 @@ public class Movimiento implements Serializable{
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "movimiento_id")
-    private int movimientoId;
+    @Column(name = "prestamo_id")
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private User user;
 
-    @Column(name = "tipo_operacion")
-    private String tipoOperacion;
+    @Column(name = "banco")
+    private String bank;
+    
+    @Column(name = "CBU")
+    private String CBU;
 
     @Column(name = "monto")
-    private Double monto;
+    private Double amount;
 
     @Column(name = "tasa_interes")
-    private Double tasaInteres;
+    private Double interestRate;
 
     @Column(name = "fecha_inicio")
-    private Date fechaInicio;
+    private LocalDate startDate;
 
     @Column(name = "fecha_vencimiento")
-    private Date fechaVencimiento;
+    private LocalDate dueDate;
 
     @Column(name = "estado")
-    private byte estado;
-
+    private boolean status;
+    
+    private File file;
+    
+    @Column(name = "numero_cuotas")
+    private Integer numberOfInstallments;
+    
+    @Column(name = "monto_cuotas")
+    private Double installmentAmount;
+    
+    @OneToMany
+    private List<Installment> installments;
 }
