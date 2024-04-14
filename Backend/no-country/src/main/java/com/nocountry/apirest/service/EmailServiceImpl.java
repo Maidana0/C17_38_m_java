@@ -32,7 +32,7 @@ public class EmailServiceImpl implements EmailService {
             emailSender.send(message);
         }catch(Exception e){
             System.out.println(e.getMessage());
-            throw new EmailSendingException("Error al enviar el correo electrónico", e);
+            throw new EmailSendingException("Error al enviar el correo electrónico");
         }
 
     }
