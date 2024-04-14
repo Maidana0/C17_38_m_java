@@ -64,11 +64,11 @@ public class Loan implements Serializable{
     private File file;
     
     @Column(name = "numero_cuotas")
-    private Integer numberInstallments;
+    private Integer numberOfInstallments;
     
     @Column(name = "monto_cuotas")
     private Double installmentAmount;
     
     @OneToMany
-    private List<Installment> installment;
+    private List<Installment> installments;
 }

@@ -35,17 +35,17 @@ public class LoanServiceImpl implements ILoanService {
 
 	//Save Loan
 	@Transactional
-	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments, Double installmentAmount) 
+	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberOfInstallments, Double installmentAmount) 
 			throws LoanNotFoundException {
 		
-		validate(userId, bank, CBU, amount, interestRate, file, numberInstallments, installmentAmount);
+		validate(userId, bank, CBU, amount, interestRate, file, numberOfInstallments, installmentAmount);
 		
 		User user = userRepository.findById(userId).get();
 		Loan loan = new Loan();
 		int loanId = loan.getId();
 		LocalDate today = LocalDate.now();
 		LocalDate dueDate = calculateDueDate(today);
-		List<Installment> installment = createInstallments(loanId, numberInstallments, installmentAmount, today);
+		List<Installment> installments = createInstallments(loanId, numberOfInstallments, installmentAmount, today);
 		
 		loan.setUser(user);
 		loan.setBank(bank);
@@ -57,7 +57,7 @@ public class LoanServiceImpl implements ILoanService {
 		loan.setStatus(true);
 		loan.setFile(file);
 		loan.setInstallmentAmount(installmentAmount);
-		loan.setInstallment(installment);
+		loan.setInstallments(installments);
 		
 		loanRepository.save(loan);
 
@@ -66,19 +66,22 @@ public class LoanServiceImpl implements ILoanService {
 	}
 	
 	//Create installment
-	private List<Installment> createInstallments(Integer loanId, Integer numberInstallments, Double installmentAmount, LocalDate today){
+	private List<Installment> createInstallments(Integer loanId, Integer numberOfInstallments, Double installmentAmount, LocalDate today){
 		
 		InstallmentServiceImpl installmentService = new InstallmentServiceImpl();
 		
 		List<Installment> installments = new ArrayList<>();
 		
-		for(int i = 0; i<numberInstallments; i++) {
+		for(int i = 0; i<numberOfInstallments; i++) {
 			
 			//Create new Installment
 			Installment installment = new Installment();
 			
+			//Calculate Installment number
+			int installmentNumber = i+1;
+			
 			//Save Installment
-			installmentService.saveInstallment(loanId, installmentAmount, today);
+			installmentService.saveInstallment(loanId, installmentAmount, today, installmentNumber);
 			
 			//Add Installment to list
 			installments.add(installment);
