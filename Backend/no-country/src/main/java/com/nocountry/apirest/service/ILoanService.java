@@ -7,7 +7,7 @@ import com.nocountry.apirest.model.Loan;
 
 public interface ILoanService {
 	
-	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments);
+	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments, Double installmentValue);
 	public List<Loan> getLoans();
 	public void deactivateLoan(Integer id);
 

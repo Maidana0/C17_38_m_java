@@ -31,15 +31,12 @@ public class LoanServiceImpl implements ILoanService {
 		this.emailService = emailService;
 	}
 
-	//saveLoan() method with automatic status assignment
-
-	
 	//Save Loan
 	@Transactional
-	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments) 
+	public void saveLoan(Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments, Double installmentAmount) 
 			throws LoanNotFoundException {
 		
-		validate(userId, bank, CBU, amount, interestRate, file, numberInstallments);
+		validate(userId, bank, CBU, amount, interestRate, file, numberInstallments, installmentAmount);
 		
 		User user = userRepository.findById(userId).get();
 		Loan loan = new Loan();
@@ -56,6 +53,7 @@ public class LoanServiceImpl implements ILoanService {
 		loan.setDueDate(dueDate);
 		loan.setStatus(true);
 		loan.setFile(file);
+		loan.setInstallmentAmount(installmentAmount);
 		
 		loanRepository.save(loan);
 
@@ -68,7 +66,7 @@ public class LoanServiceImpl implements ILoanService {
 		return loanRepository.findAll();
 	}
 	
-	//DeactivateLoan
+	//Deactivate Loan
 	public void deactivateLoan(Integer id) {
 		
 		Optional<Loan> answer= loanRepository.findById(id);
@@ -103,7 +101,7 @@ public class LoanServiceImpl implements ILoanService {
 	}
 	
 	//Validate
-	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments) {
+	private void validate (Integer userId, String bank, String CBU, Double amount, Double interestRate, File file, Integer numberInstallments, Double installmentAmount) {
 		if(userId == null) {
 			throw new LoanNotFoundException ("El id de usuario no puede ser nulo");
 		}
@@ -128,6 +126,9 @@ public class LoanServiceImpl implements ILoanService {
 		}
 		if(numberInstallments == null) {
 			throw new LoanNotFoundException ("El numero de cuotas no puede ser nulo");
+		}
+		if(installmentAmount == null) {
+			throw new LoanNotFoundException ("El valor de las cuotas no puede ser nulo");
 		}
 	}
 	

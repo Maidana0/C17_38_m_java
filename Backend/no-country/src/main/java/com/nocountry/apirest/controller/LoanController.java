@@ -28,10 +28,11 @@ public class LoanController {
 	                     @RequestParam Double amount,
 	                     @RequestParam Double interestRate,
 	                     @RequestParam File file,
-	                     @RequestParam Integer numberInstallments) {
+	                     @RequestParam Integer numberInstallments,
+	                     @RequestParam Double installmmentValue) {
 
 		try {
-		    loanService.saveLoan(userId, bank, CBU, amount, interestRate, file, numberInstallments);
+		    loanService.saveLoan(userId, bank, CBU, amount, interestRate, file, numberInstallments, installmmentValue);
 		}catch (LoanNotFoundException e) {
 	        System.err.println("Error: " + e.getMessage());
 		}

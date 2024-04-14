@@ -2,6 +2,7 @@ package com.nocountry.apirest.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "loan")
+@Table(name = "prestamo")
 public class Loan implements Serializable{
     /**
 	 * 
@@ -63,4 +65,10 @@ public class Loan implements Serializable{
     
     @Column(name = "numero_cuotas")
     private Integer numberInstallments;
+    
+    @Column(name = "monto_cuotas")
+    private Double installmentAmount;
+    
+    @OneToMany
+    private List<Installment> installment;
 }
