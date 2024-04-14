@@ -1,5 +1,6 @@
 package com.nocountry.apirest.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,19 +21,63 @@ public class InstallmentServiceImpl implements IInstallmentService{
 	
 	//Save Installment
 	@Transactional
-	public void saveInstallment(Integer loanId, Double installmentAmount) {
+	public void saveInstallment(Integer loanId, Double installmentAmount, LocalDate today) {
 		
-		Loan loan = loanRepository.findById(loanId).get();
 		Installment installment = new Installment();
+		Loan loan = loanRepository.findById(loanId).get();
 		
+		LocalDate paymentDate = calculatePaymentDate(today);
+	    LocalDate dueDate = calculateDueDate(paymentDate);
+	    
 		installment.setLoan(loan);
 		installment.setAmount(installmentAmount);
-		installment.setPaymentDate(null);
-		installment.setDueDate(null);
+		installment.setPaymentDate(paymentDate);
+		installment.setDueDate(dueDate);
 		installment.setStatus(true);
 		
 		installmentRepository.save(installment);
+		
 	}
+	
+	//Calculate payment date
+		private static LocalDate calculatePaymentDate(LocalDate today) {
+			
+			//Get current month
+			int currentMonth = today.getMonthValue();
+			int nextMonth = currentMonth + 1;
+			
+			//Get current year or next year
+			int currentYear = today.getYear();
+			int year = currentYear;
+			if(nextMonth ==13) {
+				nextMonth = 1;
+				year++;
+			}
+			
+			//Create due date
+			LocalDate dueDate = LocalDate.of(year, nextMonth, 10);
+			return dueDate;
+		}
+		
+		//Calculate due date
+		private static LocalDate calculateDueDate(LocalDate paymentDay) {
+			
+			//Get current month
+			int currentMonth = paymentDay.getMonthValue();
+			int nextMonth = currentMonth + 1;
+			
+			//Get current year or next year
+			int currentYear = paymentDay.getYear();
+			int year = currentYear;
+			if(nextMonth ==13) {
+				nextMonth = 1;
+				year++;
+			}
+			
+			//Create due date
+			LocalDate dueDate = LocalDate.of(year, nextMonth, 10);
+			return dueDate;
+		}
 	
 	//List
 	public List<Installment> getInstallments(){
