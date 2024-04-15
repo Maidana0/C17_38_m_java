@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.nocountry.apirest.exception.InstallmentNotFoundException;
 import com.nocountry.apirest.model.Installment;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.repository.IInstallmentRepository;
@@ -50,6 +51,7 @@ public class InstallmentServiceImpl implements IInstallmentService{
 	}
 	
 	//Deactivate Installment
+	@Transactional
 	public void deactivateInstallment(int id) {
 		
 			Optional<Installment> answer= installmentRepository.findById(id);
@@ -61,6 +63,20 @@ public class InstallmentServiceImpl implements IInstallmentService{
 			
 				installmentRepository.save(installment);
 			}
+	}
+	
+	//Get Installment By Id
+	@Transactional
+	public Installment getInstallmentById(Integer id) throws InstallmentNotFoundException {
+		
+		Optional<Installment> optionalInstallment = installmentRepository.findById(id);
+		
+		if (optionalInstallment.isPresent()) {
+			return optionalInstallment.get();
+		}else {
+			throw new InstallmentNotFoundException("Installment no encontrado con el id: " + id);
+		}
+		
 	}
 	
 	
