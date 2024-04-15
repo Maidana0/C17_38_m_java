@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ import org.springframework.ui.Model;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/file")
 @AllArgsConstructor
