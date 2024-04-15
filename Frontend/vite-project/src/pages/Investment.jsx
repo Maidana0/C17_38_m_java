@@ -8,6 +8,15 @@ import StepThree from "../components/investment/StepThree"
 
 const Investment = () => {
     const [currentStep, setCurrentStep] = useState(1)
+    // TO INVEST
+    const [totalFunds, setTotalFunds] = useState(0)
+    const [invest, setInvest] = useState(0)
+
+    /*
+    EL USUARIO VA A PODER ELEGIR LOS FONDOS Y LA CANTIDAD A INVERTIR QUE VENDRA DE ESOS FONDOS
+    FONDOS TOTALES / A INVERTIR
+    100 / 50
+    */
     return (
         <div className={styles.investment_contain}>
             <ProgressBar currentStep={currentStep} setStep={setCurrentStep} totalSteps={4}>

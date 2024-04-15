@@ -41,6 +41,9 @@ public class Installment {
 	@Column(name = "fecha_vencimiento")
 	private LocalDate dueDate;
 	
+	@Column(name = "numero_cuota")
+	private Integer installmentNumber;
+	
 	@Column(name = "estado")
 	private boolean status;
 }
