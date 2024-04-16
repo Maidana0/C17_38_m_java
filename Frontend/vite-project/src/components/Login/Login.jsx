@@ -1,17 +1,38 @@
 import "./login.css";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
 function Login() {
+  const { setUser } = useContext(Context);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Datos del formulario:", data);
+  function onSubmit(data) {
     // Realiza acciones adicionales, como enviar datos al servidor
-  };
+    fetch("http://localhost:5000/users/login", {
+      method: "POST",
+      body: JSON.stringify({ email: data[0].value, password: data[1].value }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data);
+        console.log(data.name);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => navigate("/userpanel"));
+  }
 
   return (
     <div className="login">
@@ -19,7 +40,10 @@ function Login() {
         <div className="panelLogin">
           <div className="navegacionL">
             <p>Volver Atras</p>
-            <p>Ayuda</p>
+            <img
+              src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280918/Cashfly/help_cdyxt2.svg"
+              alt=""
+            />
           </div>
           <div className="loginElementos">
             <div className="tituloLogin">
@@ -30,75 +54,105 @@ function Login() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input
-                className="inputP"
-                type="email"
-                placeholder="Correo electrónico"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Expresión regular para validar el correo
-                })}
-              />
-              {errors.email && <span>Ingresa un correo válido</span>}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit(e.target);
+              }}
+            >
+              <div className="formLoginCont">
+                <input
+                  className="inputP"
+                  type="email"
+                  placeholder="Correo electrónico"
+                  {...register("email", {
+                    required: true,
+                    pattern: /[A-Za-z0-9_.-]{8,15}/g, // Expresión regular para validar el correo
+                  })}
+                />
+                {errors.email && <span>Ingresa un correo válido</span>}
 
-              <input
-                className="inputP"
-                type="password"
-                placeholder="Contraseña"
-                {...register("password", {
-                  required: true,
-                  pattern:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/,
-                })}
-              />
-              {errors.password && (
-                <span>
-                  * La contraseña debe ser de 8 a 15 dígitos y con distintos
-                  tipos de caracteres
-                </span>
-              )}
+                <input
+                  className="inputP"
+                  type="password"
+                  placeholder="Contraseña"
+                  {...register("password", {
+                    required: true,
+                    pattern: /[A-Za-z0-9_.-]{8,15}/g,
+                  })}
+                />
+                {errors.password && (
+                  <span>
+                    * La contraseña debe ser de 8 a 15 dígitos y con distintos
+                    tipos de caracteres
+                  </span>
+                )}
 
-              <div className="validacionesInfo">
-                <div className="validacionesItem">
-                  Al menos una letra minúscula
+                <div className="validacionesInfo">
+                  <div className="validacionesItem">
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713283505/Cashfly/listItem_ceyvf0.svg"
+                      alt=""
+                    />
+                    <p>Al menos una letra minúscula</p>
+                  </div>
+                  <div className="validacionesItem">
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713283505/Cashfly/listItem_ceyvf0.svg"
+                      alt=""
+                    />
+                    <p>Contener 8 o más caracteres</p>
+                  </div>
+                  <div className="validacionesItem">
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713283505/Cashfly/listItem_ceyvf0.svg"
+                      alt=""
+                    />
+                    <p>Al menos una letra mayúscula</p>
+                  </div>
+                  <div className="validacionesItem">
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713283505/Cashfly/listItem_ceyvf0.svg"
+                      alt=""
+                    />
+                    <p>Al menos un carácter numérico</p>
+                  </div>
                 </div>
-                <div className="validacionesItem">
-                  Contener 8 o más caracteres
-                </div>
-                <div className="validacionesItem">
-                  Al menos una letra mayúscula
-                </div>
-                <div className="validacionesItem">
-                  Al menos un carácter numérico
+
+                <input
+                  className="inputP"
+                  type="password"
+                  placeholder="Repetir contraseña"
+                  {...register("password2", {
+                    required: true,
+                    pattern:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/,
+                  })}
+                />
+                {errors.password && (
+                  <span>
+                    * Este campo es obligatorio y debe de coincidir con la
+                    primera
+                  </span>
+                )}
+                <div className="linkRegLogin">
+                  <p>¿Aún no estás registrado? </p>
+                  <a href="/registrarme"> Registrate aquí</a>
                 </div>
               </div>
 
-              <input
-                className="inputP"
-                type="text"
-                placeholder="Repetir contraseña"
-                {...register("password2", {
-                  required: true,
-                  pattern:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/,
-                })}
-              />
-              {errors.password && (
-                <span>
-                  * Este campo es obligatorio y debe de coincidir con la primera
-                </span>
-              )}
-
-              <div className="btn-container">
-                <button type="submit">Ingresar</button>
-              </div>
+              <button type="submit">Ingresar</button>
             </form>
           </div>
         </div>
         <div className="panelInfoL">
           <div className="infoLCont">
-            <div className="logoLCont">CashFly</div>
+            <div className="logoLCont">
+              <img
+                src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
+                alt=""
+              />
+            </div>
             <div className="descripcionL">
               <h2 className="tituloL2">Crece con tus finanzas:</h2>
               <p className="parrafoL2">

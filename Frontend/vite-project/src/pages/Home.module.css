@@ -13,7 +13,7 @@
 }
 .panel0{
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,9 +138,34 @@
 .tip{
     width: 95%;
     height: 95%;
-    border-radius: 30px;
+    border-radius: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;   
+}
+.imgCont1{
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
     background-color: var(--color1);
     border: solid 1px var(--colorLine1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgCont1 img{
+    width: 50%;
+    height: 50%;
+}
+.tip p{
+    width: 80%;
+    height: auto;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.2rem;
 }
 /*----------- Seccion 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -188,6 +213,9 @@
     }
     .titulo2{
         font-size: 2.6rem;
+    }
+    .tip p{
+        font-size: 1rem;
     }
 }
 
@@ -254,7 +282,7 @@
         scroll-snap-type: x mandatory;
     }
     .carrucel1{
-        width: 400%;
+        width: 500%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
