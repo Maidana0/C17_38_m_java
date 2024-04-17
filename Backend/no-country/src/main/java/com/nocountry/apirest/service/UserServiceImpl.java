@@ -41,7 +41,7 @@ public class UserServiceImpl implements IUserService{
         System.out.println("DNI: " + user.getDni());
         System.out.println("Email: " + user.getEmail());
         System.out.println("Cellphone: " + user.getCellphone());
-        System.out.println("Password: " + user.getPassword());
+       // System.out.println("Password: " + user.getPassword());
         System.out.println("State: " + user.isState());
         System.out.println("Esta eliminado: " + user.isDeleted());
 
@@ -124,6 +124,21 @@ public class UserServiceImpl implements IUserService{
 
 	    throw new AutenticacionException("Credenciales incorrectas");
 	}
+
+    @Override
+    public boolean validateEmailAndDni(String email, String dni) {
+
+        if(userRepo.existsByEmail(email)){
+
+            return false;
+        }
+        if(userRepo.existsByDni(dni)){
+
+            return false;
+        }
+        return true;
+
+    }
 
 
 }

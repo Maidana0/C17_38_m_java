@@ -18,4 +18,6 @@ public interface IUserService {
     public User findUser(int id) throws UserNotFoundException;
 
     User autenticarUsuario(User user);
+
+    public boolean validateEmailAndDni(String email, String dni);
 }
