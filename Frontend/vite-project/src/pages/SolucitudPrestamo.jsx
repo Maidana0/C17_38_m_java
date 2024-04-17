@@ -26,6 +26,7 @@ const Solucitud = () => {
                 setStep={setStep}
                 textButton={step == 3 ? "Sacar prestamo" : false}
                 moreButtons={ step > 1 && <CustomButton />}
+                
             >
 
                 {
