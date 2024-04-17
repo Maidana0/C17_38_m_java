@@ -44,11 +44,11 @@ header>div {
 }
 
 
-.hamburger-react, .nav-buttons {
+.hamburger-react {
     display: none;
 }
 
-.nav-buttons a,
+.link-signup,
 .nav-items li:nth-child(5) {
     background-color: black;
     color: #fff;
@@ -64,26 +64,33 @@ header>div {
     display: none;
 }
 
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-right: .5rem;
+}
 
-@media (max-width: 760px) {
+.link-signup {}
+
+.link-login {}
+
+@media (max-width: 890px) {
     .nav-items li:nth-child(5) {
-    display: none;
+        display: none;
     }
-    .title-app,.nav-buttons, .hamburger-react{
+
+    .title-app,
+    .hamburger-react {
         z-index: 6;
     }
-    .hamburger-react{
+
+    .hamburger-react {
         display: block;
         padding-left: 1rem;
     }
-    .title-app{
-        padding-left: 0;
-    }
-    .nav-buttons {
-        display: flex;
-        align-items: center;
-        padding-right: .5rem;
-    }
+
+
 
     .navbar {
         position: fixed;
@@ -125,6 +132,9 @@ header>div {
         z-index: 4;
         opacity: 1;
         display: block;
+    }
+    .title-center{
+        margin: auto;
     }
 }
 
