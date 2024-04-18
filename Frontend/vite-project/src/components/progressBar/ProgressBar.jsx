@@ -33,7 +33,7 @@ const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps
       {children}
 
       <div className={styles.progress_footer}>
-        {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}>
+        {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}  >
           {
             textButton ? textButton : currentStep > 1 ? "Siguiente" : "Continuar"
           }
