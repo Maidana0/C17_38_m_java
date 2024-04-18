@@ -26,6 +26,7 @@ function Verification() {
               type="button"
               className="btn-verify"
               onClick={handleVerifyInTime}
+              disabled
             >
               Verificar mi identidad
             </button>
@@ -33,6 +34,7 @@ function Verification() {
               type="button"
               className="btn-verify-later"
               onClick={handleVerifyLate}
+              disabled
             >
               Verificar más tarde
             </button>

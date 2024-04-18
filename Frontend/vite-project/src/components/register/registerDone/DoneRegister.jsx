@@ -6,9 +6,12 @@ function DoneRegister() {
     <div className="doneRegister">
       <div className="column-1">
         <div className="doneContainer">
-          <div className="custom-circle">
-            <img src={"images/OK.svg"} height={20} alt="Imagen de terminado " />
-          </div>
+          <img
+            className="custom-circle"
+            src={"images/OK.svg"}
+            height={20}
+            alt="Imagen de terminado "
+          />
 
           <h1 className="read">!Listo¡</h1>
 

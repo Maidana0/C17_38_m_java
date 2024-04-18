@@ -51,7 +51,7 @@ function Register() {
           </div>
 
           <div className="registerCont">
-            <h1>Información personal </h1>
+            <h2>Información personal </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 className="quit-border"
@@ -131,7 +131,7 @@ function Register() {
                 {...register("password", {
                   required: true,
                   pattern:
-                    /*/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/*//[A-Za-z0-9_.-]{8,15}/g,
+                    /*/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/*/ /[A-Za-z0-9_.-]{8,15}/g,
                 })}
               />
               {errors.password && (
