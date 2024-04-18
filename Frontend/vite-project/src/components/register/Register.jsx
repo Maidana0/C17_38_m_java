@@ -30,13 +30,13 @@ function Register() {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        //Accept: "application/json",
+        Accept: "application/json",
       },
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log("USER CREATED: ", data);
         setUserCreated(data);
-        console.log(data);
       })
       .catch((error) => console.log(error))
       .finally(() => navigate("/verifi"));
