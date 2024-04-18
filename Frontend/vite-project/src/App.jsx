@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 
-import { Register } from "./components/register/Register";
 import Login from "./components/Login/Login";
 
 import Solicitud from "./pages/SolucitudPrestamo";
@@ -12,6 +11,7 @@ import Investment from "./pages/Investment";
 import Verification from "./components/register/verificationIdentity/Verification";
 import DoneRegister from "./components/register/registerDone/DoneRegister";
 import UserPanel from "./components/UserPanel/UserPanel";
+import Register from "./pages/Register";
 
 function App() {
   return (

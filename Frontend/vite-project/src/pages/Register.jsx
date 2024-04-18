@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProgressBar from "../components/progressBar/ProgressBar";
 import styles from "../components/investment/styles.module.css";
 import Verification from "../components/register/verificationIdentity/Verification";
+import RegisterComponent from "../components/register/Register";
 
 const Register = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -13,7 +14,7 @@ const Register = () => {
         totalSteps={4}
       >
         <div className={styles.step_contain}>
-          {currentStep == 1 && <Register />}
+          {currentStep == 1 && <RegisterComponent />}
 
           {currentStep == 2 && <Verification />}
         </div>

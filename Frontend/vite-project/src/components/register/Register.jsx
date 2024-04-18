@@ -1,22 +1,55 @@
-import "./register.css";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import "./register.css";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
-export function Register() {
+function Register() {
+  const { setUserCreated } = useContext(Context);
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Datos del formulario:", data);
-    // Realiza acciones adicionales, como enviar datos al servidor
-  };
-
+  function onSubmit(data) {
+    const object = {
+      name: data.name,
+      surname: data.surname,
+      dni: data.dni,
+      email: data.email,
+      cellphone: data.phone,
+      password: data.password,
+    };
+    fetch("http://localhost:5000/users/create", {
+      method: "POST",
+      body: JSON.stringify(object),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        //Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUserCreated(data);
+        console.log(data);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => navigate("/verifi"));
+  }
   return (
     <>
       <div className="register">
         <div className="column-1">
+          <div className="header_navigation">
+            <div>Help</div>
+            <div>info</div>
+          </div>
+
           <div className="registerCont">
             <h1>Información personal </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -134,7 +167,13 @@ export function Register() {
         </div>
 
         <div className="column-2">
-          <div className="logoLeftSide">CashFly</div>
+          <div className="logoLeftSide">
+            <img
+              className="logo_cashFly"
+              src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
+              alt="Logo Cashfy"
+            />
+          </div>
           <div className="descriptionL">
             <p className="contextL">
               ¡Invierte en proyectos emocionantes y haz crecer tu dinero
@@ -146,3 +185,5 @@ export function Register() {
     </>
   );
 }
+
+export default Register;
