@@ -54,7 +54,7 @@ function Login() {
               </p>
             </div>
 
-            <form
+            <form className="formL"
               onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(e.target);
