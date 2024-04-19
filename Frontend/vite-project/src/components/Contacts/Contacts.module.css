@@ -1,0 +1,112 @@
+.Contacts{
+    width: 70%;
+    min-width: 900px;
+    height: 80%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panelCont{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+}
+.contactsCont{
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+    gap: 30px;
+}
+.tittleCont{
+    width: 100%;
+    height: 10%;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tittleCont h2{
+    font-size: 2rem;
+}
+.tittleCont p {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.tittleCont p:hover{
+    color: green;
+    font-weight: 700;
+}
+.listaC{
+    width: 100%;
+    height: calc(90% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    overflow-y: auto;
+}
+.contacto{
+    width: 50%;
+    height: 70px;
+    background-color: var(--color1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactoC{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+.imgcont{
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgcont img{
+    height: 60%;
+    width: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.conactoC p{
+    width: auto;
+    height: auto;
+    font-weight: 700;
+}
+
+@media screen and (aspect-ratio < 1.2){
+    .Contacts{
+        width: 100%;
+        min-width: 300px;
+    }
+    .tittleCont h2{
+        font-size: 1.6rem;
+    }
+    .contacto{
+        width: 90%;
+        height: 70px;
+        background-color: var(--color1);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -7,6 +7,7 @@ export const ContextProvider = ({ children }) => {
   const [estadoHeader, setEstadoHeader] = useState(0);
   const [user, setUser] = useState(null);
   const [userCreated, setUserCreated] = useState();
+  const [userP, setUserP] = useState(0);
 
   return (
     <Context.Provider
@@ -14,10 +15,12 @@ export const ContextProvider = ({ children }) => {
         estadoUsuario,
         estadoHeader,
         user,
+        userP,
         setEstadoUsuario,
         setEstadoHeader,
         setUser,
         setUserCreated,
+        setUserP,
         userCreated,
       }}
     >

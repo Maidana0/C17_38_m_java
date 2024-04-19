@@ -34,6 +34,7 @@ body,
 button{
   background-color: black;
   font-family: var(--fira);
+  color: white;
 }
 
 .inputP{
