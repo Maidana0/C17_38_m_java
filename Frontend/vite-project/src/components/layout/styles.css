@@ -133,7 +133,8 @@ header>div {
         opacity: 1;
         display: block;
     }
-    .title-center{
+
+    .title-center {
         margin: auto;
     }
 }
@@ -143,8 +144,16 @@ header>div {
     .navbar {
         width: 70%;
     }
-}
 
+    .nav-buttons {
+        gap: 0;
+    }
+
+    .nav-buttons a {
+        font-size: .95em;
+        padding: .5rem .6rem;
+    }
+}
 
 
 

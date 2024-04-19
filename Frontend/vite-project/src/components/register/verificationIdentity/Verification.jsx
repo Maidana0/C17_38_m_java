@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import "./verification.css";
 
 function Verification() {
+  const navigate = useNavigate();
+
   const handleVerifyInTime = () => {
     console.log("Verify in time");
   };
 
   const handleVerifyLate = () => {
-    console.log("Verificar después");
+    navigate("/done-register");
   };
   return (
     <>
@@ -23,14 +26,15 @@ function Verification() {
               type="button"
               className="btn-verify"
               onClick={handleVerifyInTime}
+              disabled
             >
-              {" "}
               Verificar mi identidad
             </button>
             <button
               type="button"
               className="btn-verify-later"
               onClick={handleVerifyLate}
+              disabled
             >
               Verificar más tarde
             </button>
@@ -44,7 +48,13 @@ function Verification() {
         </div>
 
         <div className="column-2">
-          <div className="logoLeftSide">CashFly</div>
+          <div className="logoLeftSide">
+            <img
+              className="logo_cashFly"
+              src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
+              alt="Logo Cashfy"
+            />
+          </div>
           <div className="descriptionL">
             <p className="contextL">
               ¡Descubre emocionantes oportunidades de préstamo e inversión y

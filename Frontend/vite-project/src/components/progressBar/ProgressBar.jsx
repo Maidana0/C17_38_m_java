@@ -1,10 +1,10 @@
 import styles from "./styles.module.css"
 
-const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps, arrayWithNameSteps=[], children }) => {
+const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep, setStep, totalSteps, arrayWithNameSteps = [], children }) => {
   const steps = []
   const stepwidth = 100 / (totalSteps - 1)
-  
-  
+
+
   for (let i = 1; i <= (totalSteps - 1); i++) {
     const isActive = i <= currentStep ? styles.step_active : ""
     steps.push(
@@ -21,7 +21,11 @@ const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps
     )
   }
 
-  const handleNextStep = () => { setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep); window.scrollTo(0, 0); }
+  const handleNextStep = () => {
+    setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
+    handleSubmitButton && handleSubmitButton()
+    window.scrollTo(0, 0);
+  }
   const handlePreviousStep = () => setStep(prevStep => prevStep > 1 ? prevStep - 1 : prevStep);
 
 
@@ -53,7 +57,7 @@ const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps
               </div>
             ))
             : <div className={styles.final_step_name}>
-                {arrayWithNameSteps[totalSteps - 1]}
+              {arrayWithNameSteps[totalSteps - 1]}
             </div>
         }
       </div>
@@ -62,7 +66,7 @@ const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps
       {children}
 
       <div className={styles.progress_footer}>
-        {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}>
+        {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}  >
           {
             textButton ? textButton : currentStep > 1 ? "Siguiente" : "Continuar"
           }

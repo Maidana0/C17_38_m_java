@@ -13,6 +13,8 @@ function FormularioPrestamo(props) {
   const max = 150000;
   const {selectedOption, setSelectedOption} = props
   const {options} = props
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
   useEffect(() => {
     // Calcula la fecha actual más diez días
     const date = new Date();
@@ -56,7 +58,7 @@ function FormularioPrestamo(props) {
     setAmount(roundedValue);
     setErrorMessage(""); // Limpia el mensaje de error cuando se ajusta el slider
   };
-
+  
   
   
   // const handleButtonClick = () => {

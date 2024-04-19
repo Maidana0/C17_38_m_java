@@ -17,30 +17,30 @@ const Investment = () => {
     FONDOS TOTALES / A INVERTIR
     100 / 50
     */
-   const stepsName = ["Elegí tus fondos", "Elegí cuanto y donde invertir", "Confirma los detalles", "Inversion realizada"]
+    const stepsName = ["Elegí tus fondos", "Elegí cuanto y donde invertir", "Confirma los detalles", "Inversion realizada"]
     return (
         <div className={styles.investment_contain}>
-            <ProgressBar 
-            currentStep={currentStep} 
-            setStep={setCurrentStep}
-             totalSteps={4}
-             arrayWithNameSteps={stepsName}
-             >
+            <ProgressBar
+                currentStep={currentStep}
+                setStep={setCurrentStep}
+                totalSteps={4}
+                arrayWithNameSteps={stepsName}
+            >
                 <div className={styles.step_contain}>
 
                     {
                         currentStep == 1
-                        && <StepOne styles={styles}/>
+                        && <StepOne styles={styles} />
                     }
 
                     {
                         currentStep == 2
-                        && <StepTwo styles={styles}/>
+                        && <StepTwo styles={styles} />
                     }
 
                     {
                         currentStep == 3
-                        && <StepThree styles={styles}/>
+                        && <StepThree styles={styles} />
                     }
 
 
