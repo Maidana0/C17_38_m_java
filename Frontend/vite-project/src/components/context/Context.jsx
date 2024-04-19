@@ -14,10 +14,13 @@ export const ContextProvider = ({ children }) => {
         estadoUsuario,
         estadoHeader,
         user,
+        userP,
         setEstadoUsuario,
         setEstadoHeader,
         setUser,
         setUserCreated,
+        setUserP,
+        imagenMov,
         userCreated,
       }}
     >
