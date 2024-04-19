@@ -17,6 +17,9 @@ const Investment = () => {
     FONDOS TOTALES / A INVERTIR
     100 / 50
     */
+    //    EJEMPLO
+    const miFuncion = () => console.log("Estas en el paso: " + currentStep);
+    //    EJEMPLO
     const stepsName = ["Elegí tus fondos", "Elegí cuanto y donde invertir", "Confirma los detalles", "Inversion realizada"]
     return (
         <div className={styles.investment_contain}>
@@ -25,6 +28,15 @@ const Investment = () => {
                 setStep={setCurrentStep}
                 totalSteps={4}
                 arrayWithNameSteps={stepsName}
+                handleSubmitButton={miFuncion}
+                // EJEMPLO
+                textButton={currentStep == 1 && "Registrarme"}
+                moreButtons={<div style={{ margin: "auto" }}>
+                    <button>
+                        Otro boton
+                    </button>
+                </div>}
+            //
             >
                 <div className={styles.step_contain}>
 
