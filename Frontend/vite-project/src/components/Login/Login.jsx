@@ -118,23 +118,6 @@ function Login() {
                     <p>Al menos un carácter numérico</p>
                   </div>
                 </div>
-
-                <input
-                  className="inputP"
-                  type="password"
-                  placeholder="Repetir contraseña"
-                  {...register("password2", {
-                    required: true,
-                    pattern:
-                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/,
-                  })}
-                />
-                {errors.password && (
-                  <span>
-                    * Este campo es obligatorio y debe de coincidir con la
-                    primera
-                  </span>
-                )}
                 <div className="linkRegLogin">
                   <p>¿Aún no estás registrado? </p>
                   <a href="/registrarme"> Registrate aquí</a>

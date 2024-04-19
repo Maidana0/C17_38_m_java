@@ -94,11 +94,15 @@ button {
 
 .logoLeftSide {
   width: 100%;
-  height: auto;
-  font-size: 1.6rem;
+  height: 5%;
+  font-size: 2rem;
+  font-weight: bold;
   text-align: left;
-  margin-left: 4rem;
-  font-style: bold;
+  margin-left: 2rem;
+}
+
+.logo_cashFly {
+  height: 2.5rem;
 }
 
 .descriptionL {
@@ -122,7 +126,7 @@ button {
 .contextL {
   width: 100%;
   height: auto;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: left;
   margin-right: 12rem;
   margin-top: 2rem;
@@ -135,7 +139,7 @@ button {
 }
 
 /* PEQUEÑOS AJUSTES (by FRANCO) */
-.logoLeftSide,
+
 .descriptionL,
 .contextL {
   margin-left: 0;
@@ -184,4 +188,17 @@ button {
 
 .checkbox-container {
   justify-content: space-between;
+}
+
+#consent {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.header_navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
 }

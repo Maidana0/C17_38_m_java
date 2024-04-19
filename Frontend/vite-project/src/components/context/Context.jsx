@@ -5,7 +5,8 @@ export const Context = createContext();
 export const ContextProvider = ({ children }) => {
   const [estadoUsuario, setEstadoUsuario] = useState(0);
   const [estadoHeader, setEstadoHeader] = useState(0);
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(null);
+  const [userCreated, setUserCreated] = useState();
 
   return (
     <Context.Provider
@@ -16,6 +17,8 @@ export const ContextProvider = ({ children }) => {
         setEstadoUsuario,
         setEstadoHeader,
         setUser,
+        setUserCreated,
+        userCreated,
       }}
     >
       {children}

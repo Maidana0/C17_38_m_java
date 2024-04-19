@@ -26,7 +26,6 @@
 .custom-circle {
   width: 100px;
   height: 100px;
-  background-color: var(--color1);
   border-radius: 50%;
 }
 
