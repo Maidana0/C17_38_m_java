@@ -58,11 +58,6 @@ public class User implements Serializable{
     @Column(name = "email")
     private String email;
 
-<<<<<<< HEAD
-	//@JsonIgnore
-=======
-	
->>>>>>> 75200a2a4fdd52b27e7eb59e7ed4ab1f350430d6
 	@Column(name = "password")
     private String password;
 	

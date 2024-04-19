@@ -5,8 +5,8 @@ export const Context = createContext();
 export const ContextProvider = ({ children }) => {
   const [estadoUsuario, setEstadoUsuario] = useState(0);
   const [estadoHeader, setEstadoHeader] = useState(0);
-  const [userP, setUserP] = useState(null);
-  const [user, setUser] = useState(0);
+  const [userP, setUserP] = useState(0);
+  const [user, setUser] = useState(null);
   const [userCreated, setUserCreated] = useState();
 
   function imagenMov ( valor ){

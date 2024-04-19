@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { Context } from "../context/Context";
 
 function Login() {
-  const { setUser } = useContext(Context);
+  const { setUser, user } = useContext(Context);
   const navigate = useNavigate();
 
   const {
@@ -27,11 +27,14 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data);
-        console.log(data.name);
+        if(data){
+          setUser(data);
+          navigate("/userpanel");
+        }else{
+          throw new Error("Credenciales invalidas")
+        }
       })
       .catch((error) => console.log(error))
-      .finally(() => navigate("/userpanel"));
   }
 
   return (
@@ -54,7 +57,8 @@ function Login() {
               </p>
             </div>
 
-            <form className="formL"
+            <form
+              className="formL"
               onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(e.target);
