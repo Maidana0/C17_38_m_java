@@ -1,15 +1,27 @@
 import styles from "./styles.module.css"
 
-const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps, showStepIndex = true, children }) => {
+const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps, arrayWithNameSteps=[], children }) => {
   const steps = []
-  const stepwidth = 100 / totalSteps
-
-  for (let i = 1; i <= totalSteps; i++) {
+  const stepwidth = 100 / (totalSteps - 1)
+  
+  
+  for (let i = 1; i <= (totalSteps - 1); i++) {
     const isActive = i <= currentStep ? styles.step_active : ""
-    steps.push(<div key={i} style={{ width: `${stepwidth}%` }} className={`${styles.step} ${isActive}`} title={"Paso: " + i}></div>)
+    steps.push(
+      <div key={i} style={{ width: `calc(${stepwidth}% - 26px)` }} className={`${styles.step} ${isActive}`} title={"Paso: " + i}>
+      </div>
+    )
+    steps.push(
+      <div key={`${i}-img`} className={`${styles.step_image_contain} ${i < currentStep && styles.step_active} ${currentStep == i && styles.current_step_image}`}>
+        {(i < currentStep)
+          ? <img src="images/icons/done_step.svg" alt="done step" />
+          : ""
+        }
+      </div>
+    )
   }
 
-  const handleNextStep = () => setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
+  const handleNextStep = () => { setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep); window.scrollTo(0, 0); }
   const handlePreviousStep = () => setStep(prevStep => prevStep > 1 ? prevStep - 1 : prevStep);
 
 
@@ -20,14 +32,31 @@ const ProgressBar = ({ moreButtons, textButton, currentStep, setStep, totalSteps
           <img src="images/icons/arrow_back.svg" alt="Volver (arrow_back)" />
         </button>
 
-        {showStepIndex ? <span>Paso {currentStep}/{totalSteps}</span> : ""}
       </div>
 
       <div className={styles.progress_bar}>
         {steps}
       </div>
 
-
+      <div className={styles.steps_name_contain}>
+        {
+          currentStep != totalSteps ?
+            arrayWithNameSteps.map((name, i) => i + 1 != totalSteps && (
+              <div key={i} style={{ width: `calc(${stepwidth}% )` }}>
+                {(i + 1) <= currentStep ?
+                  <p onClick={() => setStep(i + 1)}
+                    style={{ cursor: "pointer" }}>
+                    {name}
+                  </p>
+                  : <p>{name}</p>
+                }
+              </div>
+            ))
+            : <div className={styles.final_step_name}>
+                {arrayWithNameSteps[totalSteps - 1]}
+            </div>
+        }
+      </div>
 
 
       {children}

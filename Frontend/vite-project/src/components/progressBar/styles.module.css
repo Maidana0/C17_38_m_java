@@ -1,49 +1,102 @@
-.progress_contain{
+.progress_contain {
     margin: 1rem auto;
     padding: 1rem 0;
 }
-.progress_header{
+
+.progress_header {
     display: flex;
     align-items: center;
     height: 3rem;
     color: black;
-    gap:.5rem;
+    gap: .5rem;
     letter-spacing: 1px;
-    width: 98%;
+    width: 100%;
     margin: auto;
 }
 
 .progress_bar {
     display: flex;
-    gap: .6rem;
+    align-items: center;
     margin: auto;
-    width: 96%;
+    width: 85%;
+}
 
+.step,
+.step_image_contain,
+.current_step_image {
+    background-color: rgba(124, 124, 124, 0.2);
+    transition: background-color ease .3s;
 }
 
 .step {
     height: 6px;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.363);
-    transition: background-color ease .3s;
+}
+
+.step_image_contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+
+}
+
+.steps_name_contain{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+
+.final_step_name{
+    font-size: 1.3em;
+    border-radius: 12px;
+    margin: .5rem auto 0;
+}
+
+.current_step_image{
+    background-color: #8ACF8A;
+    border: solid 3px #ccfacc;
+    box-shadow: 0 0 10px 1px #8ACF8A;
+
 }
 
 .step_active {
-    background-color: black;
-
+    background-color: #8ACF8A;
+}
+.progress_bar .step:first-child{
+    border-radius: 20px 0 0 20px;
+}
+.previous_btn {
+    background-color: transparent !important;
+    padding: 0 !important;
 }
 
-.previous_btn{
-    background-color: transparent!important;
-    padding: 0!important;
-}
 
-
-.progress_footer{
+.progress_footer {
     width: fit-content;
     margin: 2rem auto 1rem;
 }
 
-.invisible{
+.invisible {
     visibility: hidden;
+}
+
+@media (max-width: 890px) {
+    .progress_bar {
+        width: 100%;
+    }
+
+    .steps_name_contain{
+        width: 100%;
+    }
+}
+@media (max-width: 635px) {
+    .steps_name_contain p{
+        padding-right: 18px;
+        font-size: .85em;
+    }
 }
