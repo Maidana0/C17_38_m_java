@@ -62,6 +62,11 @@ public class UserController {
             return new ResponseEntity<>("Validation errors: " + errorMessages, HttpStatus.BAD_REQUEST);
         }
 
+        // Check if the email or DNI already exist
+        if (!userServi.validateEmailAndDni(user.getEmail(), user.getDni())) {
+            return new ResponseEntity<>("Email or DNI already exists", HttpStatus.BAD_REQUEST);
+        }
+
         // If there are no validation errors, the user is saved in the database
         String passwordEncoded=passwordEncoder.encode(user.getPassword());
         user.setPassword(passwordEncoded);

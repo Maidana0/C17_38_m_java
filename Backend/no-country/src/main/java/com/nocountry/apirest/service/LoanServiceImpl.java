@@ -66,6 +66,7 @@ public class LoanServiceImpl implements ILoanService {
 	}
 	
 	//Create installment
+	@Transactional
 	private List<Installment> createInstallments(Integer loanId, Integer numberOfInstallments, Double installmentAmount, LocalDate today){
 		
 		InstallmentServiceImpl installmentService = new InstallmentServiceImpl();
@@ -98,12 +99,13 @@ public class LoanServiceImpl implements ILoanService {
 	}
 	
 	//Deactivate Loan
+	@Transactional
 	public void deactivateLoan(Integer id) {
 		
-		Optional<Loan> answer= loanRepository.findById(id);
+		Optional<Loan> optionalLoan= loanRepository.findById(id);
 		
-		if (answer.isPresent()) {
-			Loan loan = answer.get();
+		if (optionalLoan.isPresent()) {
+			Loan loan = optionalLoan.get();
 			
 			loan.setStatus(false);
 			
