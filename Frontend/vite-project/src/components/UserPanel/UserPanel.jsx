@@ -4,6 +4,7 @@ import { Context } from '../context/Context'
 import AddContact from '../AddContact/AddContact';
 import Contacts from '../Contacts/Contacts';
 import UserHome from '../UserHome/UserHome';
+import Movements from '../Movements/Movements';
 
 function UserPanel() {
 
@@ -33,7 +34,7 @@ function UserPanel() {
     ],
     movimientos: [
       {
-        tipo: "Prestamo",
+        tipo: "Préstamo",
         monto: 1200,
         fecha: new Date("2024/04/17"),
         saldo: 1200,
@@ -79,7 +80,8 @@ function UserPanel() {
         </div>
         {userP === 0 && <UserHome data={data}></UserHome>}
         {userP === 1 && <AddContact></AddContact>}
-        {userP === 2 && <Contacts contactos={data.contactos}></Contacts>}       
+        {userP === 2 && <Contacts contactos={data.contactos}></Contacts>} 
+        {userP === 3 && <Movements movimientos={data.movimientos}></Movements>}        
       </div>
     </div>
   )

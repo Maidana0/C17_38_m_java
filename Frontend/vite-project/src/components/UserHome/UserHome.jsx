@@ -15,7 +15,7 @@ import { useInView, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 function UserHome({ data }) {
-  const { setUserP } = useContext(Context);
+  const { setUserP, imagenMov } = useContext(Context);
   const options = { weekday: "long" };
   const navigate = useNavigate();
 
@@ -164,13 +164,13 @@ function UserHome({ data }) {
           <div className={styles.panelActividad}>
             <div className={styles.tituloActividad}>
               <h2>Actividad Reciente</h2>
-              <p>Ver más</p>
+              <p onClick={() => setUserP(3)}>Ver más</p>
             </div>
             <div className={styles.listaActividad}>
               <div className={styles.actividad}>
                 <div className={styles.actividadDesc}>
                   <img
-                    src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313165/Cashfly/Group_52_wrc0rg.svg"
+                    src={imagenMov(data.movimientos[0].tipo)}
                     alt=""
                   />
                   <div className={styles.actD}>
@@ -207,7 +207,7 @@ function UserHome({ data }) {
               <div className={styles.actividad}>
                 <div className={styles.actividadDesc}>
                   <img
-                    src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313165/Cashfly/Group_53_vibqwt.svg"
+                    src={imagenMov(data.movimientos[1].tipo)}
                     alt=""
                   />
                   <div className={styles.actD}>
