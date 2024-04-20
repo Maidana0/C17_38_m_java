@@ -9,7 +9,7 @@ import com.nocountry.apirest.model.User;
 public interface IUserService {
 	public List<User> getUsers();
 
-	public void saveUser(User u) throws InvalidUserDataException;
+	public User saveUser(User u) throws InvalidUserDataException;
 
     public void editUser(int id, User u) throws UserNotFoundException;
 

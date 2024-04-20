@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.nocountry.apirest.model.File;
+import com.nocountry.apirest.model.Loan;
+import com.nocountry.apirest.model.User;
 import com.nocountry.apirest.service.FileServiceImp;
 import com.nocountry.apirest.services.FileUpload;
 
@@ -45,7 +47,7 @@ public class FileUploadController {
 	}
 	
 	@PostMapping(value = "", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> upload(@RequestParam("archivo") MultipartFile multipartFile) {
+    public ResponseEntity<String> upload(@RequestParam("archivo") MultipartFile multipartFile,@RequestParam(required = false) Integer usuario_id,@RequestParam(required = false) Integer prestamo_id) {
         try {
         	Map<?, ?> upload=fileUpload.uploadFile(multipartFile);
             String url = (String) upload.get("url");
@@ -57,6 +59,16 @@ public class FileUploadController {
             file.setName(multipartFile.getOriginalFilename());
             file.setUrl(url);
             file.setFileId(publicId);
+            if (usuario_id != null) {
+            	User user=new User();
+            	user.setId(usuario_id);
+            	file.setUser(user);
+            }
+            if(prestamo_id!=null) {
+            	Loan loan=new Loan();
+            	loan.setId(prestamo_id);
+            	file.setLoan(loan);
+            }
             fileService.saveUser(file);
             return new ResponseEntity<>("Archivo subido y almacenado con éxito!", HttpStatus.OK);
         } catch (IOException e) {
