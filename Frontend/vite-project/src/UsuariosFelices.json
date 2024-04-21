@@ -1,0 +1,56 @@
+[
+    {
+        "nombre": "Maga González",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638261/Cashfly/image_4_o3pxo3.png",
+        "descripcion": "Empecé a invertir desde mi celular, una experiencia perfecta para estudiantes universitarios.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Enriquez Pérez Díaz",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638262/Cashfly/image_4-1_f8ckv8.png",
+        "descripcion": "Obtuve mi primer préstamo sin complicaciones, ni pasos innecesarios. Pude tener mi préstamo en el día.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Marcos Berruti",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638262/Cashfly/image_4-2_pm6twd.png",
+        "descripcion": "Invertir con CashFly fue fácil y seguro, perfecto para principiantes como yo.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Pablo Fernández",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713660583/Cashfly/Ellipse_20_sujo8m.svg",
+        "descripcion": "Empecé a invertir desde mi celular, una experiencia perfecta para estudiantes universitarios.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Ángela Torres",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713660251/Cashfly/Ellipse_21_y2vigc.svg",
+        "descripcion": "Empecé a invertir desde mi celular, una experiencia perfecta para estudiantes universitarios.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Elías Martínez",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713660250/Cashfly/Ellipse_22_t7mt49.svg",
+        "descripcion": "Invertir con CashFly fue fácil y seguro, perfecto para principiantes como yo.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Maga González",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638261/Cashfly/image_4_o3pxo3.png",
+        "descripcion": "Empecé a invertir desde mi celular, una experiencia perfecta para estudiantes universitarios.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Enriquez Pérez Díaz",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638262/Cashfly/image_4-1_f8ckv8.png",
+        "descripcion": "Obtuve mi primer préstamo sin complicaciones, ni pasos innecesarios. Pude tener mi préstamo en el día.",
+        "estrellas": [0, 1, 2, 3, 4]
+    },
+    {
+        "nombre": "Marcos Berruti",
+        "img": "https://res.cloudinary.com/dabb8jxxh/image/upload/v1713638262/Cashfly/image_4-2_pm6twd.png",
+        "descripcion": "Invertir con CashFly fue fácil y seguro, perfecto para principiantes como yo.",
+        "estrellas": [0, 1, 2, 3, 4]
+    }
+]

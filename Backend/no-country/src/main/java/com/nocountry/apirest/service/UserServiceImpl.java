@@ -34,17 +34,7 @@ public class UserServiceImpl implements IUserService{
 	}
 
 	@Override
-	public void saveUser(User user) {
-		System.out.println("Datos del usuario:");
-        System.out.println("Name: " + user.getName());
-        System.out.println("Surname: " + user.getSurname());
-        System.out.println("DNI: " + user.getDni());
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("Cellphone: " + user.getCellphone());
-       // System.out.println("Password: " + user.getPassword());
-        System.out.println("State: " + user.isState());
-        System.out.println("Esta eliminado: " + user.isDeleted());
-
+	public User saveUser(User user) {
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         Set<ConstraintViolation<User>> violations = validator.validate(user);
 
@@ -65,6 +55,7 @@ public class UserServiceImpl implements IUserService{
 		newRole.setUser(userSave);
 		//Se guarda el rol del usuario
 		userRoleRepo.save(newRole);
+		return userSave;
 	}
 
 	@Override

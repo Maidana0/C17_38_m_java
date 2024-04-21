@@ -27,11 +27,14 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data);
-        console.log(data.name);
+        if(data){
+          setUser(data);
+          navigate("/userpanel");
+        }else{
+          throw new Error("Credenciales invalidas")
+        }
       })
       .catch((error) => console.log(error))
-      .finally(() => navigate("/userpanel"));
   }
 
   return (
@@ -39,7 +42,7 @@ function Login() {
       <div className="loginCont">
         <div className="panelLogin">
           <div className="navegacionL">
-            <p>Volver Atras</p>
+            <p onClick={() => navigate("/")}>Volver Atras</p>
             <img
               src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280918/Cashfly/help_cdyxt2.svg"
               alt=""
@@ -55,6 +58,7 @@ function Login() {
             </div>
 
             <form
+              className="formL"
               onSubmit={(e) => {
                 e.preventDefault();
                 onSubmit(e.target);

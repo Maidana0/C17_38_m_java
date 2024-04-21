@@ -114,7 +114,9 @@ align-items: center;
 .inp,.banco-select,.listabancos { 
   padding: 40px;
 }
-
+.opciones-validate{
+  width: 75%;
+}
 .p4Validate img{
   width: 8%;
   padding: 12px 0px;
@@ -129,4 +131,10 @@ align-items: center;
 .titulo-validate{
   width: auto;
 }
+}
+
+@media (width < 1400px) {
+  .opciones-validate{
+    width: 40%;
+  }
 }

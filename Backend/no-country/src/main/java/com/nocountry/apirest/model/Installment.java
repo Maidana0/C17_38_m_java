@@ -1,5 +1,6 @@
 package com.nocountry.apirest.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table (name = "cuota")
-public class Installment {
+public class Installment implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

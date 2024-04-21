@@ -130,8 +130,7 @@ function Register() {
                 placeholder="Password"
                 {...register("password", {
                   required: true,
-                  pattern:
-                    /*/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/*/ /[A-Za-z0-9_.-]{8,15}/g,
+                  pattern: /[A-Za-z0-9_.-]{8,15}/g,
                 })}
               />
               {errors.password && (
@@ -163,22 +162,6 @@ function Register() {
                 <button type="submit">Registrar</button>
               </div>
             </form>
-          </div>
-        </div>
-
-        <div className="column-2">
-          <div className="logoLeftSide">
-            <img
-              className="logo_cashFly"
-              src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
-              alt="Logo Cashfy"
-            />
-          </div>
-          <div className="descriptionL">
-            <p className="contextL">
-              ¡Invierte en proyectos emocionantes y haz crecer tu dinero
-              mientras apoyas a otros!
-            </p>
           </div>
         </div>
       </div>
