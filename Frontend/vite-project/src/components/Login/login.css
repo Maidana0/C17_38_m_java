@@ -34,6 +34,14 @@
     justify-content: space-between;
     align-items: center;
   }
+  .navegacionL p{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+  }
+  .navegacionL p:hover{
+    color: var(--colorGreen);
+    font-weight: 700;
+  }
   .loginElementos{
     width: 80%;
     height: 80%;

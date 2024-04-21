@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { Context } from "../context/Context";
 
 function Login() {
-  const { setUser, user } = useContext(Context);
+  const { setUser } = useContext(Context);
   const navigate = useNavigate();
 
   const {
@@ -42,7 +42,7 @@ function Login() {
       <div className="loginCont">
         <div className="panelLogin">
           <div className="navegacionL">
-            <p>Volver Atras</p>
+            <p onClick={() => navigate("/")}>Volver Atras</p>
             <img
               src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280918/Cashfly/help_cdyxt2.svg"
               alt=""

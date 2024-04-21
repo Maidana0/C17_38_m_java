@@ -13,6 +13,7 @@
   --color1: rgb(228, 228, 228);
   --color2: rgba(255, 173, 9, 0.2);
   --colorGreen: rgb(138, 207, 138);
+  --colorViolet: rgb(222, 223, 251);
   --fira: "Quicksand", sans-serif;
   --colorLine1: rgba(0, 0, 0, 0.05);
 }
@@ -36,6 +37,19 @@ button{
   background-color: black;
   font-family: var(--fira);
   color: white;
+}
+button:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid black;
+}
+.buttonB{
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid black;
+  font-family: var(--fira);
+  color: black;
+}
+.buttonB:hover{
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .inputP{
