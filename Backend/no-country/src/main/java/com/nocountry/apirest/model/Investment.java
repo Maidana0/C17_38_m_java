@@ -2,15 +2,13 @@ package com.nocountry.apirest.model;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,34 +20,32 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "archivos")
-public class File implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@Table(name="inversion")
+public class Investment implements Serializable{
+	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "archivo_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="inversion_id")
 	private int id;
 	
-	@Column(name = "archivo_nombre")
-	private String name;
+	@Column(name="monto_disponible")
+	private double available_amount;
 	
-	@Column(name = "archivo_url")
-	private String url;
+	@Column(name="monto_invertido")
+	private double invested_amount;
 	
-	@Column(name = "archivo_public_id")
-	private String fileId;
+	@Column(name="monto_restante")
+	private double remaining_amount;
 	
-	@JsonIgnore
-	@OneToOne
+	@Column(name="rentabilidad")
+	private double profitability;
+	
+	@Column(name="tipo_inversion")
+	private String investment_type;
+	
+	@ManyToOne
 	@JoinColumn(name="usuario_id")
 	private User user;
 	
-	@JsonIgnore
-	@OneToOne
-	@JoinColumn(name="prestamo_id")
-	private Loan loan;
 	
 }
