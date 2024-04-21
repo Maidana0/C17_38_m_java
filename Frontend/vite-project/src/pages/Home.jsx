@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../pages/Home.module.css";
-import React, { useRef, useContext } from "react";
+import React, { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 import usuariosFelices from "../UsuariosFelices.json";
 
 const Home = () => {
+  const navigate = useNavigate();
   const ref0 = useRef(null);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -49,10 +50,10 @@ const Home = () => {
                   primer préstamo personal y hacer crecer tu dinero.
                 </p>
                 <div className={styles.boton0Cont}>
-                  <Link to="/prestamos" className={styles.bCont}>
-                    <button className="buttonB">Simular préstamo</button>
-                    <button>Invertir</button>
-                  </Link>
+                  <div to="/prestamos" className={styles.bCont}>
+                    <button className="buttonB" onClick={() => navigate("/prestamos")}>Simular préstamo</button>
+                    <button onClick={() => navigate("/inversiones")}>Invertir</button>
+                  </div>
                 </div>
               </div>
               <div className={styles.imagen0Cont}>
@@ -279,7 +280,9 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
-      <section className={styles.seccion4}></section>
+      <section className={styles.seccion4}>
+        
+      </section>
     </div>
   );
 };
