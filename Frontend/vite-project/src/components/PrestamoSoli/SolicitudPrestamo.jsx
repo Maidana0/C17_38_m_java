@@ -13,6 +13,8 @@ function FormularioPrestamo(props) {
   const max = 150000;
   const {selectedOption, setSelectedOption} = props
   const {options} = props
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
   useEffect(() => {
     // Calcula la fecha actual más diez días
     const date = new Date();
@@ -30,7 +32,7 @@ function FormularioPrestamo(props) {
   
 
   const handleInputChange = (e) => {
-    const inputtedValue = e.target.value.replace(/[^0-9]/g, ''); // Solo permite números
+    let inputtedValue = e.target.value.replace(/[^0-9]/g, ''); // Solo permite números
     setInputValue(e.target.value); // Actualiza inputValue con lo que el usuario escribe
 
     if (inputtedValue === '') {
@@ -50,9 +52,14 @@ function FormularioPrestamo(props) {
   };
 
   const handleSliderChange = (e) => {
-    setAmount(Number(e.target.value));
+    const rawValue = Number(e.target.value);
+    // Redondea al múltiplo de 100 más cercano
+    const roundedValue = Math.round(rawValue / 100) * 100;
+    setAmount(roundedValue);
     setErrorMessage(""); // Limpia el mensaje de error cuando se ajusta el slider
   };
+  
+  
   
   // const handleButtonClick = () => {
   //   navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta

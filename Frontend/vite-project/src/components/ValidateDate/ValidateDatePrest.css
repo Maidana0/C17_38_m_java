@@ -1,101 +1,140 @@
 .validate{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #FFF;
-    color: black;
-  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFF;
+  color: black;
+
 }
-.opciones-validate{
-    display: flex;
-    flex-direction: column;
-    background: #FFF;
-    border-radius: 8px;
-    overflow: hidden;
+
+.opciones-validate {
+display: flex;
+flex-direction: column;
+background: #FFF;
+border-radius: 8px;
+width: 108%;
 }
 
 .titulo-validate{
-    font-weight: 600;
-    margin: 10px 20px;
-    width: 400px;
-    padding: 0 10px;
+font-weight: 600;
+margin: 13px 4px;
+width: 349px;
 }
 .p3Validate{
-    padding-top: 10px;
-    opacity: 0.6;
+padding-top: 10px;
+opacity: 0.6;
 }
-.p4Validate img{
-    display: flex;
-    justify-content: center; /* Centra el SVG horizontalmente */
-    align-items: center; /* Centra el SVG verticalmente */
-    width: 15%; /* O un ancho fijo, si prefieres */
-    height: 100%; /* O una altura fija, si prefieres */
-    padding: 10px; /* Espacio alrededor del SVG, ajusta según necesites */
-  }
+.p4Validate img {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 13%;
+height: 100%;
+padding: 10px;
+}
 
-  .p4Validate{
-    display: flex;
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: #454342;
-    opacity: 0.5 ;
-    margin: 20px;
-    padding: 6px 19px;
-    align-items: center;
-    gap: 9px;
-  }
+.p4Validate{
+  display: flex;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #454342;
+  opacity: 0.5;
+  padding: 6px 0px;
+  align-items: center;
+  justify-content: center;
+}
 
-  .titulo{
-    font-size: 1.55rem;
-  }
+.titulo{
+  font-size: 1.55rem;
+  padding-bottom: 5px;
+}
 
-  .listabancos{
-    
-    padding: 17px;
-    border: 1px solid #cccccc;
-    border-radius: 0.5rem;
-    background-color: #dadee1;
-    color: #1b1f24;
-    opacity: 0.5;
-    width: 100%;
-    margin-bottom: 1rem;
+.listabancos{
+  
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #dadee1;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
 
-  }
+}
 
-  .inp{
-    
-    padding: 17px;
-    border: 1px solid #cccccc;
-    border-radius: 0.5rem;
-    background-color: #dadee1;
-    color: #1b1f24;
-    opacity: 0.5;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+.inp{
+  
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #dadee1;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
+}
 
 .banco-select{
-    appearance: none;
-    background-image: url(images/icons/flechaderecha.svg);
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-position-y: 14px;
-    background-size: 20px;
-    padding: 17px;
-    border: 1px solid #cccccc;
-    border-radius: 0.5rem;
-    background-color: #dadee1;
-    color: #1b1f24;
-    opacity: 0.4;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-size: 17px;
+  appearance: none;
+  background-image: url(images/icons/flechaderecha.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-position-y: 14px;
+  background-size: 20px;
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #dadee1;
+  color: #1b1f24;
+  opacity: 0.4;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 17px;
 }
 
-.botonContinueValidate{
-    display: flex;
-    width: 96%;
-    margin-top: 9%;
+.botonayudaValidate{
+  display: flex;
+  margin-top: 9%;
+}
+
+.general-validate {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+@media (width > 1400px) {
+.general-validate {
+  width: 33%;
+  margin-top: 47px;
+}
+.inp,.banco-select,.listabancos { 
+  padding: 40px;
+}
+.opciones-validate{
+  width: 75%;
+}
+.p4Validate img{
+  width: 8%;
+  padding: 12px 0px;
+}
+.p3Validate{
+  font-size: 1.1rem;
+}
+.titulo{
+  font-size: 2.70rem;
+  
+}
+.titulo-validate{
+  width: auto;
+}
+}
+
+@media (width < 1400px) {
+  .opciones-validate{
+    width: 40%;
+  }
 }

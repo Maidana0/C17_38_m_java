@@ -18,19 +18,13 @@ header>div {
 }
 
 .title-app {
-    font-size: 1.5em;
     padding-left: 1rem;
+    font-size: 1.5em;
 }
 
 .title-app img {
     margin-right: .5rem;
 }
-
-.nav-buttons {
-    margin-right: 1rem;
-    display: none;
-}
-
 
 .nav-items {
     display: flex;
@@ -50,8 +44,12 @@ header>div {
 }
 
 
-.nav-buttons a,
-.nav-items li:nth-child(3) {
+.hamburger-react {
+    display: none;
+}
+
+.link-signup,
+.nav-items li:nth-child(5) {
     background-color: black;
     color: #fff;
     border-radius: 20px;
@@ -66,29 +64,42 @@ header>div {
     display: none;
 }
 
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-right: .5rem;
+}
 
-@media (max-width: 760px) {
-    .nav-items li:nth-child(3) {
-    display: none;
+.link-signup {}
+
+.link-login {}
+
+@media (max-width: 890px) {
+    .nav-items li:nth-child(5) {
+        display: none;
     }
-    .title-app,.nav-buttons{
+
+    .title-app,
+    .hamburger-react {
         z-index: 6;
     }
-    
-    .nav-buttons {
-        display: flex;
-        align-items: center;
-        gap: .65rem;
+
+    .hamburger-react {
+        display: block;
+        padding-left: 1rem;
     }
+
+
 
     .navbar {
         position: fixed;
-        right: -100%;
+        left: -100%;
         min-height: 100vh;
         width: 60%;
         padding: 5rem 0 3rem;
         background-color: inherit;
-        transition: right ease 0.3s;
+        transition: left ease 0.3s;
     }
 
     .nav-items {
@@ -98,7 +109,7 @@ header>div {
 
     .nav-active {
         z-index: 5;
-        right: 0;
+        left: 0;
         bottom: 0;
     }
 
@@ -122,6 +133,10 @@ header>div {
         opacity: 1;
         display: block;
     }
+
+    .title-center {
+        margin: auto;
+    }
 }
 
 
@@ -129,8 +144,16 @@ header>div {
     .navbar {
         width: 70%;
     }
-}
 
+    .nav-buttons {
+        gap: 0;
+    }
+
+    .nav-buttons a {
+        font-size: .95em;
+        padding: .5rem .6rem;
+    }
+}
 
 
 
