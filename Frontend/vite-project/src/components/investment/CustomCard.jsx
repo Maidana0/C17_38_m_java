@@ -1,15 +1,16 @@
-const CustomCard = ({ styles, data }) => {
+const CustomCard = ({ styles, handleInvert, data }) => {
     const detailsOnClick = () => { }
-    const Investment = () => { }
+    const Investment = () => handleInvert(data)
+
 
     return (
-        <div className={styles.card_contain_grid}>
+        <div className={styles.card_contain + " " + styles.card_option}>
             <div className={styles.card_header}>
                 <div>
                     <span>
                         <img src={`images/icons/investment/flags/${data.flag}.svg`} alt={data.flag} />
                     </span>
-                    <h5>ID - {data.id}</h5>
+                    <p>ID - {data.id}</p>
                 </div>
                 <small>
                     {data.name}
@@ -18,25 +19,25 @@ const CustomCard = ({ styles, data }) => {
 
             <div className={styles.card_content}>
                 <div>
-                    <p>Tipo de préstamo</p>
-                    <p>{data.prestamo}</p>
+                    <strong>Tipo de préstamo</strong>
+                    <span>{data.prestamo}</span>
                 </div>
                 <div>
-                    <p>Tasa de interés</p>
-                    <p>{data.interes}%</p>
+                    <strong>Tasa de interés</strong>
+                    <span>{data.interes}%</span>
                 </div>
                 <div>
-                    <p>Plazo</p>
-                    <p>{data.plazo} días</p>
+                    <strong>Plazo mínimo retirada</strong>
+                    <span>{data.plazo} días</span>
                 </div>
                 <div>
-                    <p>Cantidad disponible</p>
-                    <p>$ {data.cantidad}</p>
+                    <strong>Cantidad a recaudar</strong>
+                    <span>$ {data.cantidad}</span>
                 </div>
             </div>
 
             <div className={styles.card_footer}>
-                <button onClick={detailsOnClick}>Detalles</button>
+                <button onClick={detailsOnClick}>Ver detalles</button>
                 <button onClick={Investment}>Inversión inmediata</button>
             </div>
         </div>

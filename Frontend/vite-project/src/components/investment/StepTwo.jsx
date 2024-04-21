@@ -1,9 +1,10 @@
 import CustomCard from "./CustomCard"
+import { InputRange } from "./InputRange"
 
-const CustomButton = ({ handleClick, name, path }) => <button onClick={handleClick}>
-  <img src={`images/icons/investment/${path}.svg`} alt="path" />
-  {name}
-</button>
+// const CustomButton = ({ handleClick, name, path }) => <button onClick={handleClick}>
+//   <img src={`images/icons/investment/${path}.svg`} alt="path" />
+//   {name}
+// </button>
 
 
 const dataFicticia = [
@@ -17,7 +18,7 @@ const dataFicticia = [
     cantidad: "3000.00",
   },
   {
-    flag: "argentina",
+    flag: "colombia",
     id: "12345",
     name: "Ret.Store",
     prestamo: "Personal",
@@ -26,7 +27,7 @@ const dataFicticia = [
     cantidad: "1500.00",
   },
   {
-    flag: "argentina",
+    flag: "mexico",
     id: "54321",
     name: "Ret.Store",
     prestamo: "Crédito",
@@ -46,28 +47,42 @@ const dataFicticia = [
 ]
 
 
-const StepTwo = ({ styles }) => {
+const StepTwo = ({ handleInvert, styles, investmentValue, setInvestmentValue, totalFunds }) => {
+
   return (
     <div className={styles.invert_step_two}>
-      <h3>Elegí donde querés invertir</h3>
+      <h3>Elegí cuanto y donde querés invertir</h3>
 
+
+      <InputRange styles={styles} name={"investmentValue"} min={0} value={investmentValue} max={totalFunds} handleOnChange={(e) => setInvestmentValue(e.target.value)} />
+
+
+      <div style={{ marginTop: "2rem" }}>
+        <div style={{ width: "fit-content", color: "#454342" }}>
+          <small>Opciones recomendadas</small>
+        </div>
+
+        {dataFicticia.map((data, i) => <CustomCard handleInvert={handleInvert} key={i} styles={styles} data={data} />)}
+      </div>
+
+
+      {/* 
       <div className={styles.card_contain}>
         <h5>Fondos disponibles</h5>
         <strong> $ 0,0 </strong>
       </div>
-
       <div className={styles.btn_contain}>
         <CustomButton handleClick={() => { }} name={"Filtrar"} path={"mi_filter"} />
         <CustomButton handleClick={() => { }} name={"Ordenar"} path={"uil_arrows-v-alt"} />
-      </div>
+      </div> */}
 
 
-      {/* (MODELO) */}
-      <div className={styles.all_cards_contain}>
+      {/* (MODELO)  */}
+      {/* <div className={styles.all_cards_contain}>
         {
-          dataFicticia.map((data,i)=> <CustomCard key={i} styles={styles} data={data} />)
+          dataFicticia.map((data, i) => <CustomCard key={i} styles={styles} data={data} />)
         }
-      </div>
+      </div> */}
 
     </div>
   )

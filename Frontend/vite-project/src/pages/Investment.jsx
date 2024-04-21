@@ -4,22 +4,22 @@ import ProgressBar from "../components/progressBar/ProgressBar"
 import StepOne from "../components/investment/StepOne"
 import StepTwo from "../components/investment/StepTwo"
 import StepThree from "../components/investment/StepThree"
-
+import { Link } from 'react-router-dom'
 
 const Investment = () => {
     const [currentStep, setCurrentStep] = useState(1)
-    // TO INVEST
-    const [totalFunds, setTotalFunds] = useState(0)
-    const [invest, setInvest] = useState(0)
+    const [totalFunds, setTotalFunds] = useState(100)
+    const [investmentValue, setInvestmentValue] = useState(0)
+    const [invertTo, setInvertTo] = useState(false)
 
-    /*
-    EL USUARIO VA A PODER ELEGIR LOS FONDOS Y LA CANTIDAD A INVERTIR QUE VENDRA DE ESOS FONDOS
-    FONDOS TOTALES / A INVERTIR
-    100 / 50
-    */
-    //    EJEMPLO
-    const miFuncion = () => console.log("Estas en el paso: " + currentStep);
-    //    EJEMPLO
+
+    const handleInvertToClick = (objInvert) => {
+        setCurrentStep(prevStep => prevStep < 4 ? prevStep + 1 : prevStep);
+        setInvertTo({ ...objInvert, inversion: investmentValue, fondos: totalFunds })
+        window.scrollTo(0, 0);
+    }
+
+
     const stepsName = ["Elegí tus fondos", "Elegí cuanto y donde invertir", "Confirma los detalles", "Inversion realizada"]
     return (
         <div className={styles.investment_contain}>
@@ -28,42 +28,56 @@ const Investment = () => {
                 setStep={setCurrentStep}
                 totalSteps={4}
                 arrayWithNameSteps={stepsName}
-                handleSubmitButton={miFuncion}
-                // EJEMPLO
-                textButton={currentStep == 1 && "Registrarme"}
-                moreButtons={<div style={{ margin: "auto" }}>
-                    <button>
-                        Otro boton
+                BooleanNextButton={currentStep != 2}
+                // handleSubmitButton={}
+                textButton={currentStep == 3 && "Realizar inversión"}
+                moreButtons={currentStep >= 3 &&
+                    <button style={{ backgroundColor: "#fff", border: "solid 1px black", color: "black" }}>
+                        Necesito ayuda
                     </button>
-                </div>}
+                }
             //
             >
                 <div className={styles.step_contain}>
 
                     {
                         currentStep == 1
-                        && <StepOne styles={styles} />
+                        && <StepOne styles={styles} totalFunds={totalFunds} setTotal={setTotalFunds} />
                     }
 
                     {
                         currentStep == 2
-                        && <StepTwo styles={styles} />
+                        && <StepTwo handleInvert={handleInvertToClick} investmentValue={investmentValue} setInvestmentValue={setInvestmentValue} totalFunds={totalFunds} styles={styles} />
                     }
 
                     {
                         currentStep == 3
-                        && <StepThree styles={styles} />
+                        && <StepThree dataToInvert={invertTo} styles={styles} />
                     }
 
 
                     {
                         currentStep == 4
                         && <div className={styles.success_step_four}>
-                            <h3>¡Listo!</h3>
-                            <p>Ahora te llegará un correo electrónico con la confirmación de tu inversión</p>
-                            <p><small>Este proceso puede tardar hasta 24hs.</small></p>
+                            <img src="images/OK.svg" />
+                            <h2>¡Listo!</h2>
+                            <h3>Inversión realizada</h3>
+                            <p style={{marginBottom:"2rem"}}>Ahora te llegará un correo electrónico con la confirmación de tu inversión</p>
 
-                            <button>Volver al inicio</button>
+
+                            <Link to="/" style={{
+                                backgroundColor: "black",
+                                fontFamily: "var(--fira)",
+                                color: "white",
+                                borderRadius: "2rem",
+                                padding: "1rem 3rem",
+                                fontSize: "1rem",
+                                width: "218.31px", 
+                                textDecoration: "none",
+                                fontWeight:"bold"
+                            }}>
+                                Volver al inicio
+                            </Link>
                         </div>
 
                     }

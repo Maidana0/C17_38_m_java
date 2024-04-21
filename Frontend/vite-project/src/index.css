@@ -23,7 +23,9 @@ body,
   min-height: 100vh;
   font-family: var(--fira);
 }
-
+body{
+  background-color: #F9F9F9;
+}
 #root {
   display: flex;
   flex-direction: column;
