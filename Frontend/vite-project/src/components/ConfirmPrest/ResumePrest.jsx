@@ -28,7 +28,9 @@ function ResumePrest(props){
      
     return (
         <div className="resumen-container">
-          <h2>Revisa si está todo bien</h2>
+          <div className="container-tituloresumen">
+                 <h2>Revisa si está todo bien</h2>
+          </div>
           <div className="resumen-item">
             <span><img src="images/icons/tarjetacredito.svg" alt="" /> Recibís</span>
             <span>${amount.toLocaleString('es-AR')}</span>
