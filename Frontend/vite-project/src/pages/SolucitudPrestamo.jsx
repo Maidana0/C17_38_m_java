@@ -21,9 +21,10 @@ const Solucitud = () => {
   // const [userData, setUserData] = useState({});
   const { user } = UseContext(useState);
   function datosPrestamo() {
+    
     let option = options.find((o) => o.id === selectedOption);
     const prestamoData = {
-      userId: "",
+      userId: user.id,
       bank: "dfsdfsdf",
       CBU: "23456734",
       amount: amount,
@@ -32,7 +33,7 @@ const Solucitud = () => {
       numberInstallments: Number(option.text.split(" cuotas")[0]),
       installmmentValue: option.value,
     };
-    console.log(prestamoData);
+    console.log(user.id);
     fetch("http://localhost:5000/loan/save", {
       method: "POST",
       body: JSON.stringify(prestamoData),
@@ -47,9 +48,9 @@ const Solucitud = () => {
         console.log("data: ", data);
       })
       .catch((error) => console.log(error));
-    console.log(user.id)
+    
   }
-
+  console.log(user.id)
   return (
     <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
       <ProgressBar
