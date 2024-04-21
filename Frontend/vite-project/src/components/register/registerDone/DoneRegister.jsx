@@ -24,22 +24,6 @@ function DoneRegister() {
           </Link>
         </div>
       </div>
-
-      <div className="column-2">
-        <div className="logoLeftSide">
-          <img
-            className="logo_cashFly"
-            src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
-            alt="Logo Cashfy"
-          />
-        </div>
-        <div className="descriptionL">
-          <p className="contextL">
-            ¡Descubre emocionantes oportunidades de préstamo e inversión y
-            alcanza tus metas financieras de forma divertida!
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
