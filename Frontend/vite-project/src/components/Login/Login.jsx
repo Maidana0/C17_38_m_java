@@ -1,12 +1,17 @@
 import "./login.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Context } from "../context/Context";
+import { useInView, motion } from "framer-motion";
 
 function Login() {
+
   const { setUser } = useContext(Context);
   const navigate = useNavigate();
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   const {
     register,
@@ -39,8 +44,8 @@ function Login() {
 
   return (
     <div className="login">
-      <div className="loginCont">
-        <div className="panelLogin">
+      <div className="loginCont" ref={ref}>
+        <motion.div className="panelLogin" initial={{width: "20%", opacity: 0}} animate={isInView ? {width: "55%", opacity: 1} : {width: "20%", opacity: 0}} transition={{duration: 0.8, ease: "easeOut"}}>
           <div className="navegacionL">
             <p onClick={() => navigate("/")}>Volver Atras</p>
             <img
@@ -131,9 +136,9 @@ function Login() {
               <button type="submit">Ingresar</button>
             </form>
           </div>
-        </div>
-        <div className="panelInfoL">
-          <div className="infoLCont">
+        </motion.div>
+        <motion.div className="panelInfoL" initial={{width: "80%", opacity: 0}} animate={isInView ? {width: "45%", opacity: 1} : {width: "80%", opacity: 0}} transition={{duration: 0.8, ease: "easeOut"}}>
+          <motion.div className="infoLCont"initial={{opacity: 0}} animate={isInView ? {opacity: 1} : {opacity: 0}} transition={{delay: 0.8, duration: 0.4, ease: "easeOut"}}>
             <div className="logoLCont">
               <img
                 src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
@@ -147,8 +152,8 @@ function Login() {
                 y a hacer crecer tu dinero.
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

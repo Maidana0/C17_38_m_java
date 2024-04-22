@@ -1,11 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../pages/Home.module.css";
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { useInView, motion } from "framer-motion";
 import usuariosFelices from "../UsuariosFelices.json";
+import { Context } from "../components/context/Context";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { user } = useContext(Context);
+
   const ref0 = useRef(null);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -61,11 +64,11 @@ const Home = () => {
                   <div to="/prestamos" className={styles.bCont}>
                     <button
                       className="buttonB"
-                      onClick={() => navigate("/prestamos")}
+                      onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/prestamos")}
                     >
                       Simular préstamo
                     </button>
-                    <button onClick={() => navigate("/inversiones")}>
+                    <button onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/inversiones")}>
                       Invertir
                     </button>
                   </div>
