@@ -23,8 +23,6 @@ public class LoanDTO {
 	
 	private int numberOfInstallments;
 	
-	//private File file;
-	
 	private int userId;
 
 }
