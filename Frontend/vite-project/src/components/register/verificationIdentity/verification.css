@@ -12,10 +12,10 @@
   align-items: center;
   background-color: white;
 }
+
 .verifyContainer {
   color: black;
   width: 480px;
-  min-height: 400px;
   padding: 2rem;
   margin: 0 auto;
   display: flex;
@@ -24,23 +24,9 @@
   align-items: center;
 }
 
-.column-1,
-.column-2 {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: black;
-}
-
-.column-1 {
-  width: 55%;
-}
-
-.column-2 {
-  width: 45%;
-  background-color: var(--color1);
+.title-verification {
+  font-size: 2rem;
+  padding: 1rem 0.8rem;
 }
 
 .logoLeftSide {
@@ -68,7 +54,7 @@
 
 .info_to_userL {
   opacity: 0.5;
-  margin-top: 10rem;
+  padding: 1rem;
 }
 
 @media (aspect-ratio < 12/10) {
@@ -77,13 +63,6 @@
     height: auto;
   }
 
-  .column-1,
-  .column-2 {
-    width: 100%;
-    min-height: 50vh;
-  }
-
-  /* PEQUEÑOS AJUSTES (by FRANCO) */
   .verifyContainer {
     margin-top: 2rem;
     width: 100%;

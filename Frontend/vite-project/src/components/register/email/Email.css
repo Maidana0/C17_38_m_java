@@ -1,0 +1,85 @@
+.container-email {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.container-email input {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.registerCont-email {
+  color: black;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-email {
+  width: 100%;
+  height: auto;
+  font-size: 0.7rem;
+  text-align: left;
+  color: red;
+}
+
+.checkbox-container-email {
+  display: flex;
+  margin: 0;
+}
+
+.checkbox-container-email {
+  justify-content: space-between;
+}
+
+.header_navigation-email {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.header-Email {
+  font-size: 2rem;
+  padding: 1rem 0.8rem;
+}
+
+.form-email {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-email input {
+  background-color: white;
+  border-bottom: 1px solid gray;
+  border-radius: 0;
+  width: 370px;
+}
+.checkbox-container-email #consent {
+  padding: 0;
+  margin: 0;
+}
+
+@media (aspect-ratio < 12/10) {
+  .container-email {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .column-1-email,
+  .column-2-email {
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  .registerCont-email {
+    width: 100%;
+    padding: 0;
+  }
+}
