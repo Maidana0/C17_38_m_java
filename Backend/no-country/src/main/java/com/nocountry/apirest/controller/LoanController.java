@@ -59,7 +59,7 @@ public class LoanController {
     		loan.setInterestRate(loanDTO.getInterestRate());
     		loan.setStatus(true);
     		loan.setNumberOfInstallments(loanDTO.getNumberOfInstallments());
-    		loan.setFile(loanDTO.getFile());
+    		//loan.setFile(loanDTO.getFile());
     		
     		User user = new User();
     		user.setId(loanDTO.getUserId());
