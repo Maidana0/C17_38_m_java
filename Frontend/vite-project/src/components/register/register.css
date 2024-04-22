@@ -1,5 +1,4 @@
 .register {
-  margin-top: 4rem;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -21,8 +20,7 @@
   color: black;
   width: 480px;
   min-height: 400px;
-  padding: 2rem;
-  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +34,7 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 form {
@@ -63,9 +61,6 @@ button {
 }
 
 @media (aspect-ratio < 12/10) {
-  /*.column-2 {
-    display: none;
-  }*/
   .register {
     flex-direction: column;
     height: auto;
@@ -78,7 +73,6 @@ button {
   }
 
   .registerCont {
-    margin-top: 2rem;
     width: 100%;
     padding: 0;
   }

@@ -45,11 +45,6 @@ function Register() {
     <>
       <div className="register">
         <div className="column-1">
-          <div className="header_navigation">
-            <div>Help</div>
-            <div>info</div>
-          </div>
-
           <div className="registerCont">
             <h2>Información personal </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -158,9 +153,9 @@ function Register() {
                   </span>
                 )}
               </div>
-              <div className="btn-container">
+              {/* <div className="btn-container">
                 <button type="submit">Registrar</button>
-              </div>
+              </div>*/}
             </form>
           </div>
         </div>
