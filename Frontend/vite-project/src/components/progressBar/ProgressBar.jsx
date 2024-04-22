@@ -22,8 +22,8 @@ const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep,
   }
 
   const handleNextStep = () => {
-    setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
     handleSubmitButton && handleSubmitButton()
+    setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
     window.scrollTo(0, 0);
   }
   const handlePreviousStep = () => setStep(prevStep => prevStep > 1 ? prevStep - 1 : prevStep);

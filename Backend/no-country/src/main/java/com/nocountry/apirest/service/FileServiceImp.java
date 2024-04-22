@@ -45,8 +45,13 @@ public class FileServiceImp implements IFileService{
 		///verifica si el archivo existe
 		File file=fileRepository.finByPublicId(id);
 		//elimina el archivo en la base de datos
-		fileRepository.deleteById(file.getId());
-		
+		fileRepository.deleteById(file.getId());	
 	}
+	
+	@Override
+	public boolean existsByUsuarioIdOrPrestamoId(String usuarioId, String prestamoId) {
+        File file = fileRepository.findByUsuarioIdOrPrestamoId(usuarioId, prestamoId);
+        return file != null;
+    }
 	
 }
