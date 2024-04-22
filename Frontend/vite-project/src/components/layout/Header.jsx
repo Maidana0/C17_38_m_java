@@ -17,55 +17,63 @@ const Header = () => {
   const closeNavbar = () => isOpen && setIsOpen(false)
 
   return (
-    <header>
-      {
-        user != null &&
-        <>
+    <>
+      <header>
+        {
+          user != null &&
           <Hamburger
             distance="lg"
             toggled={isOpen}
             toggle={setOpen}
           />
-          <div onClick={closeNavbar} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
-        </>
-      }
+        }
 
-      <div className={`title-app ${user != null && "title-center"}`}>
-        <img alt="CashFly-icon" src="cashFly.svg" width={25} height={25} />
-        <Link to={"/"}>
-          CashFly
-        </Link>
-      </div>
+        <div className={`title-app`}>
+          <img alt="CashFly-icon" src="cashFly.svg" />
+          <Link to={"/"}>
+            CashFly
+          </Link>
+        </div>
 
-      {
-        user != null
-          ?
-          <nav className={`navbar ${isOpen ? "nav-active" : ""}`}>
-            <ul className='nav-items'>
-              {
-                paths.map(({ name, path }, i) => (
-                  <li key={i} className='nav-link'>
-                    <Link onClick={closeNavbar} to={path ? path : `/${name}`}>{name}</Link>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
+        {
+          user != null
+            ?
+            <nav className={`navbar ${isOpen ? "nav-active" : ""}`}>
+              <ul className='nav-items'>
+                {
+                  paths.map(({ name, path }, i) => (
+                    <li key={i} className='nav-link'>
+                      <Link onClick={closeNavbar} to={path ? path : `/${name}`}>{name}</Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
 
-          :
-          <div className='nav-buttons'>
-            <Link onClick={closeNavbar} to={"/iniciar-sesion"} className='link-login'>
-              iniciar sesión
-            </Link>
-            <Link onClick={closeNavbar} to={"/registrarme"} className='link-signup'>
-              registrarme
-            </Link>
+            :
+            <div className='nav-buttons'>
+              <Link onClick={closeNavbar} to={"/iniciar-sesion"} className='link-login'>
+                iniciar sesión
+              </Link>
+              <Link onClick={closeNavbar} to={"/registrarme"} className='link-signup'>
+                registrarme
+              </Link>
+            </div>
+        }
+
+        {
+          user != null &&
+          <div style={{ display: "flex", alignItems: "center", gap: "5px", paddingRight: "5px" }}>
+            <img src="/images/help.svg" alt="help-icon" />
+            <img src="/images/notifications.svg" alt="notifications-icon" />
+            <img src="/images/profile_default.svg" alt="profile_default-icon" />
           </div>
-      }
+        }
 
 
-
-    </header>
+      </header>
+      <div onClick={closeNavbar} className={`backdrop ${isOpen ? "bd-active" : "hidden"}`}></div>
+    </>
   )
 }
 

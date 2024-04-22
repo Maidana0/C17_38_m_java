@@ -1,11 +1,12 @@
 header {
+    z-index: 6;
     width: 100%;
     position: fixed;
     height: 4rem;
-    background-color: white;
+    background-color: #F5F5F5;
     color: black;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 header a {
@@ -18,13 +19,12 @@ header>div {
 }
 
 .title-app {
-    padding-left: 1rem;
+    display: flex;
+    gap: 4px;
+    align-items: center;
     font-size: 1.5em;
 }
 
-.title-app img {
-    margin-right: .5rem;
-}
 
 .nav-items {
     display: flex;
@@ -48,8 +48,7 @@ header>div {
     display: none;
 }
 
-.link-signup,
-.nav-items li:nth-child(5) {
+.link-signup{
     background-color: black;
     color: #fff;
     border-radius: 20px;
@@ -76,10 +75,10 @@ header>div {
 .link-login {}
 
 @media (max-width: 890px) {
-    .nav-items li:nth-child(5) {
-        display: none;
+    header{
+        justify-content: space-between;
     }
-
+  
     .title-app,
     .hamburger-react {
         z-index: 6;
@@ -87,7 +86,6 @@ header>div {
 
     .hamburger-react {
         display: block;
-        padding-left: 1rem;
     }
 
 
@@ -95,9 +93,9 @@ header>div {
     .navbar {
         position: fixed;
         left: -100%;
-        min-height: 100vh;
+        bottom: 0;
+        height: calc(100vh - 4rem);
         width: 60%;
-        padding: 5rem 0 3rem;
         background-color: inherit;
         transition: left ease 0.3s;
     }
@@ -105,6 +103,9 @@ header>div {
     .nav-items {
         flex-direction: column;
         padding: 0;
+        padding-top: 4rem;
+        height: 100%;
+        gap: 1rem;
     }
 
     .nav-active {
@@ -114,12 +115,10 @@ header>div {
     }
 
     .backdrop {
-        display: block;
         position: fixed;
-        min-height: calc(100vh - 4rem);
+        height: 100vh;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.4);
-        margin-top: 4rem;
     }
 
     .hidden {
@@ -132,10 +131,6 @@ header>div {
         z-index: 4;
         opacity: 1;
         display: block;
-    }
-
-    .title-center {
-        margin: auto;
     }
 }
 
@@ -170,9 +165,29 @@ header>div {
 
 /* FOOTER */
 footer {
-    background-color: white;
-    height: 5rem;
+    background-color: #F5F5F5;
+    color: #8C8C94;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+footer .social-media{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+}
+
+footer .social-media img{
+    transition: all ease .5s;
+    cursor: pointer;
+}
+
+footer .social-media img:hover{
+    transform: scale(1.2);
 }

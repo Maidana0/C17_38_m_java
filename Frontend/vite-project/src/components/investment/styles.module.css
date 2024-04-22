@@ -214,7 +214,8 @@
     justify-content: end;
     text-align: end;
     overflow: hidden;
-
+    text-overflow: ellipsis;
+    flex-wrap: nowrap;
 }
 
 .invert_step_three .extra_content strong {
@@ -275,13 +276,18 @@
     }
 
     .card_footer button {
-        padding: 0 1rem;
+        padding: .5rem 1rem;
+        width: 47%;
+        height: auto;
     }
 
     .invert_step_three .extra_content strong {
         font-size: 1.2em;
     }
     .invert_step_three .extra_content span {
-        font-size: .77em;
+        font-size: .70em;
+        width: 100%;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;    
     }
 }
