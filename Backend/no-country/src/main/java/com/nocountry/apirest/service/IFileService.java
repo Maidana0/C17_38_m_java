@@ -13,4 +13,5 @@ public interface IFileService {
 	public void saveUser(File File);
 	public void delete (String id);
 	void editUser(File file);
+	public boolean existsByUsuarioIdOrPrestamoId(String usuarioId, String prestamoId) ;
 }

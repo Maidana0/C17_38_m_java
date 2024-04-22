@@ -1,7 +1,5 @@
 package com.nocountry.apirest.DTO;
 
-import com.nocountry.apirest.model.File;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
