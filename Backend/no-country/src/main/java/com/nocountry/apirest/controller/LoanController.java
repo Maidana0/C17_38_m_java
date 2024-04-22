@@ -18,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nocountry.apirest.DTO.LoanDTO;
 import com.nocountry.apirest.exception.InvalidLoanException;
+import com.nocountry.apirest.exception.UserNotFoundException;
 import com.nocountry.apirest.model.File;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.model.User;
 import com.nocountry.apirest.service.ILoanService;
+import com.nocountry.apirest.service.IUserService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.validation.ConstraintViolationException;
@@ -35,9 +37,11 @@ import lombok.AllArgsConstructor;
 public class LoanController {
 	
     private ILoanService loanService;
+    private IUserService userService;
+    
     
     @PostMapping("Save")
-    public ResponseEntity<?> save(@Valid @RequestBody LoanDTO loanDTO, BindingResult result) throws InvalidLoanException{
+    public ResponseEntity<?> save(@Valid @RequestBody Loan loana,@RequestParam int id, BindingResult result) throws InvalidLoanException{
     	
     	Loan newLoan = null;
     	Map<String, Object> response = new HashMap<>();
@@ -54,16 +58,23 @@ public class LoanController {
     	try {
     		Loan loan = new Loan();
     		
-    		loan.setBank(loanDTO.getBank());
-    		loan.setCBU(loanDTO.getCBU());
-    		loan.setAmount(loanDTO.getAmount());
-    		loan.setInterestRate(loanDTO.getInterestRate());
+    		loan.setBank(loana.getBank());
+    		loan.setCBU(loana.getCBU());
+    		loan.setAmount(loana.getAmount());
+    		loan.setInterestRate(loana.getInterestRate());
     		loan.setStatus(true);
-    		loan.setNumberOfInstallments(loanDTO.getNumberOfInstallments());
+    		loan.setNumberOfInstallments(loana.getNumberOfInstallments());
     		
-    		User user = new User();
-    		user.setId(loanDTO.getUserId());
-    		loan.setUser(user);
+    		try {
+    		    User user = userService.findUser(id);
+    		    if (user != null) {
+    		        loan.setUser(user);
+    		    }
+    		} catch (UserNotFoundException e) {
+    		    // Manejar el caso donde el usuario no existe
+    		    response.put("message", "Usuario no encontrado con el id: " + id);
+    		    return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+    		}
     		
     		newLoan = loanService.saveLoan(loan);
     		

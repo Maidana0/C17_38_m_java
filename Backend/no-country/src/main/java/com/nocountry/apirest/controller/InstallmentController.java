@@ -13,7 +13,7 @@ import com.nocountry.apirest.service.IInstallmentService;
 
 import lombok.AllArgsConstructor;
 
-@CrossOrigin(origins= {"https://cashfly.vercel.app "})
+@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/installment")
 @AllArgsConstructor

@@ -30,7 +30,7 @@ import org.springframework.ui.Model;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
-@CrossOrigin(origins= {"https://cashfly.vercel.app "})
+@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/file")
 @AllArgsConstructor
