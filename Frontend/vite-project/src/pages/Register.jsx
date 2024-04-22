@@ -17,9 +17,16 @@ const Register = () => {
               <p>atras</p> <p>help</p>
             </div>
             <div className="registerPanel">
-              {currentStep == 1 && <RegisterComponent />}
-              {/* {currentStep == 2 && <Verification />}
+              <ProgressBar
+                currentStep={currentStep}
+                totalSteps={3}
+                setStep={setCurrentStep}
+                textButton={"Guardar"}
+              >
+                {currentStep == 1 && <RegisterComponent />}
+                {/* {currentStep == 2 && <Verification />}
               {currentStep == 3 && <DoneRegister />} */}
+              </ProgressBar>
             </div>
           </div>
         </div>

@@ -3,9 +3,10 @@
   padding: 0;
   position: fixed;
   width: 100%;
-  height: calc(100vh - 4rem);
+  height: 100vh;
   z-index: 7;
   display: flex;
+  overflow-y: scroll;
 }
 
 .column-1-page,
@@ -45,14 +46,7 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
-}
-
-.investiment-contain {
-  margin: 0;
-  display: flex;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
+  cursor: pointer;
 }
 
 .column-2-page {
@@ -61,4 +55,8 @@
 
 .column-1-page {
   background-color: white;
+}
+
+._progress_header_1temt_6 {
+  display: none;
 }
