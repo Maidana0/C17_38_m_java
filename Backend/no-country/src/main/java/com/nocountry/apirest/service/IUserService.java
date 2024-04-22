@@ -2,6 +2,7 @@ package com.nocountry.apirest.service;
 
 import java.util.List;
 
+import com.nocountry.apirest.DTO.UserSummaryDTO;
 import com.nocountry.apirest.exception.InvalidUserDataException;
 import com.nocountry.apirest.exception.UserNotFoundException;
 import com.nocountry.apirest.model.User;
@@ -20,4 +21,6 @@ public interface IUserService {
     User autenticarUsuario(User user);
 
     public boolean validateEmailAndDni(String email, String dni);
+
+    UserSummaryDTO getUserWithLoansAndInvestments(int userId);
 }

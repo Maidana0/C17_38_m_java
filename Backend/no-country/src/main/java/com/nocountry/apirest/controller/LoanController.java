@@ -35,7 +35,7 @@ public class LoanController {
 	
     private ILoanService loanService;
     
-    @PostMapping("Save")
+    @PostMapping("/Save")
     public ResponseEntity<?> save(@Valid @RequestBody LoanDTO loanDTO, BindingResult result) throws InvalidLoanException{
     	
     	Loan newLoan = null;
