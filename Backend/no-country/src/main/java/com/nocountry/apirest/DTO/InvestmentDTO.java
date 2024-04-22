@@ -1,5 +1,6 @@
 package com.nocountry.apirest.DTO;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +23,8 @@ public class InvestmentDTO {
 	private String investment_type;
 	
 	private int user_id;
+	
+	private String company_name;
+	
+	private double minimum_withdrawal_period;
 }

@@ -8,22 +8,18 @@ import org.springframework.stereotype.Service;
 
 import com.nocountry.apirest.exception.InvalidLoanException;
 import com.nocountry.apirest.model.Installment;
+import com.nocountry.apirest.model.Investment;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.repository.ILoanRepository;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class LoanServiceImpl implements ILoanService {
 	
-	@Autowired
 	private ILoanRepository loanRepository;
 	
-	@Autowired
-	private final EmailService emailService;
-
-	public LoanServiceImpl(EmailService emailService) {
-		this.emailService = emailService;
-	}
 	
 	@Override
 	public Loan saveLoan(Loan loan) throws InvalidLoanException {
@@ -34,18 +30,18 @@ public class LoanServiceImpl implements ILoanService {
 		
 		newLoan.setStartDate(today);
 		newLoan.setDueDate(dueDate);
-		newLoan.setInstallmentAmount(null);
 		
-		int loanId = newLoan.getId();
-		double installmentAmount = newLoan.getAmount()/newLoan.getNumberOfInstallments();
-		List<Installment> installments = createInstallments(loanId, newLoan.getNumberOfInstallments(), installmentAmount, today);
-		newLoan.setInstallments(installments);
 		
-		return loanRepository.save(newLoan);
+		//int loanId = newLoan.getId();
+		//double installmentAmount = newLoan.getAmount()/newLoan.getNumberOfInstallments();
+		//.setInstallmentAmount(installmentAmount);
+		//List<Installment> installments = createInstallments(loanId, newLoan.getNumberOfInstallments(), installmentAmount, today);
+		//newLoan.setInstallments(installments);
+		Loan newloan=loanRepository.save(newLoan);
+		return newloan;
 	}
 
 	//Create installment
-	@Transactional
 	private List<Installment> createInstallments(Integer loanId, Integer numberOfInstallments, Double installmentAmount, LocalDate today){
 		
 		InstallmentServiceImpl installmentService = new InstallmentServiceImpl();
@@ -71,6 +67,7 @@ public class LoanServiceImpl implements ILoanService {
 	}
 
 	//List 
+	@Override
 	public List<Loan> getLoan() {
 		return loanRepository.findAll();
 	}
