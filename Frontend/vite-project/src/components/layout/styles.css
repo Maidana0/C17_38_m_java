@@ -3,7 +3,7 @@ header {
     width: 100%;
     position: fixed;
     height: 4rem;
-    background-color: #F5F5F5;
+    background-color: #FFF;
     color: black;
     display: flex;
     justify-content: space-evenly;
@@ -23,6 +23,7 @@ header>div {
     gap: 4px;
     align-items: center;
     font-size: 1.5em;
+    font-weight: bold;
 }
 
 
@@ -165,7 +166,7 @@ header>div {
 
 /* FOOTER */
 footer {
-    background-color: #F5F5F5;
+    background-color: #FFF;
     color: #8C8C94;
     height: auto;
     display: flex;
@@ -184,10 +185,10 @@ footer .social-media{
 }
 
 footer .social-media img{
-    transition: all ease .5s;
+    transition: all ease .3s;
     cursor: pointer;
 }
 
 footer .social-media img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }

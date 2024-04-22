@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { UseContext } from "../components/context/Context"
 import { createInvestment, transformDto } from "../components/investment/fetch"
 
-const SERVER_ACTIVE = false
+const SERVER_ACTIVE = true
 
 const Investment = () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -91,7 +91,7 @@ const Investment = () => {
                             <p style={{ marginBottom: "2rem" }}>Ahora te llegará un correo electrónico con la confirmación de tu inversión</p>
 
 
-                            <Link to="/" style={{
+                            <Link to={user ? "/userPanel" : "/"} style={{
                                 backgroundColor: "black",
                                 fontFamily: "var(--fira)",
                                 color: "white",

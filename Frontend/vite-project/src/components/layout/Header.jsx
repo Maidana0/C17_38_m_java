@@ -6,12 +6,11 @@ import { UseContext } from '../context/Context'
 const paths = Object.freeze([
   { name: "préstamos", path: "/prestamos" },
   { name: "inversiones" },
-  { name: "configuración", path: "#" },
-  { name: "cerrar sesión", path: "#" }
+  { name: "configuración", path: "#" }
 ])
 
 const Header = () => {
-  const { user } = UseContext()
+  const { user, setUser } = UseContext()
   const [isOpen, setIsOpen] = useState(false)
   const setOpen = () => setIsOpen(!isOpen)
   const closeNavbar = () => isOpen && setIsOpen(false)
@@ -47,6 +46,17 @@ const Header = () => {
                     </li>
                   ))
                 }
+                <li className='nav-link' style={{ padding: "0px" }}>
+
+                  <Link to="/"
+                    onClick={() => {
+                      setUser(null)
+                    }}
+                    style={{
+                      borderRadius: "38px",
+                      padding: ".5rem 1rem", border: "solid 1px #000"
+                    }}>cerrar sesión</Link>
+                </li>
               </ul>
             </nav>
 
@@ -64,9 +74,9 @@ const Header = () => {
         {
           user != null &&
           <div style={{ display: "flex", alignItems: "center", gap: "5px", paddingRight: "5px" }}>
-            <img src="/images/help.svg" alt="help-icon" />
-            <img src="/images/notifications.svg" alt="notifications-icon" />
-            <img src="/images/profile_default.svg" alt="profile_default-icon" />
+            <img style={{cursor:"pointer"}} src="/images/help.svg" alt="help-icon" />
+            <img style={{cursor:"pointer"}} src="/images/notifications.svg" alt="notifications-icon" />
+            <img style={{cursor:"pointer"}} src="/images/profile_default.svg" alt="profile_default-icon" />
           </div>
         }
 
