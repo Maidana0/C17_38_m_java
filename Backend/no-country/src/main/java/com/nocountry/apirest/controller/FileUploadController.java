@@ -47,8 +47,16 @@ public class FileUploadController {
 	}
 	
 	@PostMapping(value = "", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> upload(@RequestParam("archivo") MultipartFile multipartFile,@RequestParam(required = false) Integer usuario_id,@RequestParam(required = false) Integer prestamo_id) {
+    public ResponseEntity<String> upload(@RequestParam("archivo") MultipartFile multipartFile,
+    									@RequestParam(required = false) Integer usuario_id,
+    									@RequestParam(required = false) Integer prestamo_id) {
         try {
+        	if (usuario_id != null || prestamo_id != null) {
+                boolean fileExists = fileService.existsByUsuarioIdOrPrestamoId(String.valueOf(usuario_id), String.valueOf(prestamo_id));
+                if (fileExists) {
+                    return new ResponseEntity<>("Ya existe un archivo asociado a este usuario o préstamo!", HttpStatus.BAD_REQUEST);
+                }
+            }
         	Map<?, ?> upload=fileUpload.uploadFile(multipartFile);
             String url = (String) upload.get("url");
             String publicId=(String) upload.get("public_id");
