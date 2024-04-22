@@ -42,7 +42,6 @@ public class LoanServiceImpl implements ILoanService {
 	}
 
 	//Create installment
-	@Transactional
 	private List<Installment> createInstallments(Integer loanId, Integer numberOfInstallments, Double installmentAmount, LocalDate today){
 		
 		InstallmentServiceImpl installmentService = new InstallmentServiceImpl();
@@ -68,6 +67,7 @@ public class LoanServiceImpl implements ILoanService {
 	}
 
 	//List 
+	@Override
 	public List<Loan> getLoan() {
 		return loanRepository.findAll();
 	}

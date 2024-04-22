@@ -59,6 +59,8 @@ public class InvestmentController {
 			investment.setRemaining_amount(investmentDTO.getRemaining_amount());
 			investment.setProfitability(investmentDTO.getProfitability());
 			investment.setInvestment_type(investmentDTO.getInvestment_type());
+			investment.setCompany_name(investmentDTO.getCompany_name());
+			investment.setMinimum_withdrawal_period(investmentDTO.getMinimum_withdrawal_period());
 			User user=new User();
 			user.setId(investmentDTO.getUser_id());
 			investment.setUser(user);
