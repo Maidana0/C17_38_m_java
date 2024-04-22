@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nocountry.apirest.DTO.LoanDTO;
 import com.nocountry.apirest.exception.InvalidLoanException;
+import com.nocountry.apirest.model.File;
 import com.nocountry.apirest.model.Loan;
 import com.nocountry.apirest.model.User;
 import com.nocountry.apirest.service.ILoanService;
@@ -59,11 +60,15 @@ public class LoanController {
     		loan.setInterestRate(loanDTO.getInterestRate());
     		loan.setStatus(true);
     		loan.setNumberOfInstallments(loanDTO.getNumberOfInstallments());
-    		loan.setFile(loanDTO.getFile());
     		
     		User user = new User();
     		user.setId(loanDTO.getUserId());
     		loan.setUser(user);
+    		
+    		File file = new File();
+    		file.setId(loanDTO.getFileId());
+    		loan.setFile(file);
+    		
     		newLoan = loanService.saveLoan(loan);
     		
     	}catch (DataAccessException e){
@@ -86,7 +91,7 @@ public class LoanController {
 		return loanService.getLoan();
 	}
 	
-	@PostMapping("/deactivateLoan")
+	@PostMapping("/findLoan")
 	public void findLoan(@RequestParam Integer id) {
 		loanService.findLoan(id);	
 	}			

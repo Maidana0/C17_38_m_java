@@ -23,7 +23,7 @@ public class LoanDTO {
 	
 	private Integer numberOfInstallments;
 	
-	private File file;
+	private int fileId;
 	
 	private int userId;
 
