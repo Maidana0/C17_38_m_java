@@ -84,7 +84,7 @@
     width: 95%;
     height: auto;
     aspect-ratio: 1;
-    background-image: url("../../public/center.webp");
+    background-image: url("https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755471/Cashfly/center_srjar6.webp");
     background-size: cover;
     overflow: hidden;
 }
@@ -155,7 +155,7 @@
     align-items: center;
     gap: 10%;
 }
-.tittleCont1{
+.tittleCont1, .tittleCont4{
     width: 80%;
     height: 20%;
     display: flex;
@@ -188,7 +188,7 @@
 .carrucelCont::-webkit-scrollbar{
     display: none; 
 }
-.carrucel1{
+.carrucel1, .carrucel4{
     width: 100%;
     height: 100%;
     display: flex;
@@ -317,7 +317,7 @@
     gap: 10%;
     /*background-color: var(--color1);*/
     border: solid 1px var(--colorLine1);
-    background-image: url("../../public/fondo2.webp");
+    background-image: url("https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755471/Cashfly/fondo2_m4ffyw.webp");
     background-size: cover;
     background-position: center;
 }
@@ -437,6 +437,84 @@
     width: 10%;
 }
 /*----------- Seccion 3---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.seccion4{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkGuide img:hover{
+    scale: 1.1;
+}
+.imgCont4{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgCont4 img{
+    width: 100%;
+    height: 100%;
+}
+.tipTCont4{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.tipTCont4 h2{
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+.tipTCont4 p{
+    width: 100%;
+    height: auto;
+    font-size: 0.9rem;
+    text-align: left;
+}
+.linkGuide{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.linkGuide h2{
+    font-size: 1.1rem;
+    width: 80%;
+    height: auto;
+}
+.linkGuide img{
+    height: auto;
+    width: 10%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.tipCont{
+    width: 25%;
+    min-width: 320px;
+    height: auto;
+    aspect-ratio: 9/12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tittleCont4 p{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+/*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Animacion ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @keyframes scrollX3 {
@@ -602,7 +680,7 @@
     }
     
     .titulo1{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .articulo1{
@@ -641,6 +719,15 @@
         width: 80%;
         text-align: center;
     }
+    .tipTCont4 p{
+        font-size: 0.8rem;
+    }
+    .tittleCont4{
+        gap: 10px;
+    }
+    .tittleCont4 p{
+        font-size: 1rem;
+    }
 }
 
 @media screen and (aspect-ratio < 1) {
@@ -653,6 +740,13 @@
     }
     .carrucel1{
         width: 500%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .carrucel4{
+        width: 300%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
