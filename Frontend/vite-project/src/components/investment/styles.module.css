@@ -22,7 +22,6 @@
 }
 
 .amount strong {
-    /* color: #454342; */
     font-size: 1.3em;
 }
 
@@ -33,7 +32,6 @@
 
 .card_contain,
 .amount_step_one .info {
-    /* border-radius: 12px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +51,6 @@
 .card_contain {
     margin: 1.3rem auto 1rem;
     padding: 1rem .8rem;
-    /* border: solid 1px #000; */
 }
 
 .special_card_contain {
@@ -149,16 +146,6 @@
     padding: 1rem;
 }
 
-/* .all_cards_contain {
-    display: grid;
-    width: 100%;
-    height: auto;
-    margin: 1.5rem auto;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2rem;
-} */
-
 .card_content div {
     margin: 7px auto;
 }
@@ -250,7 +237,7 @@
 
 /* PASO 4 FINAL */
 .success_step_four {
-    margin: 4rem auto 0;
+    margin: 3rem auto 0;
     text-align: center;
 }
 

@@ -73,7 +73,9 @@
     background-color: transparent !important;
     padding: 0 !important;
 }
-
+.previous_btn:hover {
+    border: none;
+}
 
 .progress_footer {
     width: fit-content;
