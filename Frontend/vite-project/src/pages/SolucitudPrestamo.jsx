@@ -33,7 +33,7 @@ const Solucitud = () => {
       numberInstallments: Number(option.text.split(" cuotas")[0]),
       installmmentValue: option.value,
     };
-    console.log(user.id);
+    //console.log(user.id);
     fetch("http://localhost:5000/loan/save", {
       method: "POST",
       body: JSON.stringify(prestamoData),
@@ -50,7 +50,7 @@ const Solucitud = () => {
       .catch((error) => console.log(error));
     
   }
-  console.log(user.id)
+  //console.log(user.id)
   return (
     <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
       <ProgressBar
