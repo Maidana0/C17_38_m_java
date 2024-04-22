@@ -6,10 +6,13 @@ import EmailComponent from "../components/register/email/Email";
 import DoneRegister from "../components/register/registerDone/DoneRegister";
 import "./Register.css";
 import { Context } from "../components/context/Context";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { setUserCreated, userCreated } = useContext(Context);
   const [currentStep, setCurrentStep] = useState(1);
+
+  const navigate = useNavigate();
 
   function onSubmit() {
     console.log("DESDE EL PRINCIPAL", userCreated);
@@ -43,7 +46,7 @@ const Register = () => {
 
   const back = () => {
     if (currentStep === 1) {
-      return;
+      navigate("/");
     } else {
       setCurrentStep(currentStep - 1);
     }

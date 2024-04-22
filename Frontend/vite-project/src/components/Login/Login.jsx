@@ -6,7 +6,6 @@ import { Context } from "../context/Context";
 import { useInView, motion } from "framer-motion";
 
 function Login() {
-
   const { setUser } = useContext(Context);
   const navigate = useNavigate();
 
@@ -32,20 +31,29 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data){
+        if (data) {
           setUser(data);
           navigate("/userpanel");
-        }else{
-          throw new Error("Credenciales invalidas")
+        } else {
+          throw new Error("Credenciales invalidas");
         }
       })
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
   }
 
   return (
     <div className="login">
       <div className="loginCont" ref={ref}>
-        <motion.div className="panelLogin" initial={{width: "20%", opacity: 0}} animate={isInView ? {width: "55%", opacity: 1} : {width: "20%", opacity: 0}} transition={{duration: 0.8, ease: "easeOut"}}>
+        <motion.div
+          className="panelLogin"
+          initial={{ width: "20%", opacity: 0 }}
+          animate={
+            isInView
+              ? { width: "55%", opacity: 1 }
+              : { width: "20%", opacity: 0 }
+          }
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="navegacionL">
             <p onClick={() => navigate("/")}>Volver Atras</p>
             <img
@@ -137,8 +145,22 @@ function Login() {
             </form>
           </div>
         </motion.div>
-        <motion.div className="panelInfoL" initial={{width: "80%", opacity: 0}} animate={isInView ? {width: "45%", opacity: 1} : {width: "80%", opacity: 0}} transition={{duration: 0.8, ease: "easeOut"}}>
-          <motion.div className="infoLCont"initial={{opacity: 0}} animate={isInView ? {opacity: 1} : {opacity: 0}} transition={{delay: 0.8, duration: 0.4, ease: "easeOut"}}>
+        <motion.div
+          className="panelInfoL"
+          initial={{ width: "80%", opacity: 0 }}
+          animate={
+            isInView
+              ? { width: "45%", opacity: 1 }
+              : { width: "80%", opacity: 0 }
+          }
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.div
+            className="infoLCont"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
+          >
             <div className="logoLCont">
               <img
                 src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
