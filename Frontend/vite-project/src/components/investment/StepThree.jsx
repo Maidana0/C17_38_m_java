@@ -1,36 +1,49 @@
+import { transformNumber } from "./InputRange";
 
-const LocalCard = ({ styles, data }) => <div className={styles.card_contain}>
-  <div className={styles.card_head}>
-    <span>
-      {data.icon}
-    </span>
-    <h4>{data.name}</h4>
-  </div>
-  <strong>  {data.value} </strong>
-</div>
-
-
-const StepThree = ({ styles }) => {
+const StepThree = ({ dataToInvert = false, styles }) => {
 
   const cardInfo = [
-    { icon: "ID", name: "USERID", value: "Ret Store?" },
-    { icon: <img src="images/icons/investment/paid.svg" />, name: "Cantidad a invertir", value: "$ 0,0" },
-    { icon: <img src="images/icons/investment/payments.svg" />, name: "Tasa de intéres", value: "9%" },
-    { icon: <img src="images/icons/investment/calendar_clock.svg" />, name: "Plazo", value: "680 días" },
+    {
+      special: true, icon: <img src={`images/icons/investment/flags/${dataToInvert.flag}.svg`} alt={dataToInvert.flag + "-icon"} />,
+      name: `ID - ${dataToInvert.id}`, value: dataToInvert.name
+    },
+    {
+      special: true, icon: <img src="images/icons/investment/paid.svg" alt="paid-icon" />, name: "Invertir", value: "$" + transformNumber(dataToInvert.inversion),
+      extraContent: "$" + transformNumber(dataToInvert.fondos)
+    },
+    { icon: <img src="images/icons/investment/payments.svg" alt="payments-icon" />, name: "Tasa de intéres", value: `${dataToInvert.interes}%` },
+    { icon: <img src="images/icons/investment/calendar_clock.svg" />, name: "Plazo mínimo retirada", value: `${dataToInvert.plazo} días` },
 
   ]
 
 
   return (
-    <div>
-      <h3>Elegí cuanto querés invertir</h3>
+    <div className={styles.invert_step_three}>
+      <h3>Revisa si está todo bien</h3>
 
       {
-        cardInfo.map((data, i) => <LocalCard key={i} styles={styles} data={data} />)
+        cardInfo.map((data, i) => (
+          <div key={i} className={`${styles.card_contain} ${data.special ? styles.special_card : ""}`}>
+            <div className={styles.card_head}>
+              <span>
+                {data.icon}
+              </span>
+              <h5>{data.name}</h5>
+            </div>
+            {
+              data.extraContent ?
+                <div className={styles.extra_content}>
+                  <strong>{data.value}</strong>
+                  <span>Fondo disponible: <strong>{data.extraContent}</strong></span>
+                </div>
+                : <strong style={{ textDecoration: "underline" }}>{data.value}</strong>
+            }
+          </div>
+        ))
       }
 
       <span>
-        <small style={{ margin: "1.5rem auto 1rem", padding: "1rem" }}>Al confirmar estas aceptando <strong>los términos y conficiones</strong> de este prestamo</small>
+        <small style={{ margin: "1.5rem auto 1rem", padding: "1rem" }}>Al confirmar estas <strong>aceptando los términos y condiciones</strong> de esta inversión</small>
       </span>
 
     </div>
