@@ -1,0 +1,186 @@
+.Prestamo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+
+.botonsoli{
+    display: flex;
+    justify-content: center;
+}
+
+
+.Prestamo{
+  background-color: #ffffff;
+}
+
+.loan-amount-slider {
+    
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 30px;
+    width: 400px;
+    min-height: 400px;
+    padding: 0.5rem;
+    margin: 0 auto;
+    color: black;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.amount-input{
+  display: block; /* O `display: flex;` si quieres mantener el estilo Flexbox */
+  margin: 20px auto; /* Centrar el campo de texto */
+  padding: 10px;
+  font-size: 1.5em;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  width: 100%; /* Puede que quieras un ancho específico o porcentaje */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  text-align: center; /* Alinea el texto al centro */
+}
+.amount-display {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin: 20px 0;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: auto;
+  
+  
+}
+
+.labels {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+
+}
+
+.p1{
+  font-weight: 600;
+  font-size: 1.55rem;
+}
+.p2{
+  font-weight: 600;
+  font-size: 1.65rem;
+  margin: 10px 5px 0;
+}
+.textos{
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.p3{
+  display: flex;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background-color: gainsboro;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 6px 19px;
+}
+
+.rangebar{
+  width: 60%;
+  margin-bottom: 0rem;
+  
+} 
+
+
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+@media (min-width: 1200px) {
+  .amount-input{
+    padding: 30px;
+    font-size: 3.3rem;
+ } 
+.loan-amount-slider{
+  width: 33%;
+  margin-bottom: 0rem;
+  
+}
+.payment-option {
+  margin-bottom: 1rem; /* Espaciado entre las opciones */
+}
+
+.option-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  /* Agrega estilos adicionales aquí */
+}
+
+.p1{
+  font-weight: 600;
+  font-size: 2.2rem;
+  text-align: left;
+}
+.labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.p2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 10px 5px 0;
+}
+.p3 {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: gainsboro;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px 67px;
+}
+.payment-option label:before {
+  content: '';
+  display: inline-block;
+  margin-right: 23px;
+  margin-left: 108px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #454342;
+  border-radius: 50%;
+  background-color: white;
+  
+  font-size: 1.3rem;
+}
+.option-text, .option-value {
+  display: flex;
+  align-items: center;
+  margin-right: 92px;
+}
+ 
+}
+@media (max-width: 1500px) {
+  .payment-option label:before {
+    margin-left: 0px;
+    
+}
+.option-text, .option-value {
+  
+  margin-right: 0px;
+}
+}
+

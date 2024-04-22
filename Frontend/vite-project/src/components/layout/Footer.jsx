@@ -1,4 +1,3 @@
-
 const Footer = () => {
   return (
     <footer>
@@ -6,9 +5,7 @@ const Footer = () => {
 
 
       {/* IN PROGRESS... */}
-      <span style={{ textAlign: "center" }}>
-        Este es el footer, por el momento...
-      </span>
+      <img src="images/Iconos-redes-sociales.svg" alt="Redes Sociales" />
     </footer>
   )
 }
