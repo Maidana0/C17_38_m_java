@@ -26,7 +26,7 @@ import com.nocountry.apirest.service.IInvestmentService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
-@CrossOrigin(origins= {"https://cashfly.vercel.app "})
+@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/investment")
 @AllArgsConstructor
