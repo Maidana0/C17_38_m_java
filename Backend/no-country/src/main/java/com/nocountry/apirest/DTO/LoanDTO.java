@@ -17,13 +17,11 @@ public class LoanDTO {
 	
 	private String CBU;
 	
-	private Double amount;
+	private double amount;
 	
-	private Double interestRate;
+	private double interestRate;
 	
-	private Integer numberOfInstallments;
-	
-	private int fileId;
+	private int numberOfInstallments;
 	
 	private int userId;
 

@@ -65,10 +65,6 @@ public class LoanController {
     		user.setId(loanDTO.getUserId());
     		loan.setUser(user);
     		
-    		File file = new File();
-    		file.setId(loanDTO.getFileId());
-    		loan.setFile(file);
-    		
     		newLoan = loanService.saveLoan(loan);
     		
     	}catch (DataAccessException e){
