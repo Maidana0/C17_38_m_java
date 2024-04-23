@@ -2,11 +2,20 @@
   color: #000000;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  margin: auto;
   padding: 12px 11px;
+  flex-direction: column;
+}
+
+  }
+  .cajas-resumen{
+     display: flex;
+     flex-direction: column;
+ 
   }
   .container-tituloresumen{
     display: flex;
+    margin-bottom: 1.5rem;
   }
   .titulo-resumen{
     display: flex;
@@ -18,22 +27,58 @@
   }
   
   .resumen-item {
-    background: #ffffff;
+    background: #DEDFFB;
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    border: #454342 solid;
-    opacity: 0.6;
+    /* border: #454342 solid; */
+    
   }
-  
+
+  .resumen-item:nth-child(2){
+    
+  }
+
+  .resumen-item:nth-child(3), .resumen-item:nth-child(4){
+    background-color: #FCF7F5;
+  }
+  .resume-redondo{
+    
+    border-radius: 20px;
+    padding: 5px;
+  }
+  .resumen-item:nth-child(1) .resume-redondo{
+    background-color: #EBEBFF;
+    
+  }
+  .resumen-item:nth-child(3) .resume-redondo {
+    background-color: #FBEFE9; /* Reemplaza #color2 con el código de color deseado */
+    
+  }
+  .resumen-item:nth-child(4) .resume-redondo {
+    background-color: #FBEFE9; /* Reemplaza #color3 con el código de color deseado */
+  }
+  .resumen-item:nth-child(1) .texto-resumen-valor{
+    border-bottom: 1px solid #000; /* Ajusta el color y el grosor de la línea según sea necesario */
+    display: inline-block; /* Asegura que la línea se ajuste al contenido del texto */
+    line-height: 1.5; /* Ajusta la altura de la línea del texto si es necesario */
+    padding-bottom: 3px; /* Ajusta el espacio entre el texto y la línea */
+  }
+  .resumen-item:nth-child(3) .texto-resumen-valor{
+    border-bottom: 1px solid #000; /* Ajusta el color y el grosor de la línea según sea necesario */
+    display: inline-block; /* Asegura que la línea se ajuste al contenido del texto */
+    line-height: 1.5; /* Ajusta la altura de la línea del texto si es necesario */
+    padding-bottom: 3px; /* Ajusta el espacio entre el texto y la línea */
+  }
   .resumen-item span{
     display: flex;
     align-items: center;
     margin: 3px;
+    font-weight: 900;
 
   }
   .resumen-item-recibis{
@@ -49,12 +94,19 @@
 
   .titulo-pagas{
     display: flex;
+    background-color: #EBEBFF;
+    border-radius: 20px;
+    padding: 5px;
+
     
+  }
+  .texto-resumen-valor{
+    font-size: 1.3rem;
   }
   .contenido-pagas{
     display: flex;
     flex-direction: column;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   .contenido-pagas-texto{
     display: flex;
@@ -107,6 +159,7 @@
     
     .resumen-container h2 {
       font-size: 2rem;
+      margin-bottom: 10px;
   }
     .todo-resumen {
       width: 48%;
@@ -128,13 +181,15 @@
   } 
   
   @media (width > 1200px) {
-        .todo-resumen {
+        /* .todo-resumen {
           width: 33%;
           display: flex;
           flex-direction: column;
-      }.resumen-container{
-        align-items: center;
-      }.resumen-item{
+      }  */
+      .resumen-container {
+        width: 47%;
+      }
+      .resumen-item{
         padding:24px   
       }
 
@@ -150,5 +205,27 @@
       
   }
 
+  @media (width < 1200px) {
+    /* .todo-resumen {
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+  }  */
+  .resumen-container {
+    width: 95%;
+  }
+  
+
+  /* .texto-final-resume {
+    display: flex;
+    padding: 14px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}.resumen-container h2 {
+  font-size: 2rem;
+} */
+  
+}
  
   

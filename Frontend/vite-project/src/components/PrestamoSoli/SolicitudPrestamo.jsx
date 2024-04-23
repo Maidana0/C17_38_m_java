@@ -69,12 +69,15 @@ function FormularioPrestamo(props) {
       <div className="loan-amount-slider">
         <p className="p1">Elige el monto que necesitas, y elige una opción de pago.</p>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
-        <input
-          type="text"
-          className="amount-input"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
+        <div className="input-with-symbol">
+          <span className="currency-symbol">$</span>
+          <input
+            type="text"
+            className="amount-input"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+        </div>
         <div className="labels">
           <span>${min.toLocaleString()}</span>
           <input className="rangebar"
@@ -87,7 +90,7 @@ function FormularioPrestamo(props) {
           <span>${max.toLocaleString()}</span>
         </div>
 
-        <p className="p2">Como preferis devolverlo?</p>
+        <p className="p2">¿Como preferis devolverlo?</p>
         <div className="textos">
           <p className="p3">Comenzá a pagarlo el {startDate}</p>
         </div>

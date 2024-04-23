@@ -20,6 +20,26 @@ const Solucitud = () => {
   ];
   // const [userData, setUserData] = useState({});
   const { user } = UseContext(useState);
+  function saveFile() {
+    
+    const formdata = new FormData();
+    formdata.append("userId", user.id);
+    formdata.append("file", archivoDNI);
+    
+    fetch("http://127.0.0.1:5000/file", {
+      method: "POST",
+      body: formdata,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data: ", data);
+      })
+      .catch((error) => console.log(error));
+    
+  }
   function datosPrestamo() {
     
     let option = options.find((o) => o.id === selectedOption);
@@ -34,7 +54,9 @@ const Solucitud = () => {
       installmmentValue: option.value,
     };
     console.log(user.id);
-    fetch("http://localhost:5000/loan/save", {
+    console.log(prestamoData);
+
+    fetch("http://127.0.0.1:5000/loan/save", {
       method: "POST",
       body: JSON.stringify(prestamoData),
       headers: {
@@ -50,7 +72,7 @@ const Solucitud = () => {
       .catch((error) => console.log(error));
     
   }
-  console.log(user.id)
+
   return (
     <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
       <ProgressBar
@@ -59,7 +81,7 @@ const Solucitud = () => {
         setStep={setStep}
         textButton={step == 3 ? "Sacar prestamo" : false}
         moreButtons={step > 1 && <CustomButton />}
-        handleSubmitButton={step == 3 && datosPrestamo}
+        handleSubmitButton={step == 3 ? datosPrestamo : step == 2 && saveFile }
       >
         {step == 1 && (
           <FormularioPrestamo
