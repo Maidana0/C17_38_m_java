@@ -1,21 +1,23 @@
 .register_page {
-  margin: 0;
-  padding: 0;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 7;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 
 .column-1-page,
 .column-2-page {
+  --width55: 55vw;
   height: 100%;
-  width: 50%;
+  width: var(--width55);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   color: black;
 }
 
@@ -25,15 +27,15 @@
 }
 
 .registerPanel {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .side-navigation-bar {
-  width: 90%;
+  width: 100%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -50,6 +52,8 @@
 
 .column-2-page {
   background-color: var(--color1);
+  --width45 : 45%;
+  --width80 : 80%;
 }
 
 .column-1-page {
@@ -58,4 +62,72 @@
 
 ._progress_header_1temt_6 {
   display: none;
+}
+.column-2-page{
+  width: 45%;
+  height: 100%;
+  display: flex;
+  background-color: var(--color1);
+}
+.infoLCont{
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+.logoLCont{
+  width: 100%;
+  height: 15%;
+  text-align: left;
+}
+.logoLCont img{
+  height: 80%;
+  width: auto;
+}
+.descripcionL{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.tituloL2{
+  width: 100%;
+  height: auto;
+  font-size: 2.4rem;
+  text-align: left;
+}
+.parrafoL2{
+  width: 100%;
+  height: auto;
+  font-size: 2rem;
+  text-align: left;
+}
+
+@media screen and (aspect-ratio < 1.2) {
+  .column-1-page {
+    --width55: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  .column-2-page{
+    display: none;
+    --width45 : 0%;
+    --width80 : 0%;
+  }
+  .tituloL2{
+    font-size: 1.8rem;
+  }
+  .parrafoL2{
+    font-size: 1.6rem;
+  }
 }

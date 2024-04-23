@@ -1,11 +1,19 @@
-.container-email {
-  width: 100%;
+.email-container{
+  width: 45vw;
+  height: 54vh;
+  min-width: 300px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
-
+.column-1-email{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
 .container-email input {
   border-radius: 0;
   background-color: transparent;
@@ -13,13 +21,24 @@
 
 .registerCont-email {
   color: black;
-  width: 480px;
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.tituloReg{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.quit-border-email{ 
+  width: 100%;
+}
 .error-email {
   width: 100%;
   height: auto;
@@ -30,43 +49,62 @@
 
 .checkbox-container-email {
   display: flex;
-  margin: 0;
+  justify-content: space-evenly;
 }
-
-.checkbox-container-email {
-  justify-content: space-between;
-}
-
 .header_navigation-email {
   display: flex;
   justify-content: space-between;
   width: 80%;
 }
 .header-Email {
-  font-size: 2rem;
-  padding: 1rem 0.8rem;
+  font-size: 1.8rem;
+  text-align: left;
+  font-weight: 700;
+  width: 100%;
+  height: auto;
 }
-
+.context-email{
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 700;
+}
 .form-email {
-  padding-top: 1.5rem;
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .form-email input {
   background-color: white;
   border-bottom: 1px solid gray;
   border-radius: 0;
-  width: 370px;
+  width: 100%;
 }
+.checkbox-container-email input{
+  width: 10%;
+}
+.checkbox-container-email label{
+  width: 70%;
+  height: auto;
+}
+
 .checkbox-container-email #consent {
   padding: 0;
   margin: 0;
 }
 
 @media (aspect-ratio < 12/10) {
+
+  .email-container{
+    width: 90vw;
+    height: 55vh;
+  }
+
   .container-email {
     flex-direction: column;
     height: auto;
@@ -74,12 +112,33 @@
 
   .column-1-email,
   .column-2-email {
-    width: 100%;
+    width: 70%;
     min-height: 50vh;
   }
 
   .registerCont-email {
     width: 100%;
     padding: 0;
+  }
+  .header-Email {
+    font-size: 1.5rem;
+  }
+  .context-email{
+    font-size: 0.8rem;
+  }
+  .checkbox-container-email label{
+    font-size: 0.8rem;
+  }
+}
+
+@media (height < 670px){
+  .header-Email {
+    font-size: 1.2rem;
+  }
+  .context-email{
+    font-size: 0.8rem;
+  }
+  .checkbox-container-email label{
+    font-size: 0.8rem;
   }
 }

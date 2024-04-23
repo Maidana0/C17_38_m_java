@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import ProgressBar from "../components/progressBar/ProgressBar";
 import Verification from "../components/register/verificationIdentity/Verification";
 import RegisterComponent from "../components/register/Register";
@@ -7,15 +7,18 @@ import DoneRegister from "../components/register/registerDone/DoneRegister";
 import "./Register.css";
 import { Context } from "../components/context/Context";
 import { useNavigate } from "react-router-dom";
+import { useInView, motion } from "framer-motion";
 
 const Register = () => {
   const { setUserCreated, userCreated } = useContext(Context);
   const [currentStep, setCurrentStep] = useState(1);
 
   const navigate = useNavigate();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   function onSubmit() {
-    console.log("DESDE EL PRINCIPAL", userCreated);
+
     if (userCreated.consent) {
       delete userCreated.consent;
     }
@@ -53,9 +56,15 @@ const Register = () => {
   };
 
   return (
-    <>
-      <div className="register_page ">
-        <div className="column-1-page">
+
+      <div className="register_page " style={{width: "100%"}}>
+        <motion.div className="column-1-page" ref={ref} initial={{ width: "20%", opacity: 0 }}
+          animate={
+            isInView
+              ? { width: "var(--width55)", opacity: 1 }
+              : { width: "20%", opacity: 0 }
+          }
+          transition={{ duration: 0.6, ease: "easeOut" }}>
           <div className="side-navigation-bar">
             <div className="navigation-bar">
               <span onClick={back}>
@@ -88,24 +97,37 @@ const Register = () => {
               </ProgressBar>
             </div>
           </div>
-        </div>
-        <div className="column-2-page">
-          <div className="logoLeftSide">
-            <img
-              className="logo_cashFly"
-              src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
-              alt="Logo Cashfy"
-            />
-          </div>
-          <div className="descriptionL">
-            <p className="contextL">
-              ¡Invierte en proyectos emocionantes y haz crecer tu dinero
-              mientras apoyas a otros!
-            </p>
-          </div>
-        </div>
+        </motion.div>
+        <motion.div
+          className="column-2-page"
+          initial={{ width: "var(--width80)", opacity: 0 }}
+          animate={
+            isInView
+              ? { width: "var(--width45)", opacity: 1 }
+              : { width: "var(--width80)", opacity: 0 }
+          }
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.div
+            className="infoLCont"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
+          >
+            <div className="logoLCont">
+              <img
+                src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280914/Cashfly/Frame_61_rqiigo.svg"
+                alt=""
+              />
+            </div>
+            <div className="descripcionL">
+              <p className="parrafoL2">
+              ¡Invierte en proyectos emocionantes y haz crecer tu dinero mientras apoyas a otros!
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </>
   );
 };
 

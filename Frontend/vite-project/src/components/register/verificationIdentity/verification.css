@@ -4,7 +4,6 @@
 }
 
 .verify {
-  margin-top: 4rem;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -15,20 +14,30 @@
 
 .verifyContainer {
   color: black;
-  width: 480px;
+  width: 45vw;
+  height: 55vh;
   padding: 2rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .title-verification {
-  font-size: 2rem;
-  padding: 1rem 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 60%;
+  height: auto;
+  text-align: center;
 }
-
+.context_verification{
+  font-size: 1rem;
+  font-weight: 700;
+  width: 65%;
+  height: auto;
+  text-align: center;
+}
 .logoLeftSide {
   font-size: 18px;
   font-weight: bold;
@@ -53,8 +62,11 @@
 }
 
 .info_to_userL {
-  opacity: 0.5;
-  padding: 1rem;
+  width: 65%;
+  height: auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 @media (aspect-ratio < 12/10) {
@@ -64,8 +76,16 @@
   }
 
   .verifyContainer {
-    margin-top: 2rem;
-    width: 100%;
-    padding: 0;
+    width: 90vw;
+    height: 55vh;
+  }
+  .title-verification {
+    font-size: 1.5rem;
+  }
+  .context_verification{
+    font-size: 0.9rem;
+  }
+  .info_to_userL {
+    font-size: 0.9rem;
   }
 }

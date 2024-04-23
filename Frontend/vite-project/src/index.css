@@ -16,6 +16,7 @@
   --colorViolet: rgb(222, 223, 251);
   --fira: "Quicksand", sans-serif;
   --colorLine1: rgba(0, 0, 0, 0.05);
+  --width55: 55vw;
 }
 
 html,
@@ -66,6 +67,7 @@ button:hover{
 footer{
   margin-top: auto;
 }
+
 /* Navegador modo oscuro*/
 /* @media (prefers-color-scheme: dark) {} */
 

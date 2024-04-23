@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./done.css";
 
 function DoneRegister() {
+
   return (
     <div className="doneRegister">
       <div className="column-1-done">

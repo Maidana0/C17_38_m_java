@@ -13,6 +13,7 @@ function Register() {
             <p className="header-register">Información Personal</p>
             <form className="registerForm">
               <input
+                className="inputP"
                 type="text"
                 placeholder="Nombre"
                 onChange={(e) =>
@@ -21,6 +22,7 @@ function Register() {
               />
 
               <input
+                className="inputP"
                 type="text"
                 placeholder="Apellidos"
                 onChange={(e) =>
@@ -29,6 +31,7 @@ function Register() {
               />
 
               <input
+                className="inputP"
                 type="text"
                 placeholder="DNI/ ID"
                 onChange={(e) =>
@@ -37,6 +40,7 @@ function Register() {
               />
 
               <input
+                className="inputP"
                 type="text"
                 placeholder="Celular"
                 onChange={(e) =>

@@ -52,7 +52,7 @@ function Login() {
               ? { width: "55%", opacity: 1 }
               : { width: "20%", opacity: 0 }
           }
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="navegacionL">
             <p onClick={() => navigate("/")}>Volver Atras</p>
@@ -153,13 +153,13 @@ function Login() {
               ? { width: "45%", opacity: 1 }
               : { width: "80%", opacity: 0 }
           }
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.div
             className="infoLCont"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
+            transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
           >
             <div className="logoLCont">
               <img

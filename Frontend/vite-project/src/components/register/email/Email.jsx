@@ -10,6 +10,7 @@ function Email() {
       <div className="email-container">
         <div className="column-1-email">
           <div className="registerCont-email">
+            <div className="tituloReg">
             <p className="header-Email">Soy nuevx aquí? Registrate!</p>
             <p className="context-email">
               Esto solo tomará unos minutos.
@@ -17,18 +18,20 @@ function Email() {
               Por favor, completa todos los campos para
               <br /> continuar con el siguiente paso.
             </p>
+            </div>
+            
             <form className="form-email">
               <input
                 type="email"
                 onChange={(e) =>
                   setUserCreated({ ...userCreated, email: e.target.value })
                 }
-                className="quit-border-email"
+                className="quit-border-email inputP"
                 placeholder="Correo electrónico"
               />
 
               <input
-                className="quit-border-email"
+                className="quit-border-email inputP"
                 type="password"
                 placeholder="Contraseña"
                 onChange={(e) =>
