@@ -17,7 +17,7 @@ Miro: https://miro.com/app/board/uXjVKbDgeYI=/
 
 DISEÑO UX/UI:
 
-- Ana Laura Sidan Linkedin: [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-laura-sidan/)
+- Ana Laura Sidan [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-laura-sidan/)
 - Andrea Rossero [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrea-rosero-v/)
 
 FRONTEND:
