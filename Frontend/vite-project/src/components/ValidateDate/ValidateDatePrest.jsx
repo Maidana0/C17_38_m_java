@@ -60,11 +60,21 @@ function ValidateDatePrest({setArchivoDNI}) {
         />
 
         {/* Campo de carga de archivo para el DNI */}
-        <input className="inp"
+
+          {/* Campo de carga de archivo para el DNI */}
+          <label htmlFor="file-upload" className="custom-file-upload">
+            <p>Adjunta la foto de tu DNI</p>
+            <img src="images/icons/tarjetacredito.svg" alt="tarjeta" />
+            {/* El texto que quieres que aparezca en el botón */}
+          </label>
+          <input id="file-upload" type="file" onChange={handleFileChange} accept="file/*" style={{ display: 'none' }} />
+
+
+        {/* <input className="inp"
           type="file"
           onChange={handleFileChange}
-          accept="image/png, image/jpeg"
-        />
+          accept="file/*"
+        /> */}
       </div>
       {/* {<div className="botonayudaValidate"><button
         onClick={handleButtonClick}>
@@ -72,27 +82,8 @@ function ValidateDatePrest({setArchivoDNI}) {
       </button></div>} */}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   )
-
-
-
-
-
-
-
 
 
 }

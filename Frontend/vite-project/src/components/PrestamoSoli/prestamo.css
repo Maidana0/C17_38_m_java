@@ -13,10 +13,9 @@
 }
 
 
-.Prestamo{
-  background-color: #ffffff;
+.Prestamo {
+  background-color: #F9F9F9;
 }
-
 .loan-amount-slider {
     
   padding: 20px;
@@ -39,11 +38,12 @@
   margin: 20px auto; /* Centrar el campo de texto */
   padding: 10px;
   font-size: 1.5em;
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
   border-radius: 20px;
   width: 100%; /* Puede que quieras un ancho específico o porcentaje */
   box-sizing: border-box; /* Incluye padding y border en el ancho total */
   text-align: center; /* Alinea el texto al centro */
+  background-color: #FFFFFF;
 }
 .amount-display {
   display: flex;
@@ -85,7 +85,7 @@
   display: flex;
   font-weight: 600;
   font-size: 0.8rem;
-  background-color: gainsboro;
+  background-color: #DEDFFB;
   border-radius: 10px;
   margin: 20px;
   padding: 6px 19px;
@@ -97,6 +97,11 @@
   
 } 
 
+
+.rangebar {
+   /* Altura de la barra */
+  background: #eb0e0e; /* Color de fondo de la barra */
+}
 
 
 .error-message {
@@ -112,7 +117,7 @@
     font-size: 3.3rem;
  } 
 .loan-amount-slider{
-  width: 33%;
+  width: 48%;
   margin-bottom: 0rem;
   
 }
@@ -148,7 +153,7 @@
   display: flex;
   font-weight: 600;
   font-size: 1.1rem;
-  background-color: gainsboro;
+  background-color: #DEDFFB;
   border-radius: 10px;
   margin: 20px;
   padding: 10px 67px;
@@ -171,8 +176,11 @@
   align-items: center;
   margin-right: 92px;
 }
- 
+
+
+
 }
+
 @media (max-width: 1500px) {
   .payment-option label:before {
     margin-left: 0px;
@@ -184,3 +192,39 @@
 }
 }
 
+
+
+
+.input-with-symbol {
+  position: relative;
+  display: inline-block;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 222px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+  pointer-events: none;
+  font-size: 46px;
+  font-weight: 500;
+}
+
+.amount-input {
+  padding-left: 20px; /* Espacio para el símbolo de moneda */
+  /* Asegúrate de que el resto de tu estilo de .amount-input no interfiera con esto */
+}
+
+
+@media (max-width:1400px){
+  .currency-symbol{
+    left: 178px;
+  }
+}
+@media (max-width: 1200px){
+  .currency-symbol{
+    left: 145px;
+    font-size: 21px;
+  }
+}

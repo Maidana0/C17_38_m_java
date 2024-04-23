@@ -55,7 +55,7 @@ padding: 10px;
   padding: 17px;
   border: 1px solid #cccccc;
   border-radius: 0.5rem;
-  background-color: #dadee1;
+  background-color: #FFFFFF;
   color: #1b1f24;
   opacity: 0.5;
   width: 100%;
@@ -68,7 +68,7 @@ padding: 10px;
   padding: 17px;
   border: 1px solid #cccccc;
   border-radius: 0.5rem;
-  background-color: #dadee1;
+  background-color: #FFFFFF;
   color: #1b1f24;
   opacity: 0.5;
   width: 100%;
@@ -85,7 +85,7 @@ padding: 10px;
   padding: 17px;
   border: 1px solid #cccccc;
   border-radius: 0.5rem;
-  background-color: #dadee1;
+  background-color: #FFFFFF;
   color: #1b1f24;
   opacity: 0.4;
   width: 100%;
@@ -95,16 +95,50 @@ padding: 10px;
 
 .botonayudaValidate{
   display: flex;
-  margin-top: 9%;
+  justify-content: center;
+
 }
 
+.buton-ayuda{
+  width: 9%;
+  padding: 1rem;
+  color: #000000;
+  background-color: #ffff;
+  border: #000000 solid 1px;
+}
 .general-validate {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
+/* .inp[type="file"] {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -1;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
 
+.custom-file-upload {
+  display: inline-block;
+  display: flex;
+  cursor: pointer;
+  padding: 35px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
 
 @media (width > 1400px) {
 .general-validate {
@@ -115,10 +149,10 @@ align-items: center;
   padding: 40px;
 }
 .opciones-validate{
-  width: 75%;
+  width: 54%;
 }
 .p4Validate img{
-  width: 8%;
+  width: 4%;
   padding: 12px 0px;
 }
 .p3Validate{
@@ -129,12 +163,16 @@ align-items: center;
   
 }
 .titulo-validate{
-  width: auto;
+  width: 52%;
 }
 }
+
 
 @media (width < 1400px) {
   .opciones-validate{
     width: 40%;
+  }
+  .titulo-validate{
+    width: 45%;
   }
 }
