@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     margin: auto;
-    width: 85%;
+    width: 80%;
 }
 
 .step,
@@ -39,25 +39,22 @@
     height: 26px;
     width: 26px;
     border-radius: 100%;
-
 }
 
-.steps_name_contain{
+.steps_name_contain {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 85%;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
+.steps_name_contain p {
+    margin-top: .6rem ;
 
-.final_step_name{
-    font-size: 1.3em;
-    border-radius: 12px;
-    margin: .5rem auto 0;
 }
 
-.current_step_image{
+.current_step_image {
     background-color: #8ACF8A;
     border: solid 3px #ccfacc;
     box-shadow: 0 0 10px 1px #8ACF8A;
@@ -67,36 +64,38 @@
 .step_active {
     background-color: #8ACF8A;
 }
-.progress_bar .step:first-child{
+
+.progress_bar .step:first-child {
     border-radius: 20px 0 0 20px;
 }
+
 .previous_btn {
     background-color: transparent !important;
     padding: 0 !important;
 }
-
+.previous_btn:hover {
+    border: none;
+}
 
 .progress_footer {
     width: fit-content;
     margin: 2rem auto 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .invisible {
     visibility: hidden;
 }
 
-@media (max-width: 890px) {
+@media (max-width: 635px) {
     .progress_bar {
-        width: 100%;
+    width: 85%;
     }
 
-    .steps_name_contain{
-        width: 100%;
-    }
-}
-@media (max-width: 635px) {
-    .steps_name_contain p{
-        padding-right: 18px;
+    .steps_name_contain p {
         font-size: .85em;
+        padding: 0 5px;
     }
 }

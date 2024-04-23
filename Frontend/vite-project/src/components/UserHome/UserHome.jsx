@@ -58,7 +58,7 @@ function UserHome({ data }) {
                 />
                 <p>Transferir</p>
               </div>
-              <div className={styles.accion}>
+              <div className={styles.accion} onClick={() => navigate("/inversiones")}>
                 <img
                   src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313165/Cashfly/Group_53_vibqwt.svg"
                   alt=""

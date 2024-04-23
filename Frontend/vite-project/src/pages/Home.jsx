@@ -1,30 +1,41 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../pages/Home.module.css";
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { useInView, motion } from "framer-motion";
 import usuariosFelices from "../UsuariosFelices.json";
+import { Context } from "../components/context/Context";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { user } = useContext(Context);
+
   const ref0 = useRef(null);
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref4 = useRef(null);
+  const refa = useRef(null);
+  const refb = useRef(null);
+  const refc = useRef(null);
   const inView0 = useInView(ref0);
   const inView1 = useInView(ref1);
   const inView2 = useInView(ref2);
   const inView3 = useInView(ref3);
   const inView4 = useInView(ref4);
+  const inViewa = useInView(refa);
+  const inViewb = useInView(refb);
+  const inViewc = useInView(refc);
 
   const refS0 = useRef(null);
   const refS1 = useRef(null);
   const refS2 = useRef(null);
   const refS3 = useRef(null);
+  const refS4 = useRef(null);
   const isInViewS0 = useInView(refS0, { once: false });
   const isInViewS1 = useInView(refS1, { once: false });
   const isInViewS2 = useInView(refS2, { once: false });
   const isInViewS3 = useInView(refS3, { once: false });
+  const isInViewS4 = useInView(refS4, { once: false });
   const estilosDeCarga = {
     isOn: { scale: 1, opacity: 1 },
     isOff: { scale: 0.95, opacity: 0.5 },
@@ -51,8 +62,15 @@ const Home = () => {
                 </p>
                 <div className={styles.boton0Cont}>
                   <div to="/prestamos" className={styles.bCont}>
-                    <button className="buttonB" onClick={() => navigate("/prestamos")}>Simular préstamo</button>
-                    <button onClick={() => navigate("/inversiones")}>Invertir</button>
+                    <button
+                      className="buttonB"
+                      onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/prestamos")}
+                    >
+                      Simular préstamo
+                    </button>
+                    <button onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/inversiones")}>
+                      Invertir
+                    </button>
                   </div>
                 </div>
               </div>
@@ -281,7 +299,102 @@ const Home = () => {
         </div>
       </motion.section>
       <section className={styles.seccion4}>
-        
+        <motion.div
+          className={styles.articulo1}
+          initial={"isOff"}
+          animate={isInViewS4 === true ? "isOn" : "isOff"}
+          transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
+          variants={estilosDeCarga}
+        >
+          <div className={styles.tittleCont4} ref={refS4}>
+            <h4 className={styles.titulo1}>Aprende a gestionar tus finanzas</h4>
+            <p>Registrate para aprender a pedir préstamos, manejar tus finanzas y crecer económicamente.</p>
+          </div>
+          <div className={styles.carrucelCont}>
+            <div className={styles.carrucel4}>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={refa}>
+                  <div className={styles.imgCont4}>
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755495/Cashfly/Image0_tlqdvs.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.tipTCont4}>
+                    <h2>Inversiones</h2>
+                    <div className={styles.linkGuide}>
+                      <h2>Descubre el Poder de Hacer Crecer tu Dinero</h2>
+                      <img src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755827/Cashfly/Icon_wrap_ildzw9.svg" alt="" />
+                    </div>
+                    <p>Sumérgete en nuestra sección de inversiones y aprende cómo hacer que tu dinero trabaje para ti. Desde conceptos básicos hasta estrategias avanzadas, aquí encontrarás todo lo que necesitas para comenzar a invertir.</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={refb}>
+                  <div className={styles.imgCont4}>
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755496/Cashfly/Image2_h6rlyg.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.tipTCont4}>
+                    <h2>Préstamos</h2>
+                    <div className={styles.linkGuide}>
+                      <h2>Entendiendo y Dominando los Préstamos</h2>
+                      <img src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755827/Cashfly/Icon_wrap_ildzw9.svg" alt="" />
+                    </div>
+                    <p>En esta sección, te guiaremos a través del mundo de los préstamos de manera inteligente y responsable. Aprende cómo obtener el financiamiento que necesitas para tus proyectos sin comprometer tu futuro financiero.</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.tipCont}>
+                <div className={styles.tip} ref={refc}>
+                  <div className={styles.imgCont4}>
+                    <img
+                      src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755498/Cashfly/Image_cvcpts.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.tipTCont4}>
+                    <h2>Tu Futuro</h2>
+                    <div className={styles.linkGuide}>
+                      <h2>Construyendo tu Futuro Financiero</h2>
+                      <img src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755827/Cashfly/Icon_wrap_ildzw9.svg" alt="" />
+                    </div>
+                    <p>Prepárate para el futuro y asegura tu estabilidad financiera con nuestra sección dedicada a tu futuro. Desde la planificación de ahorros hasta la jubilación anticipada, aquí encontrarás recursos para tomar el control de tu destino.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.paginaCont}>
+            <div
+              className={styles.pagina}
+              style={
+                inViewa
+                  ? { backgroundColor: "black" }
+                  : { backgroundColor: "rgb(189, 189, 189)" }
+              }
+            ></div>
+            <div
+              className={styles.pagina}
+              style={
+                inViewb
+                  ? { backgroundColor: "black" }
+                  : { backgroundColor: "rgb(189, 189, 189)" }
+              }
+            ></div>
+            <div
+              className={styles.pagina}
+              style={
+                inViewc
+                  ? { backgroundColor: "black" }
+                  : { backgroundColor: "rgb(189, 189, 189)" }
+              }
+            ></div>
+          </div>
+        </motion.div>
       </section>
     </div>
   );

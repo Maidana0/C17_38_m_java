@@ -1,6 +1,6 @@
 .investment_contain {
     margin: 4rem auto;
-    width: 93%;
+    width: 580px;
     text-align: center;
 }
 
@@ -11,57 +11,119 @@
 }
 
 /* PASO 1 */
-.amount_step_one {}
-
-.amount_step_one .amount {
+.amount {
     padding: 1rem 2rem;
-    font-size: 2em;
+    font-size: 2.4em;
+    color: #241D1D;
+    display: flex;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: .5rem auto;
 }
 
-.amount_step_one span {
+.amount strong {
+    font-size: 1.3em;
+}
+
+.amount span {
     margin-right: 10px;
     font-weight: 700;
-
 }
 
 .card_contain,
 .amount_step_one .info {
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #fff;
 }
 
 .amount_step_one .info {
     margin-top: 1rem;
     padding: .6rem 1rem;
+    border-radius: 30px;
+}
+
+.amount_step_one .info:hover {
     background-color: rgba(211, 211, 211, 0.5);
+
 }
 
 .card_contain {
-    margin: 1.5rem auto 1rem;
-    padding: 1.2rem .8rem;
-    border: solid 1px #000;
+    margin: 1.3rem auto 1rem;
+    padding: 1rem .8rem;
 }
 
-
-.amount_step_one .suggestions {
-    text-align: start;
+.special_card_contain {
+    background-color: #DEDFFB;
+    gap: .5rem;
+    border-radius: 30px;
+    justify-content: center;
+    width: 70%;
+    font-size: 16px;
 }
+
+.input_range_contain {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    gap: 5px;
+}
+
+.input_range_contain label {
+    text-wrap: nowrap;
+}
+
+.input_range_contain input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 8px;
+    background-color: #F0F0F0;
+    cursor: pointer;
+    border-radius: 11px;
+
+}
+
+.input_range_contain input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #FFF;
+    border: solid 2px #8ACF8A;
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+}
+
 
 /* PASO 2 */
+
+
 .invert_step_two {
     margin: 3rem auto;
 }
 
-.invert_step_two .card_contain_grid {
-    display: flex;
+.invert_step_two .card_contain {
     flex-direction: column;
-    gap: 15px;
-    border-radius: 12px;
+    padding: 1.5rem 2rem;
+}
 
-    border: solid 1px #000;
-    padding: .8rem;
+.card_option {
+    border-radius: 16px;
+    border: solid 1px #DEDFFB;
+}
+
+.card_header {
+    margin-bottom: 1rem;
+}
+
+.card_header,
+.card_content {
+    width: 100%;
 }
 
 .card_content div,
@@ -70,7 +132,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+.card_header small {
+    color: #939393;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .invert_step_two .btn_contain button {
@@ -83,27 +150,31 @@
     padding: 1rem;
 }
 
-.all_cards_contain {
-    display: grid;
-    width: 100%;
-    height: auto;
-    margin: 1.5rem auto;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2rem;
-}
 .card_content div {
     margin: 7px auto;
 }
+
+.card_content div strong {
+    font-size: 18px;
+}
+
+.card_content div span {
+    font-size: 16px;
+}
+
 .card_footer {
+    margin-top: 1.5rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.card_footer button{
-    padding: 1rem 1.5rem;
+.card_footer button {
+    padding: 0 2.5rem;
+    height: 49px;
+    font-size: 17px;
+    font-weight: normal;
 }
 
 .card_footer button:first-child {
@@ -114,26 +185,100 @@
 
 /* PASO 3 */
 
+.invert_step_three .card_contain{
+    border-radius: 16px;
+    margin: 1rem auto;
+}
+.invert_step_three .card_contain strong {
+    font-size: 0.83em;
+}
+
+.invert_step_three .card_contain span {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.extra_content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    text-align: end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-wrap: nowrap;
+}
+
+.invert_step_three .extra_content strong {
+    font-size: 1.35em;
+}
+.invert_step_three .extra_content span {
+    font-size: .88em;
+}
+
 .card_header div,
 .card_head {
     display: flex;
-    gap: 7px;
+    align-items: center;
+    gap: 10px;
 }
 
+.special_card {
+    background-color: #DEDFFB;
+
+}
+
+.card_head {
+    padding: .6rem .9rem;
+    border-radius: 16px;
+    background-color: #FBEFE9;
+}   
+
+.special_card .card_head {
+    background-color: #EBEBFF;
+
+}
 
 /* PASO 4 FINAL */
 .success_step_four {
-    margin: 4rem auto 3rem;
+    margin: 3rem auto 0;
+    text-align: center;
 }
 
-h3,
+.success_step_four h2,
 .success_step_four p {
-    margin-top: 1rem;
+    margin-top: .8rem;
     padding: 5px 1rem;
     line-height: 1.4em;
-
 }
 
 .success_step_four button {
     margin-top: 2.5rem;
+}
+
+
+@media (max-width:580px) {
+    .investment_contain {
+        width: 95%;
+    }
+
+    .invert_step_two .card_contain {
+        padding: 1rem;
+    }
+
+    .card_footer button {
+        padding: .5rem 1rem;
+        width: 47%;
+        height: auto;
+    }
+
+    .invert_step_three .extra_content strong {
+        font-size: 1.2em;
+    }
+    .invert_step_three .extra_content span {
+        font-size: .70em;
+        width: 100%;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;    
+    }
 }

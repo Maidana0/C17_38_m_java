@@ -53,10 +53,10 @@ const Solucitud = () => {
       numberInstallments: Number(option.text.split(" cuotas")[0]),
       installmmentValue: option.value,
     };
-    console.log(user.id);
-    console.log(prestamoData);
 
-    fetch("http://127.0.0.1:5000/loan/save", {
+   
+    fetch("http://localhost:5000/loan/save", {
+
       method: "POST",
       body: JSON.stringify(prestamoData),
       headers: {

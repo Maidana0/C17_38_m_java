@@ -1,16 +1,12 @@
 import styles from "./styles.module.css"
 
-const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep, setStep, totalSteps, arrayWithNameSteps = [], children }) => {
+const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep, setStep, totalSteps, arrayWithNameSteps = [],BooleanNextButton=true, children }) => {
   const steps = []
   const stepwidth = 100 / (totalSteps - 1)
 
 
-  for (let i = 1; i <= (totalSteps - 1); i++) {
+  for (let i = 1; i <= (totalSteps); i++) {
     const isActive = i <= currentStep ? styles.step_active : ""
-    steps.push(
-      <div key={i} style={{ width: `calc(${stepwidth}% - 26px)` }} className={`${styles.step} ${isActive}`} title={"Paso: " + i}>
-      </div>
-    )
     steps.push(
       <div key={`${i}-img`} className={`${styles.step_image_contain} ${i < currentStep && styles.step_active} ${currentStep == i && styles.current_step_image}`}>
         {(i < currentStep)
@@ -19,11 +15,15 @@ const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep,
         }
       </div>
     )
+    i != totalSteps && steps.push(
+      <div key={i} style={{ width: `calc(${stepwidth}% - 26px)` }} className={`${styles.step} ${isActive}`} title={"Paso: " + i}>
+      </div>
+    )
   }
 
   const handleNextStep = () => {
-    setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
     handleSubmitButton && handleSubmitButton()
+    setStep(prevStep => prevStep < totalSteps ? prevStep + 1 : prevStep);
     window.scrollTo(0, 0);
   }
   const handlePreviousStep = () => setStep(prevStep => prevStep > 1 ? prevStep - 1 : prevStep);
@@ -44,36 +44,34 @@ const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep,
 
       <div className={styles.steps_name_contain}>
         {
-          currentStep != totalSteps ?
-            arrayWithNameSteps.map((name, i) => i + 1 != totalSteps && (
-              <div key={i} style={{ width: `calc(${stepwidth}% )` }}>
-                {(i + 1) <= currentStep ?
-                  <p onClick={() => setStep(i + 1)}
-                    style={{ cursor: "pointer" }}>
-                    {name}
-                  </p>
-                  : <p>{name}</p>
-                }
-              </div>
-            ))
-            : <div className={styles.final_step_name}>
-              {arrayWithNameSteps[totalSteps - 1]}
+          arrayWithNameSteps.map((name, i) => (
+            <div key={i} style={{ width: `${stepwidth}%` }}>
+              {(i + 1) <= currentStep ?
+                <p onClick={() => setStep(i + 1)}
+                  style={{ cursor: "pointer", fontWeight: `${i + 1 == currentStep ? 700 : 400}` }}>
+                  {name}
+                </p>
+                : <p>{name}</p>
+              }
             </div>
+          ))
         }
       </div>
 
 
       {children}
+      {
+        BooleanNextButton &&
+        <div className={styles.progress_footer}>
+          {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}  >
+            {
+              textButton ? textButton : currentStep > 1 ? "Siguiente" : "Continuar"
+            }
+          </button>}
+          {moreButtons ? moreButtons : ""}
+        </div>
+      }
 
-      <div className={styles.progress_footer}>
-        {currentStep < totalSteps && <button className={styles.next_btn} onClick={handleNextStep}  >
-          {
-            textButton ? textButton : currentStep > 1 ? "Siguiente" : "Continuar"
-          }
-        </button>}
-      </div>
-
-      {moreButtons ? moreButtons : ""}
     </div>
   )
 }

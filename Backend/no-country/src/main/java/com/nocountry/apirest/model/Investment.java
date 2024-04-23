@@ -47,5 +47,11 @@ public class Investment implements Serializable{
 	@JoinColumn(name="usuario_id")
 	private User user;
 	
+	@Column(name = "nombre_empresa")
+	private String company_name;
+	
+	@Column(name="plazo_minimo_retirada")
+	private double minimum_withdrawal_period;
+	
 	
 }

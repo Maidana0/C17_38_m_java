@@ -7,8 +7,8 @@
     align-items: flex-end;
     background-color: white;
     color: black;
-    position: relative;
-    z-index: 6;
+    position: fixed;
+    z-index: 7;
   }
   .loginCont {
     width: 100%;

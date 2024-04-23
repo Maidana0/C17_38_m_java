@@ -59,7 +59,6 @@ public class Loan implements Serializable{
     @Column(name = "estado")
     private boolean status;
     
-    
     @Column(name = "numero_cuotas")
     private Integer numberOfInstallments;
     
