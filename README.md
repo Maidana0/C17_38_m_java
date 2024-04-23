@@ -17,27 +17,27 @@ Miro: https://miro.com/app/board/uXjVKbDgeYI=/
 
 DISEÑO UX/UI:
 
-- Ana Laura Sidan, Linkedin: [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-laura-sidan/)
-- Andrea Rossero, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrea-rosero-v/)
+- Ana Laura Sidan Linkedin: [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-laura-sidan/)
+- Andrea Rossero [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrea-rosero-v/)
 
 FRONTEND:
 
-- Walter Sanchez, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waltersanchez26/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Z4nchez)
+- Walter Sanchez [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waltersanchez26/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Z4nchez)
 - Edivaldo Gomes [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edivaldo-gomes/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://www.github.com/edivaldogomes)
-- Franco Maidana, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maidana-franco07), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Maidana0)
-- Daniel Sanabria, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielsanabriarivera/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/dqniel12396)
+- Franco Maidana [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maidana-franco07), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Maidana0)
+- Daniel Sanabria [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielsanabriarivera/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/dqniel12396)
 
 BACKEND:
 
-- Vanesa Najera, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanessa-najera-44b179bb/)
-- Bruno Sandoval, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bruno-sandoval-5b8b83173/)
-- Milena Ajerez, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/milenajerez/)
-- Héctor Laguna, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-lag/)
+- Vanesa Najera [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanessa-najera-44b179bb/)
+- Bruno Sandoval [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bruno-sandoval-5b8b83173/)
+- Milena Ajerez [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/milenajerez/)
+- Héctor Laguna [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-lag/)
 
 QA:
 
-- Nicolas Theumer, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicotheumer27/)
-- Matías Saucedo, [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/)
+- Nicolas Theumer [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicotheumer27/)
+- Matías Saucedo [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/)
 
 
 ## 💻 Tecnologias
