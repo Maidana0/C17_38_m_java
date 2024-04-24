@@ -37,7 +37,7 @@ BACKEND:
 QA:
 
 - Nicolas Theumer [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicotheumer27/)
-- Matías Saucedo [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/)
+- Matías Saucedo [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/matiasesaucedo)
 
 
 ## 💻 Tecnologias
@@ -45,6 +45,12 @@ QA:
 UI/UX:
 
 - Figma:
+
+QA:
+
+- ![Static Badge](https://img.shields.io/badge/Jira-blue?style=for-the-badge&logo=jirasoftware&logoColor=white)
+- ![Static Badge](https://img.shields.io/badge/Google%20Sheets-%2334A853?style=for-the-badge&logo=googlesheets&logoColor=white)
+- ![Static Badge](https://img.shields.io/badge/Swagger%20UI-green?style=for-the-badge&logo=swagger&logoColor=white)
 
 Frontend:
 
