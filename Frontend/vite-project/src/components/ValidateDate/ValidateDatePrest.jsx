@@ -16,15 +16,15 @@ function ValidateDatePrest({setArchivoDNI}) {
     const value = event.target.value.replace(/[^0-9]/g, '');
     setCbu(value);
   };
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.match('image.*')) {
-      setArchivoDNI(file);
-    } else {
-      setArchivoDNI(null);
-      alert('Solo se aceptan imágenes.');
-    }
-  };
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file && file.type.match('image.*')) {
+  //     setArchivoDNI(file);
+  //   } else {
+  //     setArchivoDNI(null);
+  //     alert('Solo se aceptan imágenes.');
+  //   }
+  // };
   // const handleButtonClick = () => {
   //   navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
   // };
@@ -67,7 +67,7 @@ function ValidateDatePrest({setArchivoDNI}) {
             <img src="images/icons/tarjetacredito.svg" alt="tarjeta" />
             {/* El texto que quieres que aparezca en el botón */}
           </label>
-          <input id="file-upload" type="file" onChange={handleFileChange} accept="file/*" style={{ display: 'none' }} />
+          <input id="file-upload" type="file"  accept="file/*" style={{ display: 'none' }} />
 
 
         {/* <input className="inp"
