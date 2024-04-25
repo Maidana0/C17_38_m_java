@@ -18,6 +18,8 @@ const Solucitud = () => {
     { id: 2, text: "6 cuotas", value: Math.ceil(amount / 6) },
     { id: 3, text: "3 cuotas", value: Math.ceil(amount / 3) },
   ];
+  const [banco, setBanco] = useState('');
+  const [cbu, setCbu] = useState('');
   // const [userData, setUserData] = useState({});
   const { user } = UseContext(useState);
   
@@ -63,14 +65,14 @@ const Solucitud = () => {
     
     let option = options.find((o) => o.id === selectedOption);
     const prestamoData = {
-      bank: "dfsdfsdf",
+      bank: banco,
       amount: amount,
       interesRate: 0.005,
       numberOfInstallments: Number(option.text.split(" cuotas")[0]),
       userId: user.id,
-      cbu: "23456734",
+      cbu: cbu,
     };
-    console.log(prestamoData);
+    
    
     const url = new URL("http://localhost:5000/loan/Create");
     url.searchParams.append('id', user.id); // Asegúrate de que este es el valor correcto para 'id'
@@ -114,7 +116,7 @@ const Solucitud = () => {
           />
         )}
 
-        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} />}
+        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} setBanco={setBanco} setCbu={setCbu} banco={banco} cbu={cbu} />}
 
         {step == 3 && (
           <ResumePrest

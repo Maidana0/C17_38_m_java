@@ -2,11 +2,12 @@ import { useState } from "react";
 import "./ValidateDatePrest.css";
 import { useNavigate } from 'react-router-dom';
 
-function ValidateDatePrest({setArchivoDNI}) {
+function ValidateDatePrest({setArchivoDNI, setBanco, setCbu, cbu, banco} ) {
   // let navigate = useNavigate();
 
-  const [banco, setBanco] = useState('');
-  const [cbu, setCbu] = useState('');
+  
+  // const [banco, setBanco] = useState('');
+  // const [cbu, setCbu] = useState('');
   
   const bancos = ["Santander Rio", "Galicia", "Nacion", "Banco Patagonia"];
   const handleBancoChange = (event) => {
