@@ -33,7 +33,6 @@ function Login() {
       .then((res) => res.json())
       .then((datos) => {
         if (datos) {
-          console.log(datos)
           setUser(datos);
           navigate("/userpanel");
           setContactosIA(cIA);

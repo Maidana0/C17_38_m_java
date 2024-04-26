@@ -1,6 +1,12 @@
 import "./okPrest.css"
-
+import { UseContext } from "../context/Context"
+import { useNavigate } from "react-router-dom";
+ 
 function Finalprest() {
+
+  const { user } = UseContext()
+  const navigate = useNavigate();
+
     return (
       <div className="Finalprest-container">
         <div className="cuerpo-end">
@@ -9,7 +15,7 @@ function Finalprest() {
         <h2 className="subtitulo-end">Confirmación</h2>
         <h2 className="texto-oculto-end">Ahora fijate en tu correo electrónico que tiene que haber llegado la validación.</h2>
         <p>Estamos trabajando para que tu préstamo se vea reflejado en tu cuenta bancaria en 24hs.</p>
-        <button className="inicio-button">Volver al Inicio</button>
+        <button className="inicio-button" onClick={() => user ? navigate("/userpanel") : navigate("/")}>Volver al Inicio</button>
         </div>
         
       </div>

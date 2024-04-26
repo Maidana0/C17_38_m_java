@@ -18,45 +18,65 @@ const Solucitud = () => {
     { id: 2, text: "6 cuotas", value: Math.ceil(amount / 6) },
     { id: 3, text: "3 cuotas", value: Math.ceil(amount / 3) },
   ];
+  
   // const [userData, setUserData] = useState({});
-  const { user } = UseContext(useState);
-  function saveFile() {
+  // const {user } = UseContext(useState);
+  const { banco, cbu,  user } = UseContext(useState);
+  // const fileToBinaryString = (file) => {
+  //   const reader = new FileReader();
+  
+  //   return new Promise((resolve, reject) => {
+  //     reader.onload = () => {
+  //       resolve(reader.result);
+  //     };
+  //     reader.onerror = (error) => {
+  //       reject(error);
+  //     };
+  //     reader.readAsBinaryString(file);
+  //   });
+  // };
+  
+  async function saveFile() {
+    //const binaryString = await fileToBinaryString(archivoDNI);
+    // const formdata = new FormData();
+    // formdata.append("userId", user.id);
+    // formdata.append("file", archivoDNI);
+
     
-    const formdata = new FormData();
-    formdata.append("userId", user.id);
-    formdata.append("file", archivoDNI);
-    
-    fetch("http://127.0.0.1:5000/file", {
-      method: "POST",
-      body: formdata,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("data: ", data);
-      })
-      .catch((error) => console.log(error));
+    //console.log(binaryString); // console
+
+
+    // fetch("http://localhost:5000/file", {
+    //   method: "POST",
+    //   body: binaryString,
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log("data: ", data);
+    //   })
+    //   .catch((error) => console.log(error));
     
   }
-  function datosPrestamo() {
+  function datosPrestamo(userId) {  // Asumiendo que tienes el ID del usuario como un argumento
     
     let option = options.find((o) => o.id === selectedOption);
     const prestamoData = {
-      userId: user.id,
-      bank: "dfsdfsdf",
-      CBU: "23456734",
+      bank: banco,
       amount: amount,
       interesRate: 0.005,
-      file: archivoDNI,
-      numberInstallments: Number(option.text.split(" cuotas")[0]),
-      installmmentValue: option.value,
+      numberOfInstallments: Number(option.text.split(" cuotas")[0]),
+      userId: user.id,
+      cbu: cbu,
     };
-
+    
    
-    fetch("http://localhost:5000/loan/save", {
+    const url = new URL("http://localhost:5000/loan/Create");
+    url.searchParams.append('id', user.id); // Asegúrate de que este es el valor correcto para 'id'
 
+    fetch(url.toString(), {  // Usamos url.toString() para incluir los parámetros de consulta
       method: "POST",
       body: JSON.stringify(prestamoData),
       headers: {
@@ -65,13 +85,13 @@ const Solucitud = () => {
         Accept: "application/json",
       },
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("data: ", data);
-      })
-      .catch((error) => console.log(error));
-    
-  }
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("data: ", data);
+    })
+    .catch((error) => console.log(error));
+}
+
 
   return (
     <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
@@ -95,7 +115,7 @@ const Solucitud = () => {
           />
         )}
 
-        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} />}
+        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} banco={banco} cbu={cbu}  />}
 
         {step == 3 && (
           <ResumePrest

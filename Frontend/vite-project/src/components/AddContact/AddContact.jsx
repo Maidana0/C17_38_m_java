@@ -25,18 +25,14 @@ function AddContact() {
     if (contactoE){
       setEncontrado(true)
       setContacto(contactoE) 
-      console.log("Encontrado")
     }else{
       setEncontrado(false)
-      setContacto({nombre: "", img: "", email: ""})
-      console.log("No encontrado")     
+      setContacto({nombre: "", img: "", email: ""})   
     }
     if (contactoA) {
       setAñadido(true)
-      console.log("Añadido")
     }else{
       setAñadido(false)
-      console.log("No añadido")
     }
   }
 
