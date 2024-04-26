@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import dt from "../../data.json"
 
 export const Context = createContext();
 
@@ -7,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [estadoHeader, setEstadoHeader] = useState(0);
   const [userP, setUserP] = useState(0);
   const [user, setUser] = useState(null);
+  const [data, setData] = useState(dt)
   const [userCreated, setUserCreated] = useState({
     name: "",
     surname: "",
@@ -16,6 +18,8 @@ export const ContextProvider = ({ children }) => {
     consent: "",
     password: "",
   });
+  const [contactosIA, setContactosIA] = useState([]);
+
 
   function imagenMov(valor) {
     if (valor == "Préstamo")
@@ -36,6 +40,10 @@ export const ContextProvider = ({ children }) => {
         estadoHeader,
         user,
         userP,
+        contactosIA,
+        data,
+        setContactosIA,
+        setData,
         setEstadoUsuario,
         setEstadoHeader,
         setUser,

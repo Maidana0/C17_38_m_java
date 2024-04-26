@@ -56,7 +56,7 @@ function Movements({ movimientos }) {
                       : `+ $${mov.monto}`}
                   </h2>
                   <p>
-                    {mov.fecha.toLocaleDateString(
+                    {new Date(mov.fecha).toLocaleDateString(
                       "es-ES",
                       options
                     )}

@@ -14,8 +14,8 @@ import {
 import { useInView, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function UserHome({ data }) {
-  const { setUserP, imagenMov } = useContext(Context);
+function UserHome() {
+  const { setUserP, imagenMov, data } = useContext(Context);
   const options = { weekday: "long" };
   const navigate = useNavigate();
 
@@ -26,6 +26,9 @@ function UserHome({ data }) {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+
+  const fecha1 = new Date(data.movimientos[0].fecha);
+  const fecha2 = new Date(data.movimientos[1].fecha);
 
   return (
     <motion.div className={styles.UserHome} ref={ref} initial={"isOff"} animate={isInView === true ? "isOn" : "isOff"} transition={{ duration: 0.4, ease: "easeOut" }} variants={estilosDeCarga}>
@@ -197,7 +200,7 @@ function UserHome({ data }) {
                       : `+ $${data.movimientos[0].monto}`}
                   </h2>
                   <p>
-                    {data.movimientos[0].fecha.toLocaleDateString(
+                    {fecha1.toLocaleDateString(
                       "es-ES",
                       options
                     )}
@@ -230,7 +233,7 @@ function UserHome({ data }) {
                       : `+ $${data.movimientos[1].monto}`}
                   </h2>
                   <p>
-                    {data.movimientos[1].fecha.toLocaleDateString(
+                    {fecha2.toLocaleDateString(
                       "es-ES",
                       options
                     )}

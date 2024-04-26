@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useRef } from "react";
 import { Context } from "../context/Context";
 import { useInView, motion } from "framer-motion";
+import cIA from "../../contactos.json"
 
 function Login() {
-  const { setUser } = useContext(Context);
+  const { setUser,  setContactosIA, data, setData} = useContext(Context);
   const navigate = useNavigate();
 
   const ref = useRef(null);
@@ -18,11 +19,11 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  function onSubmit(data) {
+  function onSubmit(info) {
     // Realiza acciones adicionales, como enviar datos al servidor
     fetch("http://localhost:5000/users/login", {
       method: "POST",
-      body: JSON.stringify({ email: data[0].value, password: data[1].value }),
+      body: JSON.stringify({ email: info[0].value, password: info[1].value }),
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
@@ -30,10 +31,13 @@ function Login() {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setUser(data);
+      .then((datos) => {
+        if (datos) {
+          console.log(datos)
+          setUser(datos);
           navigate("/userpanel");
+          setContactosIA(cIA);
+          setData({...data, nombre: datos.name, email: datos.email})
         } else {
           throw new Error("Credenciales invalidas");
         }
