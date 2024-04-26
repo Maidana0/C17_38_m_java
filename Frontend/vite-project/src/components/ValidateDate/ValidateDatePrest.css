@@ -1,0 +1,178 @@
+.validate{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFF;
+  color: black;
+
+}
+
+.opciones-validate {
+display: flex;
+flex-direction: column;
+background: #FFF;
+border-radius: 8px;
+width: 108%;
+}
+
+.titulo-validate{
+font-weight: 600;
+margin: 13px 4px;
+width: 349px;
+}
+.p3Validate{
+padding-top: 10px;
+opacity: 0.6;
+}
+.p4Validate img {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 13%;
+height: 100%;
+padding: 10px;
+}
+
+.p4Validate{
+  display: flex;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #454342;
+  opacity: 0.5;
+  padding: 6px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo{
+  font-size: 1.55rem;
+  padding-bottom: 5px;
+}
+
+.listabancos{
+  
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
+
+}
+
+.inp{
+  
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.banco-select{
+  appearance: none;
+  background-image: url(images/icons/flechaderecha.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-position-y: 14px;
+  background-size: 20px;
+  padding: 17px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+  color: #1b1f24;
+  opacity: 0.4;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 17px;
+}
+
+.botonayudaValidate{
+  display: flex;
+  justify-content: center;
+
+}
+
+.buton-ayuda{
+  width: 101%;
+  padding: 1rem;
+  color: #000000;
+  background-color: #ffff;
+  border: #000000 solid 1px;
+}
+.general-validate {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+/* .inp[type="file"] {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  z-index: -1;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+
+.custom-file-upload {
+  display: inline-block;
+  display: flex;
+  cursor: pointer;
+  padding: 35px;
+  border: 1px solid #cccccc;
+  border-radius: 0.5rem;
+  color: #1b1f24;
+  opacity: 0.5;
+  width: 100%;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+@media (width > 1400px) {
+.general-validate {
+  width: 33%;
+  margin-top: 47px;
+}
+.inp,.banco-select,.listabancos { 
+  padding: 40px;
+}
+.opciones-validate{
+  width: 54%;
+}
+.p4Validate img{
+  width: 4%;
+  padding: 12px 0px;
+}
+.p3Validate{
+  font-size: 1.1rem;
+}
+.titulo{
+  font-size: 2.70rem;
+  
+}
+.titulo-validate{
+  width: 52%;
+}
+}
+
+
+@media (width < 1400px) {
+  .opciones-validate{
+    width: 40%;
+  }
+  .titulo-validate{
+    width: 45%;
+  }
+}

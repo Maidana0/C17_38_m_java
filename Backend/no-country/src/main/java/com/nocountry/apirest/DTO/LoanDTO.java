@@ -1,7 +1,5 @@
 package com.nocountry.apirest.DTO;
 
-import com.nocountry.apirest.model.File;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,13 +15,11 @@ public class LoanDTO {
 	
 	private String CBU;
 	
-	private Double amount;
+	private double amount;
 	
-	private Double interestRate;
+	private double interestRate;
 	
-	private Integer numberOfInstallments;
-	
-	private File file;
+	private int numberOfInstallments;
 	
 	private int userId;
 

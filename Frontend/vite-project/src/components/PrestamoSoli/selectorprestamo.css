@@ -1,0 +1,109 @@
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  /* background: #FFF; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  /*margin: 8px; */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.payment-option label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 15px;
+  accent-color: black; /* This sets the color of the radio button */
+}
+
+.option-text {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.option-value {
+  font-weight: bold;
+  height: 50px;
+}
+
+/* Estilo para cuando el radio está seleccionado */
+.payment-option input[type="radio"]:checked + label {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+
+/* Ocultar el input de radio original */
+.payment-option input[type="radio"] {
+  display: none;
+}
+
+/* Estilos para el label que hará de "fake" input radio */
+.payment-option label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: #FCF7F5;
+    opacity: 0.5;
+  
+}
+
+/* Crear un nuevo "fake" radio button */
+.payment-option label:before {
+  content: '';
+  display: inline-block;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #454342; /* Color de tu preferencia */
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Estilos para el "fake" radio button cuando está seleccionado */
+.payment-option input[type="radio"]:checked + label:before {
+  content: '✓'; /* Carácter Unicode para la marca de verificación */
+  color: #FFAD09; /* Color de tu preferencia */
+  font-size: 18px; /* Tamaño ajustable a tu preferencia */
+  text-align: center;
+  line-height: 20px; /* Ajusta para centrar verticalmente el check dentro del círculo */
+}
+
+/* Estilos adicionales para cuando el radio está seleccionado */
+.payment-option input[type="radio"]:checked + label {
+  background-color: #FFFFFF;
+  border: 1px solid #bbb1ac;
+  opacity: unset;
+}
+
+.option-text,
+.option-value {
+  display: flex;
+  align-items: center; /* Esto asegura la alineación vertical */
+}
+
+.botonContinue{
+  display: flex;
+  justify-content: center;
+}
+
+.botonContinue button {
+    width: 51%;
+}
+
