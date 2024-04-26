@@ -1,5 +1,6 @@
 package com.nocountry.apirest.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,8 +35,24 @@ public class InvestmentController {
 	private IInvestmentService investService;
 	
 	@GetMapping(value="")
-	public List<Investment>getInvestment(){
-		return investService.getInvestment();
+	public List<InvestmentDTO>getInvestment(){
+		List<Investment> investements= investService.getInvestment();
+		List<InvestmentDTO> investementsDTO=new ArrayList<>();
+		for(Investment investment:investements) {
+			InvestmentDTO investmentDTO=new InvestmentDTO();
+			investmentDTO.setAvailable_amount(investment.getAvailable_amount());
+			investmentDTO.setInvested_amount(investment.getInvested_amount());
+			investmentDTO.setRemaining_amount(investment.getRemaining_amount());
+			investmentDTO.setProfitability(investment.getProfitability());
+			investmentDTO.setInvestment_type(investment.getInvestment_type());
+			investmentDTO.setUser_id(investment.getUser().getId());
+			investmentDTO.setCompany_name(investment.getCompany_name());
+			investmentDTO.setMinimum_withdrawal_period(investment.getMinimum_withdrawal_period());
+			investementsDTO.add(investmentDTO);
+		}
+
+		
+		return investementsDTO;
 	}
 	
 	@PostMapping("Create")

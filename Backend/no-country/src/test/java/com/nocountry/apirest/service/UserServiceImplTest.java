@@ -42,7 +42,7 @@ class UserServiceImplTest {
 
     @BeforeEach
     void setUp(){
-        underTest = new UserServiceImpl(userRepository, userRoleRepo, passwordEncoder);
+        underTest = new UserServiceImpl(userRepository, userRoleRepo, passwordEncoder, null, null);
     }
 
     @DisplayName("Check if it's able to list all the users")
