@@ -1,17 +1,20 @@
 package com.nocountry.apirest.service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+import com.nocountry.apirest.DTO.UserSummaryDTO;
+import com.nocountry.apirest.model.*;
+import com.nocountry.apirest.repository.IInvestmentRepository;
+import com.nocountry.apirest.repository.ILoanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nocountry.apirest.exception.AutenticacionException;
 import com.nocountry.apirest.exception.InvalidUserDataException;
 import com.nocountry.apirest.exception.UserNotFoundException;
-import com.nocountry.apirest.model.Role;
-import com.nocountry.apirest.model.User;
-import com.nocountry.apirest.model.UserRole;
 import com.nocountry.apirest.repository.IUserRepository;
 import com.nocountry.apirest.repository.IUserRoleRepository;
 
@@ -23,10 +26,18 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements IUserService{
-	
+
+    @Autowired
 	private IUserRepository userRepo;
+
     private IUserRoleRepository userRoleRepo;
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private final ILoanRepository loanRepository;
+
+    @Autowired
+    private final IInvestmentRepository investmentRepository;
 
 
 	public List<User> getUsers() {
@@ -129,6 +140,32 @@ public class UserServiceImpl implements IUserService{
         }
         return true;
 
+    }
+
+    @Override
+    public UserSummaryDTO getUserWithLoansAndInvestments(int userId) {
+
+        User user = userRepo.findById(userId).orElse(null);
+
+        List<Investment> investments = userRepo.findInvestmentsByUserId(userId);
+        List<Loan> loans = userRepo.findLoansByUserId(userId);
+
+        // Verificar si las listas de préstamos e inversiones son nulas o están vacías
+        if (investments == null) {
+            investments = Collections.emptyList(); // Asignar una lista vacía si es nula
+        }
+        if (loans == null) {
+            loans = Collections.emptyList(); // Asignar una lista vacía si es nula
+        }
+
+        UserSummaryDTO dto = new UserSummaryDTO();
+        dto.setUser_id(user.getId());
+        dto.setName(user.getName());
+        dto.setEmail(user.getEmail());
+        dto.setLoans(loans);
+        dto.setInvestments(investments);
+
+        return dto;
     }
 
 

@@ -3,6 +3,7 @@ package com.nocountry.apirest.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.nocountry.apirest.DTO.UserSummaryDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -163,6 +164,13 @@ public class UserController {
         } catch (AutenticacionException ex) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ex.getMessage());
         }
+    }
+
+    //Datos del usuario con su inversion
+    @GetMapping("/userloaninvestment/{userId}")
+    public UserSummaryDTO getUserSummary(@PathVariable int userId) {
+
+        return userServi.getUserWithLoansAndInvestments(userId);
     }
 
 }
