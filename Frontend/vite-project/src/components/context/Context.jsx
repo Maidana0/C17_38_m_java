@@ -7,6 +7,9 @@ export const ContextProvider = ({ children }) => {
   const [estadoHeader, setEstadoHeader] = useState(0);
   const [userP, setUserP] = useState(0);
   const [user, setUser] = useState(null);
+  const [banco, setBanco] = useState('');
+  const [cbu, setCbu] = useState('');
+
   const [userCreated, setUserCreated] = useState({
     name: "",
     surname: "",
@@ -14,7 +17,7 @@ export const ContextProvider = ({ children }) => {
     email: "",
     cellphone: "",
     consent: "",
-    password: "",
+    password: ""
   });
 
   function imagenMov(valor) {
@@ -43,6 +46,10 @@ export const ContextProvider = ({ children }) => {
         imagenMov,
         userCreated,
         setUserCreated,
+        banco, // Agrega esto
+        setBanco, // Agrega esto
+        cbu, // Agrega esto
+        setCbu, // Agrega esto
       }}
     >
       {children}

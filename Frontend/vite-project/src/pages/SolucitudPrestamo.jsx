@@ -18,11 +18,10 @@ const Solucitud = () => {
     { id: 2, text: "6 cuotas", value: Math.ceil(amount / 6) },
     { id: 3, text: "3 cuotas", value: Math.ceil(amount / 3) },
   ];
-  const [banco, setBanco] = useState('');
-  const [cbu, setCbu] = useState('');
-  // const [userData, setUserData] = useState({});
-  const { user } = UseContext(useState);
   
+  // const [userData, setUserData] = useState({});
+  // const {user } = UseContext(useState);
+  const { banco, cbu,  user } = UseContext(useState);
   // const fileToBinaryString = (file) => {
   //   const reader = new FileReader();
   
@@ -116,7 +115,7 @@ const Solucitud = () => {
           />
         )}
 
-        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} setBanco={setBanco} setCbu={setCbu} banco={banco} cbu={cbu} />}
+        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} banco={banco} cbu={cbu}  />}
 
         {step == 3 && (
           <ResumePrest

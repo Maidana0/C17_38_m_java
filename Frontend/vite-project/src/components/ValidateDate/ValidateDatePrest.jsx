@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./ValidateDatePrest.css";
 import { useNavigate } from 'react-router-dom';
+import { UseContext } from "../context/Context";
 
-function ValidateDatePrest({setArchivoDNI, setBanco, setCbu, cbu, banco} ) {
+function ValidateDatePrest({setArchivoDNI}) {
   // let navigate = useNavigate();
 
-  
   // const [banco, setBanco] = useState('');
   // const [cbu, setCbu] = useState('');
-  
+  const { banco, setBanco, cbu, setCbu } = UseContext();
   const bancos = ["Santander Rio", "Galicia", "Nacion", "Banco Patagonia"];
   const handleBancoChange = (event) => {
     setBanco(event.target.value);
