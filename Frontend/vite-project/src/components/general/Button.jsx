@@ -6,7 +6,7 @@ const CustomButton = ({ text, handleClick, classNameContain }) => {
 
     return (
         <div className={classNameContain ? classNameContain : "botonayudaValidate"}>
-            <button onClick={handleClick ? handleClick : localhandleClick}>{text ? text : "Necesitas ayuda"}</button>
+            <button  className='buton-ayuda' onClick={handleClick ? handleClick : localhandleClick}>{text ? text : "Necesitas ayuda"}</button>
         </div>
     )
 }

@@ -30,7 +30,7 @@ function Contacts({ contactos }) {
               >
                 <div className={styles.contactoC}>
                   <div className={styles.imgCont}>
-                    <img src={contacto.img} alt="" />
+                    <img src={contacto.img} alt="" className={styles.imgContacto}/>
                   </div>
                   <p>{contacto.nombre}</p>
                 </div>

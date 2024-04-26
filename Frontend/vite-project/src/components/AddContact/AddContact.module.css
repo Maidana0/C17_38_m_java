@@ -46,7 +46,7 @@
 }
 .findCont{
     width: 500px;
-    height: 80px;
+    height: auto;
     min-height: 60px;
     display: flex;
     justify-content: space-between;
@@ -75,12 +75,36 @@
     height: 20%;
     min-height: 60px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: var(--color1);
-    border-radius: 15px;
-    display: none;
+    border-radius: 25px;
+}
+.findElement{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.userStatus{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.userStatus img{
+    height: 60%;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.userStatus p{
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 @media screen and (aspect-ratio < 1.2){
@@ -98,7 +122,6 @@
     .findCont{
         width: 90%;
         min-width: 260px;
-        height: 60px;
         min-height: 60px;
         display: flex;
         flex-direction: column;
@@ -117,5 +140,8 @@
     .inputCont p{
         text-align: center;
         font-size: 0.8rem;
+    }
+    .inputCont input{
+        text-align: center;
     }
 }

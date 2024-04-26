@@ -31,9 +31,10 @@ function ResumePrest(props){
           <div className="container-tituloresumen">
                  <h2>Revisa si está todo bien</h2>
           </div>
+          <div className="cajas-resumen">
           <div className="resumen-item">
-            <span><img src="images/icons/tarjetacredito.svg" alt="" /> Recibís</span>
-            <span>${amount.toLocaleString('es-AR')}</span>
+            <span className="resume-redondo"><img src="images/icons/tarjetacredito.svg" alt="" /> Recibís</span>
+            <span className="texto-resumen-valor">${amount.toLocaleString('es-AR')}</span>
           </div>
           <div className="resumen-item">
             <span className="titulo-pagas"><img src="images/icons/Moneda.svg" alt="" /> Pagás</span>
@@ -49,12 +50,13 @@ function ResumePrest(props){
             </div>
           </div>
           <div className="resumen-item">
-            <span><img src="images/icons/billetes.svg" alt="" /> En total devolvés</span>
-            <span>${totalDevo.toLocaleString('es-AR')}</span>
+            <span className="resume-redondo"><img src="images/icons/billetes.svg" alt="" /> En total devolvés</span>
+            <span className="texto-resumen-valor">${totalDevo.toLocaleString('es-AR')}</span>
           </div>
           <div className="resumen-item">
-            <span><img src="images/icons/calendario.svg" alt="" /> Pagás la primera cuota el</span>
-            <span>{startDate}</span>
+            <span className="resume-redondo"><img src="images/icons/calendario.svg" alt="" /> Pagás la primera cuota el</span>
+            <span className="texto-resumen-valor">{startDate}</span>
+          </div>
           </div>
           <div className="terminos">
             <p>Al confirmar estás aceptando <strong>los términos y condiciones</strong> de este préstamo.</p>

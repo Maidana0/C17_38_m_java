@@ -5,7 +5,6 @@
   align-items: center;
   padding: 20px;
   background-color: #ffffff; /* o cualquier otro color de fondo que necesites */
-  height: 100vh; /* Asegura que tome toda la altura de la pantalla */
   text-align: center;
 }
 
@@ -38,13 +37,14 @@
 }
 
 .inicio-button {
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background-color: #000000; /* Color de fondo del botón */
-  color: #ffffff; /* Color de texto del botón */
-  font-size: 1em;
-  cursor: pointer;
+  padding: 20px 26px;
+    border-radius: 20px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Añade estilos adicionales para hover, focus, etc., si es necesario */

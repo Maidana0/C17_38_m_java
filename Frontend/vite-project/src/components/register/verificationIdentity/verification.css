@@ -4,7 +4,6 @@
 }
 
 .verify {
-  margin-top: 4rem;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -12,37 +11,33 @@
   align-items: center;
   background-color: white;
 }
+
 .verifyContainer {
   color: black;
-  width: 480px;
-  min-height: 400px;
+  width: 45vw;
+  height: 55vh;
   padding: 2rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.column-1,
-.column-2 {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: black;
+.title-verification {
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 60%;
+  height: auto;
+  text-align: center;
 }
-
-.column-1 {
-  width: 55%;
+.context_verification{
+  font-size: 1rem;
+  font-weight: 700;
+  width: 65%;
+  height: auto;
+  text-align: center;
 }
-
-.column-2 {
-  width: 45%;
-  background-color: var(--color1);
-}
-
 .logoLeftSide {
   font-size: 18px;
   font-weight: bold;
@@ -67,8 +62,11 @@
 }
 
 .info_to_userL {
-  opacity: 0.5;
-  margin-top: 10rem;
+  width: 65%;
+  height: auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 @media (aspect-ratio < 12/10) {
@@ -77,16 +75,17 @@
     height: auto;
   }
 
-  .column-1,
-  .column-2 {
-    width: 100%;
-    min-height: 50vh;
-  }
-
-  /* PEQUEÑOS AJUSTES (by FRANCO) */
   .verifyContainer {
-    margin-top: 2rem;
-    width: 100%;
-    padding: 0;
+    width: 90vw;
+    height: 55vh;
+  }
+  .title-verification {
+    font-size: 1.5rem;
+  }
+  .context_verification{
+    font-size: 0.9rem;
+  }
+  .info_to_userL {
+    font-size: 0.9rem;
   }
 }

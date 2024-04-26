@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./ValidateDatePrest.css";
 import { useNavigate } from 'react-router-dom';
+import { UseContext } from "../context/Context";
 
 function ValidateDatePrest({setArchivoDNI}) {
   // let navigate = useNavigate();
 
-  const [banco, setBanco] = useState('');
-  const [cbu, setCbu] = useState('');
-  
+  // const [banco, setBanco] = useState('');
+  // const [cbu, setCbu] = useState('');
+  const { banco, setBanco, cbu, setCbu } = UseContext();
   const bancos = ["Santander Rio", "Galicia", "Nacion", "Banco Patagonia"];
   const handleBancoChange = (event) => {
     setBanco(event.target.value);
@@ -16,15 +17,15 @@ function ValidateDatePrest({setArchivoDNI}) {
     const value = event.target.value.replace(/[^0-9]/g, '');
     setCbu(value);
   };
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.match('image.*')) {
-      setArchivoDNI(file);
-    } else {
-      setArchivoDNI(null);
-      alert('Solo se aceptan imágenes.');
-    }
-  };
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   if (file && file.type.match('image.*')) {
+  //     setArchivoDNI(file);
+  //   } else {
+  //     setArchivoDNI(null);
+  //     alert('Solo se aceptan imágenes.');
+  //   }
+  // };
   // const handleButtonClick = () => {
   //   navigate('/Validate-Date'); // Usa el método navigate para cambiar de ruta
   // };
@@ -60,11 +61,21 @@ function ValidateDatePrest({setArchivoDNI}) {
         />
 
         {/* Campo de carga de archivo para el DNI */}
-        <input className="inp"
+
+          {/* Campo de carga de archivo para el DNI */}
+          <label htmlFor="file-upload" className="custom-file-upload">
+            <p>Adjunta la foto de tu DNI</p>
+            <img src="images/icons/tarjetacredito.svg" alt="tarjeta" />
+            {/* El texto que quieres que aparezca en el botón */}
+          </label>
+          <input id="file-upload" type="file"  accept="file/*" style={{ display: 'none' }} />
+
+
+        {/* <input className="inp"
           type="file"
           onChange={handleFileChange}
-          accept="image/png, image/jpeg"
-        />
+          accept="file/*"
+        /> */}
       </div>
       {/* {<div className="botonayudaValidate"><button
         onClick={handleButtonClick}>
@@ -72,27 +83,8 @@ function ValidateDatePrest({setArchivoDNI}) {
       </button></div>} */}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   )
-
-
-
-
-
-
-
 
 
 }
