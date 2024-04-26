@@ -1,5 +1,6 @@
 package com.nocountry.apirest.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -162,8 +163,34 @@ public class UserServiceImpl implements IUserService{
         dto.setUser_id(user.getId());
         dto.setName(user.getName());
         dto.setEmail(user.getEmail());
-        dto.setLoans(loans);
-        dto.setInvestments(investments);
+        List<UserSummaryDTO.LoanDTO> loansDTO= new ArrayList<UserSummaryDTO.LoanDTO>();
+        List<UserSummaryDTO.InvestmentDTO> investmentsDTO=new ArrayList<UserSummaryDTO.InvestmentDTO>();
+        for(Investment investment:investments) {
+        	UserSummaryDTO.InvestmentDTO investmentDTO=new UserSummaryDTO.InvestmentDTO();
+        	investmentDTO.setAvailable_amount(investment.getAvailable_amount());
+			investmentDTO.setInvested_amount(investment.getInvested_amount());
+			investmentDTO.setRemaining_amount(investment.getRemaining_amount());
+			investmentDTO.setProfitability(investment.getProfitability());
+			investmentDTO.setInvestment_type(investment.getInvestment_type());
+			investmentDTO.setCompany_name(investment.getCompany_name());
+			investmentDTO.setMinimum_withdrawal_period(investment.getMinimum_withdrawal_period());
+			investmentsDTO.add(investmentDTO);
+        	
+        }
+        
+        for(Loan loan:loans) {
+        	UserSummaryDTO.LoanDTO loanDTO=new UserSummaryDTO.LoanDTO();
+        	loanDTO.setBank(loan.getBank());
+        	loanDTO.setCBU(loan.getCBU());
+        	loanDTO.setAmount(loan.getAmount());
+        	loanDTO.setInterestRate(loan.getInterestRate());
+        	loanDTO.setNumberOfInstallments(loan.getNumberOfInstallments());
+        	loansDTO.add(loanDTO);
+        	
+        }
+        
+        dto.setLoans(loansDTO);
+        dto.setInvestments(investmentsDTO);
 
         return dto;
     }
