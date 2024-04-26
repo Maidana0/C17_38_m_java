@@ -6,6 +6,7 @@ import ResumePrest from "../components/ConfirmPrest/ResumePrest";
 import Finalprest from "../components/EndPrest/Finalprest";
 import CustomButton from "../components/general/Button";
 import { UseContext } from "../components/context/Context";
+import { Link } from "react-router-dom";
 
 const Solucitud = () => {
   const [step, setStep] = useState(1);
@@ -127,9 +128,12 @@ const Solucitud = () => {
             startDate={startDate}
             setStartDate={setStartDate}
           />
+          
+          
         )}
 
-        {step == 4 && <Finalprest />}
+        {step == 4 && <Finalprest />
+        }
       </ProgressBar>
     </div>
   );
