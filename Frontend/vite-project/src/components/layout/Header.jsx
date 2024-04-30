@@ -10,7 +10,7 @@ const paths = Object.freeze([
 ])
 
 const Header = () => {
-  const { user, setUser } = UseContext()
+  const { user, setUser, setEstadoUsuario } = UseContext()
   const [isOpen, setIsOpen] = useState(false)
   const setOpen = () => setIsOpen(!isOpen)
   const closeNavbar = () => isOpen && setIsOpen(false)
@@ -50,7 +50,8 @@ const Header = () => {
 
                   <Link to="/"
                     onClick={() => {
-                      setUser(null)
+                      setEstadoUsuario(1);
+                      setUser(null);
                     }}
                     style={{
                       borderRadius: "38px",

@@ -31,7 +31,14 @@ function UserHome() {
   const fecha2 = new Date(data.movimientos[1].fecha);
 
   return (
-    <motion.div className={styles.UserHome} ref={ref} initial={"isOff"} animate={isInView === true ? "isOn" : "isOff"} transition={{ duration: 0.4, ease: "easeOut" }} variants={estilosDeCarga}>
+    <motion.div
+      className={styles.UserHome}
+      ref={ref}
+      initial={"isOff"}
+      animate={isInView === true ? "isOn" : "isOff"}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      variants={estilosDeCarga}
+    >
       <div className={styles.infoCont}>
         <div className={styles.profile} ref={ref}>
           <div className={styles.panelAcciones}>
@@ -61,14 +68,20 @@ function UserHome() {
                 />
                 <p>Transferir</p>
               </div>
-              <div className={styles.accion} onClick={() => navigate("/inversiones")}>
+              <div
+                className={styles.accion}
+                onClick={() => {navigate("/inversiones")}}
+              >
                 <img
                   src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313165/Cashfly/Group_53_vibqwt.svg"
                   alt=""
                 />
                 <p>Invertir</p>
               </div>
-              <div className={styles.accion} onClick={() => navigate("/prestamos")}>
+              <div
+                className={styles.accion}
+                onClick={() => {navigate("/prestamos")}}
+              >
                 <img
                   src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313165/Cashfly/Group_52_wrc0rg.svg"
                   alt=""
@@ -172,10 +185,7 @@ function UserHome() {
             <div className={styles.listaActividad}>
               <div className={styles.actividad}>
                 <div className={styles.actividadDesc}>
-                  <img
-                    src={imagenMov(data.movimientos[0].tipo)}
-                    alt=""
-                  />
+                  <img src={imagenMov(data.movimientos[0].tipo)} alt="" />
                   <div className={styles.actD}>
                     <p className={styles.actDT}>{data.movimientos[0].tipo}</p>
                     <p>
@@ -199,20 +209,12 @@ function UserHome() {
                       ? `- $${data.movimientos[0].monto}`
                       : `+ $${data.movimientos[0].monto}`}
                   </h2>
-                  <p>
-                    {fecha1.toLocaleDateString(
-                      "es-ES",
-                      options
-                    )}
-                  </p>
+                  <p>{fecha1.toLocaleDateString("es-ES", options)}</p>
                 </div>
               </div>
               <div className={styles.actividad}>
                 <div className={styles.actividadDesc}>
-                  <img
-                    src={imagenMov(data.movimientos[1].tipo)}
-                    alt=""
-                  />
+                  <img src={imagenMov(data.movimientos[1].tipo)} alt="" />
                   <div className={styles.actD}>
                     <p className={styles.actDT}>Inversión realizada</p>
                     <p>Completada</p>
@@ -232,12 +234,7 @@ function UserHome() {
                       ? `- $${data.movimientos[1].monto}`
                       : `+ $${data.movimientos[1].monto}`}
                   </h2>
-                  <p>
-                    {fecha2.toLocaleDateString(
-                      "es-ES",
-                      options
-                    )}
-                  </p>
+                  <p>{fecha2.toLocaleDateString("es-ES", options)}</p>
                 </div>
               </div>
             </div>

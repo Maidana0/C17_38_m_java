@@ -1,14 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import dt from "../../data.json"
 
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [estadoUsuario, setEstadoUsuario] = useState(0);
+  const [firstAddMov, setFirstAddMov] = useState(false);
   const [estadoHeader, setEstadoHeader] = useState(0);
   const [userP, setUserP] = useState(0);
   const [user, setUser] = useState(null);
   const [data, setData] = useState(dt)
+  const [dataIn, setDataIn] = useState([])
+  const [dataPr, setDataPr] = useState([])
   const [banco, setBanco] = useState('');
   const [cbu, setCbu] = useState('');
   const [userCreated, setUserCreated] = useState({
@@ -22,6 +25,26 @@ export const ContextProvider = ({ children }) => {
   });
   const [contactosIA, setContactosIA] = useState([]);
 
+  useEffect(()=>{
+    data.movimientos.sort(function (b, a) {
+      if (a.fecha > b.fecha) {
+        return 1;
+      }
+      if (a.fecha < b.fecha) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+  }, [data])
+
+  function getDate (){
+    let fecha = new Date();
+    let mes = fecha.getUTCMonth() + 1;
+    let dia = fecha.getUTCDate();
+    let año = fecha.getUTCFullYear();
+    return año + "/" + mes + "/" + dia;
+  }
 
   function imagenMov(valor) {
     if (valor == "Préstamo")
@@ -44,6 +67,13 @@ export const ContextProvider = ({ children }) => {
         userP,
         contactosIA,
         data,
+        dataIn,
+        dataPr,
+        firstAddMov,
+        setFirstAddMov,
+        getDate,
+        setDataIn,
+        setDataPr,
         setContactosIA,
         setData,
         setEstadoUsuario,

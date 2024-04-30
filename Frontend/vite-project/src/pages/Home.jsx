@@ -1,13 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../pages/Home.module.css";
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import { useInView, motion } from "framer-motion";
 import usuariosFelices from "../UsuariosFelices.json";
 import { Context } from "../components/context/Context";
+import dt2 from "../data.json"
 
 const Home = () => {
   const navigate = useNavigate();
-  const { user } = useContext(Context);
+  const { user, estadoUsuario, setEstadoUsuario } = useContext(Context);
 
   const ref0 = useRef(null);
   const ref1 = useRef(null);
@@ -40,6 +41,13 @@ const Home = () => {
     isOn: { scale: 1, opacity: 1 },
     isOff: { scale: 0.95, opacity: 0.5 },
   };
+
+  useEffect(() => {
+    if (estadoUsuario == 1){
+      setEstadoUsuario(0);
+      location.reload(); 
+    }   
+  }, [])
 
   return (
     <div className={styles.Home}>

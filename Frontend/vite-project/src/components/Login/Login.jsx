@@ -1,17 +1,31 @@
 import "./login.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import { Context } from "../context/Context";
 import { useInView, motion } from "framer-motion";
-import cIA from "../../contactos.json"
+import cIA from "../../contactos.json";
 
 function Login() {
-  const { setUser,  setContactosIA, data, setData} = useContext(Context);
+  const {
+    setUser,
+    setContactosIA,
+    data,
+    setData,
+    setDataIn,
+    setDataPr,
+    dataPr,
+    dataIn,
+    getDate,
+    firstAddMov,
+    setFirstAddMov
+  } = useContext(Context);
   const navigate = useNavigate();
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  const [confirmL, setConfirmL] = useState(false);
+  const [errorL, setErrorL] = useState(false);
 
   const {
     register,
@@ -21,6 +35,10 @@ function Login() {
 
   function onSubmit(info) {
     // Realiza acciones adicionales, como enviar datos al servidor
+    findData(info);
+  }
+
+  function findData(info) {
     fetch("http://localhost:5000/users/login", {
       method: "POST",
       body: JSON.stringify({ email: info[0].value, password: info[1].value }),
@@ -34,15 +52,78 @@ function Login() {
       .then((datos) => {
         if (datos) {
           setUser(datos);
-          navigate("/userpanel");
           setContactosIA(cIA);
-          setData({...data, nombre: datos.name, email: datos.email})
+          setData({ ...data, nombre: datos.name, email: datos.email });
         } else {
-          throw new Error("Credenciales invalidas");
+          throw new Error("No hay prestamos");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {console.log(error); setErrorL(true)});
   }
+
+  function cargarDatos() {
+    fetch("http://localhost:5000/loan", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((prestamos) => {
+        setDataPr(
+          prestamos.filter((prestamo) => prestamo.user.email == data.email)
+        );
+      });
+
+    fetch("http://localhost:5000/investment", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((inversiones) => {
+        setDataIn(
+          inversiones.filter((inversion) => inversion.user.email == data.email)
+        );
+      });
+  }
+
+  useEffect(() => {
+    if (dataIn[0] == null) {
+    } else {
+        dataIn.map((inv) =>
+          data.movimientos.push({
+            tipo: "Inversión",
+            monto: inv.invested_amount,
+            fecha: getDate(),
+            saldo: inv.available_amount,
+            estado: true,
+          })
+        );
+    }
+  }, [dataIn]);
+
+  useEffect(() => {
+    if (dataPr[0] == null) {
+    } else {
+        dataPr.map((pr) =>
+          data.movimientos.push({
+            tipo: "Préstamo",
+            monto: pr.amount,
+            fecha: getDate(),
+            saldo: data.saldo,
+            estado: true,
+          })
+        );
+
+        navigate("/userpanel");      
+    }
+  }, [dataPr]);
 
   return (
     <div className="login">
@@ -144,7 +225,15 @@ function Login() {
                 </div>
               </div>
 
-              <button type="submit">Ingresar</button>
+              {confirmL === false ? (
+                <button type="submit" onClick={() => errorL === true ? setConfirmL(false) : setConfirmL(true)}>
+                  Login
+                </button>
+              ) : (
+                <button onClick={() => cargarDatos()}>Ingresar</button>
+              )}
+
+              {errorL === true && <p style={{color: "red"}}>Datos incorrectos, revise su correo y contraseña.</p>}
             </form>
           </div>
         </motion.div>

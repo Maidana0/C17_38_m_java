@@ -48,21 +48,22 @@
 .listaM{
     width: 100%;
     height: calc(90% - 40px);
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
+    align-items: center;*/
     overflow-y: auto;
 }
 .mov{
-    width: 50%;
+    width: 80%;
     height: 70px;
     background-color: var(--color1);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 .actividadDesc{
     width: 40%;
