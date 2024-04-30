@@ -1,43 +1,123 @@
 .Finalprest-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #ffffff; /* o cualquier otro color de fondo que necesites */
-    height: 100vh; /* Asegura que tome toda la altura de la pantalla */
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* o cualquier otro color de fondo que necesites */
+  text-align: center;
+}
+
+.Finalprest-container h1 {
+  font-size: 2em;
+  color: #000000;
+  margin-bottom: 0.5em;
   
-  .Finalprest-container h1 {
-    font-size: 2em; /* ajusta el tamaño como lo necesites */
-    color: #000000; /* color del texto */
-    margin-bottom: 0.5em; /* espacio debajo del título */
-  }
+}
+
+.subtitulo-end {
+  font-size: 1.5em;
+  color: #000000;
+  margin-bottom: 1em;
+  visibility: visible;
+}
+
+.texto-oculto-end{
+  font-size: 1.5em;
+  color: #000000;
+  margin-bottom: 1em;
+  display: none ;
+}
+
+.Finalprest-container p {
+  color: #000000;
+  margin-bottom: 2em;
+  font-size: 0.9rem;
   
-  .Finalprest-container h2 {
-    font-size: 1.5em;
-    color: #000000;
-    margin-bottom: 1em;
-  }
-  
-  .Finalprest-container p {
-    color: #000000;
-    margin-bottom: 2em;
-  }
-  
-  .inicio-button {
-    padding: 10px 20px;
+}
+
+.inicio-button {
+  padding: 20px 26px;
     border-radius: 20px;
     border: none;
-    background-color: #000000; /* Color de fondo del botón */
-    color: #ffffff; /* Color de texto del botón */
+    background-color: #000000;
+    color: #ffffff;
     font-size: 1em;
     cursor: pointer;
+    text-decoration: none;
+}
+
+/* Añade estilos adicionales para hover, focus, etc., si es necesario */
+.inicio-button:hover {
+  background-color: #333333; /* Color más oscuro para el hover */
+}
+
+.imagen-correo{
+  visibility: hidden;
+}
+
+@media (width > 720px) {
+  .cuerpo-end {
+    width: 20%;
+}
+  .imagen-correo {
+    visibility: visible;
+    width: 95%;
+}
+.Finalprest-container h1{
+  font-size: 3rem;
+
+}
+  .subtitulo-end  {
+    
+    visibility: hidden;
   }
+  .texto-oculto-end {
+    display: block;
+    color: #000000a6;
+    font-size: 1.5rem;
+}
+.Finalprest-container p {
+  font-size: 1.2rem;
+}
   
-  /* Añade estilos adicionales para hover, focus, etc., si es necesario */
-  .inicio-button:hover {
-    background-color: #333333; /* Color más oscuro para el hover */
+
+}
+@media (width < 720px) {
+  .cuerpo-end {
+    width: 20%;
+}
+  .imagen-correo {
+   
+    width: 95%;
+}
+.Finalprest-container h1{
+  font-size: 3rem;
+
+}
+  .subtitulo-end  {
+    
+    visibility: visible;
   }
+  .texto-oculto-end {
   
+    color: #000000a6;
+    font-size: 1.5rem;
+}
+.Finalprest-container p {
+  font-size: 1.2rem;
+}
+  
+
+}
+
+@media (min-width: 1200px) {
+  .cuerpo-end {
+    width: 40%;
+}
+}
+@media (max-width: 1200px) {
+  .cuerpo-end {
+    width: 40%;
+}
+}

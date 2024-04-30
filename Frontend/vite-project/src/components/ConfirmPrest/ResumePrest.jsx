@@ -27,35 +27,43 @@ function ResumePrest(props){
     let totalDevo = (value*cuota)+Interes;
      
     return (
-        <div className="resumen-container" >
-            
-            <h2>Revisa si esta todo bien</h2>
-            <div className="resumen-item ">
-                <span ><img src="images/icons/tarjetacredito.svg" alt="" /> Recibis</span>
-                <span>{amount}</span>
+        <div className="resumen-container">
+          <div className="container-tituloresumen">
+                 <h2>Revisa si está todo bien</h2>
+          </div>
+          <div className="cajas-resumen">
+          <div className="resumen-item">
+            <span className="resume-redondo"><img src="images/icons/tarjetacredito.svg" alt="" /> Recibís</span>
+            <span className="texto-resumen-valor">${amount.toLocaleString('es-AR')}</span>
+          </div>
+          <div className="resumen-item">
+            <span className="titulo-pagas"><img src="images/icons/Moneda.svg" alt="" /> Pagás</span>
+            <div className="titulo-pagas-bloque">
+              <span className="contenido-pagas">
+                {selectedOption === 1
+                  ? `${cuota} x $${(amount / 12).toLocaleString('es-AR')}`
+                  : selectedOption === 2
+                  ? `${cuota} x $${(amount / 6).toLocaleString('es-AR')}`
+                  : `${cuota} x $${(amount / 3).toLocaleString('es-AR')}`}
+              </span>
+              <span className="contenido-pagas-texto">Cuotas fijas</span>
             </div>
-            <div className="resumen-item ">
-                <span className="titulo-pagas"> <img src="images/icons/Moneda.svg" alt="" /> Pagas</span>
-                <span className="contenido-pagas"> {selectedOption === 1
-                    ? `${cuota} x ${Math.round(amount / 12).toLocaleString()}`
-                    : selectedOption === 2
-                    ? `${cuota} x ${Math.round(amount / 6).toLocaleString()}`
-                    : `${cuota} x ${Math.round(amount / 3).toLocaleString()}`}
-                Cuotasfijas
-                </span>
-
-            </div>
-            <div className="resumen-item ">
-                <span> <img src="images/icons/billetes.svg" alt="" /> En total debes</span>
-                <span>{totalDevo}</span>
-            </div>
-            <div className="resumen-item ">
-                <span> <img src="images/icons/calendario.svg" alt="" /> Pagas la primera cuota el </span>
-                <span>{startDate}</span>
-            </div>
-            <p>Al confirmar estas aceptando los términos condiciones de este préstamo.</p>
+          </div>
+          <div className="resumen-item">
+            <span className="resume-redondo"><img src="images/icons/billetes.svg" alt="" /> En total devolvés</span>
+            <span className="texto-resumen-valor">${totalDevo.toLocaleString('es-AR')}</span>
+          </div>
+          <div className="resumen-item">
+            <span className="resume-redondo"><img src="images/icons/calendario.svg" alt="" /> Pagás la primera cuota el</span>
+            <span className="texto-resumen-valor">{startDate}</span>
+          </div>
+          </div>
+          <div className="terminos">
+            <p>Al confirmar estás aceptando <strong>los términos y condiciones</strong> de este préstamo.</p>
+          </div>
         </div>
-    )
+      );
     }
+    
 
 export default ResumePrest;

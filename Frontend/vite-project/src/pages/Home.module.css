@@ -13,7 +13,7 @@
 }
 .panel0{
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,9 @@
 .articulo0{
     width: calc(100% - 10vh);
     height: calc(100% - 10vh);
-    background-color: var(--color1);
-    border: solid 1px var(--colorLine1);
+    background: rgb(222,223,251);
+    background: linear-gradient(0deg, rgba(222,223,251,1) 0%, rgba(244,244,255,1) 100%);
+    /*border: solid 1px var(--colorLine1);*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,9 +64,77 @@
     justify-content: flex-start;
     align-items: center;
 }
+.bCont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+}
 .imagen0Cont{
     width: 45%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    width: 95%;
+    height: auto;
+    aspect-ratio: 1;
+    background-image: url("https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755471/Cashfly/center_srjar6.webp");
+    background-size: cover;
+    overflow: hidden;
+}
+.aro{
+    position: relative;
+    width: 82%;
+    height: 82%;
+    top: 9%;
+    left: 9%;
+    animation: rotacion 12s linear infinite;
+}
+.fchica{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    top: -60%;
+    left: 55%; 
+    animation: zoom 1s ease-in infinite;
+}
+.fchico{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    top: -28%;
+    left: 4%; 
+    animation: zoom2 1s ease-in infinite;
+}
+.estrella{
+    position: relative;
+    width: 15%;
+    height: 15%;
+    top: -65%;
+    left: -40%;
+    animation: rotacion 12s linear infinite;  
+}
+.estrella2{
+    position: relative;
+    width: 13%;
+    height: 13%;
+    top: -11%;
+    left: 19%; 
+    animation: rotacion 12s linear infinite; 
+}
+.eye{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    top: -80%;
+    left: -42%; 
+    animation: zoom3 1s ease-in infinite;
 }
 /*----------- Seccion 0 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -86,15 +155,29 @@
     align-items: center;
     gap: 10%;
 }
+.tittleCont1, .tittleCont4{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 .titulo1{
     width: 100%;
     height: auto;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2.8rem;
+}
+.tittleCont1 p{
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.6rem;
 }
 .carrucelCont{
     width: 90%;
-    height: 70%;
+    height: 60%;
     min-height: 430px;
     display: flex;
     flex-direction: column;
@@ -105,7 +188,7 @@
 .carrucelCont::-webkit-scrollbar{
     display: none; 
 }
-.carrucel1{
+.carrucel1, .carrucel4{
     width: 100%;
     height: 100%;
     display: flex;
@@ -138,9 +221,80 @@
 .tip{
     width: 95%;
     height: 95%;
-    border-radius: 30px;
-    background-color: var(--color1);
+    border-radius: 30px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;  
+}
+.imgCont1a, .imgCont1b, .imgCont1c, .imgCont1d, .imgCont1e{
+    width: 60%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--colorViolet);
     border: solid 1px var(--colorLine1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgCont1a{
+    animation: colorA1 10s ease-out infinite;
+    animation-delay: 0;
+}
+.imgCont1b{
+    animation: colorA1 10s ease-out infinite;
+    animation-delay: 2s;
+}
+.imgCont1c{
+    animation: colorA1 10s ease-out infinite;
+    animation-delay: 4s;
+}
+.imgCont1d{
+    animation: colorA1 10s ease-out infinite;
+    animation-delay: 6s;
+}
+.imgCont1e{
+    animation: colorA1 10s ease-out infinite;
+    animation-delay: 8s;
+}
+.imgCont1 img{
+    width: 50%;
+    height: 50%;
+}
+.step1img{
+    animation: zoomA1 4s linear infinite;
+}
+.step2img{
+    animation: zoomA1 4s linear infinite;
+}
+.step3img{
+    animation: zoomA1 4s linear infinite;
+}
+.step4img{
+    animation: zoomA1 4s linear infinite;
+}
+.step5img{
+    animation: zoomA1 4s linear infinite;
+}
+.tipTCont{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.tipTCont h2{
+    text-align: center;
+}
+.tip p{
+    width: 80%;
+    height: auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.2rem;
 }
 /*----------- Seccion 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -150,26 +304,316 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 .articulo2{
-    width: 100%;
-    height: 90%;
+    width: calc(100% - 10vh);
+    height: 70%;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10%;
-    background-color: var(--color1);
+    /*background-color: var(--color1);*/
     border: solid 1px var(--colorLine1);
+    background-image: url("https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755471/Cashfly/fondo2_m4ffyw.webp");
+    background-size: cover;
+    background-position: center;
+}
+.articulo2 p{
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
 }
 .titulo2{
+    width: 50%;
+    height: auto;
+    text-align: center;
+    font-size: 3rem;
+}
+/*----------- Seccion 2 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*----------- Seccion 3 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.seccion3{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.articulo3{
+    width: calc(100% - 10vh);
+    height: calc(100% - 10vh);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.tittleCont3{
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tCont3{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 20px;
+}
+.tCont3 h2{
+    font-size: 2.4rem;
+}
+.tCont3 p{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.tCont3b{
+    width: 10%;
+    height: 100%;
+}
+
+.panel3{
+    width: 80%;
+    height: 70%;
+    display:-webkit-inline-box;
+    align-items: center;
+    overflow-x: hidden;
+}
+.carrucel3{
+    width: 300%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: scrollX3 20s linear infinite;
+}
+.carrucel3:hover{
+    animation-play-state: paused;
+}
+.card{
+    width: 10%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color1);
+    border-radius: 20px;
+}
+.card img{
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+}
+.card h2{
     width: 80%;
     height: auto;
     text-align: center;
-    font-size: 3.2rem;
 }
-/*----------- Seccion 2 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.card p{
+    width: 80%;
+    height: auto;
+    text-align: center;
+}
+.estrellasCont{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.estrellasCont img{
+    height: auto;
+    width: 10%;
+}
+/*----------- Seccion 3---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.seccion4{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkGuide img:hover{
+    scale: 1.1;
+}
+.imgCont4{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgCont4 img{
+    width: 100%;
+    height: 100%;
+}
+.tipTCont4{
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.tipTCont4 h2{
+    font-size: 0.8rem;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+.tipTCont4 p{
+    width: 100%;
+    height: auto;
+    font-size: 0.9rem;
+    text-align: left;
+}
+.linkGuide{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.linkGuide h2{
+    font-size: 1.1rem;
+    width: 80%;
+    height: auto;
+}
+.linkGuide img{
+    height: auto;
+    width: 10%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.tipCont{
+    width: 25%;
+    min-width: 320px;
+    height: auto;
+    aspect-ratio: 9/12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tittleCont4 p{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+/*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*----------- Animacion ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@keyframes scrollX3 {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-67.5%);
+    }
+}
+
+@keyframes rotacion {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes zoom2 {
+    0%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.9);
+    }
+}
+@keyframes zoom3 {
+    0%{
+        transform: scale(0.8);
+    }
+    75%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.8);
+    }
+}
+@keyframes zoomA1 {
+    0%{
+        transform: rotate(0) ;
+    }
+    2%{
+        transform: scaleX(1) ;
+    }
+    49%{
+        transform: scaleX(-1) ;
+    }
+    51%{
+        transform: scaleX(-1) ;
+    }
+    98%{
+        transform: scaleX(1) ;
+    }
+    100%{
+        transform: scaleX(1) ;
+    }
+}
+@keyframes colorA1 {
+    0%{
+        background-color: var(--colorViolet);
+        scale: 1;
+    }
+    10%{
+        background-color: var(--colorViolet);
+        scale: 1;
+    }
+    15%{
+        background-color: rgb(160, 161, 204);
+        scale: 1.1;
+    }
+    20%{
+        background-color: var(--colorViolet);
+        scale: 1;
+    }
+    100%{
+        background-color: var(--colorViolet);
+        scale: 1;
+    }
+}
+/*----------- Animacion ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 
 @media screen and (width < 1200px) {
     .titulo0{
@@ -189,35 +633,45 @@
     .titulo2{
         font-size: 2.6rem;
     }
+    .tip p{
+        font-size: 1rem;
+    }
+    .tCont3 h2{
+        font-size: 2rem;
+    }
+    .tCont3 p{
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (aspect-ratio < 12/10) {
     .articulo0Cont{
-        justify-content: center;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
         align-items: center;
     }
     .presentacion0Cont{
         width: 100%;
-        height: 100%;
-        align-items: center;
+        height: 45%;
     }
     .imagen0Cont{
-        width: 0%;
-        height: 100%;
-    }
-    .titulo0{
-        text-align: center;
-    }
-    .descripcion0{
-        text-align: center;
+        width: 100%;
+        height: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .boton0Cont{
         justify-content: center;
         align-items: center;
     }
+    .boton0Cont button{
+        font-size: 0.8rem;
+    }
+    
 }
 
-@media screen and (width < 800px) {
+@media screen and ((width < 800px) or (height < 640px)) {
     .titulo0{
         font-size: 2rem;
     }
@@ -226,7 +680,7 @@
     }
     
     .titulo1{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .articulo1{
@@ -234,6 +688,7 @@
     }
     .titulo2{
         font-size: 1.8rem;
+        width: 80%;
     }
     .articulo0{
         width: calc(100% - 5vh);
@@ -243,18 +698,55 @@
         width: calc(100% - 5vh);
         height: calc(100% - 5vh);
     }
+    .card h2{
+        font-size: 0.8rem;
+    }
+    .card p{
+        font-size: 0.8rem;
+    }
+    .tCont3{
+        width: 100%;
+    }
+    .tCont3 h2{
+        font-size: 1.8rem;
+    }
+    .tCont3 p{
+        font-size: 1rem;
+    }
+    .articulo2 p{
+        font-size: 1.2rem;
+        font-weight: 500;
+        width: 80%;
+        text-align: center;
+    }
+    .tipTCont4 p{
+        font-size: 0.8rem;
+    }
+    .tittleCont4{
+        gap: 10px;
+    }
+    .tittleCont4 p{
+        font-size: 1rem;
+    }
 }
 
 @media screen and (aspect-ratio < 1) {
     .carrucelCont{
         width: 320px;
-        height: 70%;
+        height: 60%;
         display: block;
         scroll-behavior: smooth;  
         scroll-snap-type: x mandatory;
     }
     .carrucel1{
-        width: 400%;
+        width: 500%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .carrucel4{
+        width: 300%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
@@ -267,5 +759,20 @@
         width: 100%;
         height: auto;
         scroll-snap-align: center;
+    }
+    .tipTCont{
+        width: 100%;
+        height: 30%;
+    }
+    .tittleCont1 p{
+        font-size: 1rem;
+    }
+    .articulo1{
+        width: calc(100% - 10vh);
+        height: calc(100% - 10vh);
+        gap: 0;
+    }
+    .carrucel3{
+        width: 900%;
     }
 }

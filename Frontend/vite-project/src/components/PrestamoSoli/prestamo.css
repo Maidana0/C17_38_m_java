@@ -1,9 +1,9 @@
 .Prestamo{
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 }
 
 
@@ -13,10 +13,9 @@
 }
 
 
-.Prestamo{
-  background-color: #ffffff;
+.Prestamo {
+  background-color: #F9F9F9;
 }
-
 .loan-amount-slider {
     
   padding: 20px;
@@ -39,11 +38,12 @@
   margin: 20px auto; /* Centrar el campo de texto */
   padding: 10px;
   font-size: 1.5em;
-  border: 2px solid #000000;
+  /* border: 2px solid #000000; */
   border-radius: 20px;
   width: 100%; /* Puede que quieras un ancho específico o porcentaje */
   box-sizing: border-box; /* Incluye padding y border en el ancho total */
   text-align: center; /* Alinea el texto al centro */
+  background-color: #FFFFFF;
 }
 .amount-display {
   display: flex;
@@ -85,7 +85,7 @@
   display: flex;
   font-weight: 600;
   font-size: 0.8rem;
-  background-color: gainsboro;
+  background-color: #DEDFFB;
   border-radius: 10px;
   margin: 20px;
   padding: 6px 19px;
@@ -98,12 +98,12 @@
 } 
 
 
-@media (max-width: 430px) {
-  .formulario {
-    min-width: 40%; /* Más ancho en pantallas pequeñas para usar más espacio */
-    padding: 1rem;
-  }
+.rangebar {
+   /* Altura de la barra */
+  background: #eb0e0e; /* Color de fondo de la barra */
 }
+
+
 .error-message {
   color: red;
   margin-top: 10px;
@@ -111,3 +111,120 @@
 
 
 
+@media (min-width: 1200px) {
+  .amount-input{
+    padding: 30px;
+    font-size: 3.3rem;
+ } 
+.loan-amount-slider{
+  width: 48%;
+  margin-bottom: 0rem;
+  
+}
+.payment-option {
+  margin-bottom: 1rem; /* Espaciado entre las opciones */
+}
+
+.option-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  /* Agrega estilos adicionales aquí */
+}
+
+.p1{
+  font-weight: 600;
+  font-size: 2.2rem;
+  text-align: left;
+}
+.labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.p2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 10px 5px 0;
+}
+.p3 {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #DEDFFB;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px 67px;
+}
+.payment-option label:before {
+  content: '';
+  display: inline-block;
+  margin-right: 23px;
+  margin-left: 108px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #454342;
+  border-radius: 50%;
+  background-color: white;
+  
+  font-size: 1.3rem;
+}
+.option-text, .option-value {
+  display: flex;
+  align-items: center;
+  margin-right: 92px;
+}
+
+
+
+}
+
+@media (max-width: 1500px) {
+  .payment-option label:before {
+    margin-left: 0px;
+    
+}
+.option-text, .option-value {
+  
+  margin-right: 0px;
+}
+}
+
+
+
+
+.input-with-symbol {
+  position: relative;
+  display: inline-block;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 222px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+  pointer-events: none;
+  font-size: 46px;
+  font-weight: 500;
+}
+
+.amount-input {
+  padding-left: 20px; /* Espacio para el símbolo de moneda */
+  /* Asegúrate de que el resto de tu estilo de .amount-input no interfiera con esto */
+}
+
+
+@media (max-width:1400px){
+  .currency-symbol{
+    left: 178px;
+  }
+}
+@media (max-width: 1200px){
+  .currency-symbol{
+    left: 145px;
+    font-size: 21px;
+  }
+}

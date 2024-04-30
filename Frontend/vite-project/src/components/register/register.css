@@ -1,68 +1,52 @@
-.register{
+.register-container {
+  width: 45vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.column-1-register{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.registerCont {
-  background-color: #ffffff;
-  color: black;
-  box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.15);
-  border-radius: 2rem;
-  width: 400px;
-  min-height: 400px;
-  padding: 2rem;
-  margin: 0 auto;
-}
-
-form {
-  label {
-    display: block;
-    font-size: 1rem;
-  }
-}
-
-button {
-  padding: 1rem 3rem;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: #0f470a;
-  border: none;
-  color: #ffffff;
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: 0.25s ease;
-
-  &:hover {
-    background-color: rgba(3, 17, 2, 0.9);
-  }
-}
-
-input {
-  background-color: #dadee1;
-  color: #1b1f24;
-  border: none;
-  outline: none;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  width: 100%;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-}
-.checkbox-container {
+.registerCont-register{
+  width: 60%;
+  height: 80%;
   display: flex;
-  align-items: left; /* Centrar verticalmente */
-}
-
-input[type="checkbox"] {
-  margin-right: 2px;
-  margin-bottom: 10px;
-}
-
-.btn-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
+}
+.header-register {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.registerForm {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+}
+
+.registerForm input {
+  background-color: white;
+  border-radius: 0;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+@media screen and (aspect-ratio < 12/10) {
+  .register-container {
+    width: 90vw;
+    height: 55vh;
+  }
 }

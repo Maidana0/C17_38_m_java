@@ -1,7 +1,7 @@
 .payment-options {
   display: flex;
   flex-direction: column;
-  background: #FFF;
+  /* background: #FFF; */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -19,6 +19,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  
 }
 
 .payment-option input[type="radio"] {
@@ -58,6 +59,8 @@
   border: 1px solid #ccc;
   border-radius: 20px;
   margin-bottom: 10px;
+  background-color: #FCF7F5;
+    opacity: 0.5;
   
 }
 
@@ -76,7 +79,7 @@
 /* Estilos para el "fake" radio button cuando está seleccionado */
 .payment-option input[type="radio"]:checked + label:before {
   content: '✓'; /* Carácter Unicode para la marca de verificación */
-  color: #454342; /* Color de tu preferencia */
+  color: #FFAD09; /* Color de tu preferencia */
   font-size: 18px; /* Tamaño ajustable a tu preferencia */
   text-align: center;
   line-height: 20px; /* Ajusta para centrar verticalmente el check dentro del círculo */
@@ -84,8 +87,9 @@
 
 /* Estilos adicionales para cuando el radio está seleccionado */
 .payment-option input[type="radio"]:checked + label {
-  background-color: #f0f0f0; /* Fondo cuando está seleccionado */
-  border: 1px solid #454342; /* Borde cuando está seleccionado */
+  background-color: #FFFFFF;
+  border: 1px solid #bbb1ac;
+  opacity: unset;
 }
 
 .option-text,
