@@ -11,33 +11,31 @@ Frontend: https://cashfly.vercel.app/
 
 Figma: https://www.figma.com/file/ruxiB5Ew5ZYoh9RE0C9HbC/No-Country-C17-38-m-Java?type=whiteboard&node-id=33-338&t=4AEIA62uckB8DF2n-0
 
-Miro: https://miro.com/app/board/uXjVKbDgeYI=/
-
 ## Autores
 
-DISEÑO UX/UI:
+#### DISEÑO UX/UI:
 
 - Ana Laura Sidan [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-laura-sidan/)
 - Andrea Rossero [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrea-rosero-v/)
 
-FRONTEND:
+#### FRONTEND:
 
-- Walter Sanchez [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waltersanchez26/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Z4nchez)
-- Edivaldo Gomes [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edivaldo-gomes/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://www.github.com/edivaldogomes)
-- Franco Maidana [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maidana-franco07), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/Maidana0)
-- Daniel Sanabria [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielsanabriarivera/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/dqniel12396)
+- Walter Sanchez [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/waltersanchez26/)
+- Edivaldo Gomes [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edivaldo-gomes/)
+- Franco Maidana [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maidana-franco07)
+- Daniel Sanabria [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielsanabriarivera/)
 
-BACKEND:
+#### BACKEND:
 
 - Vanesa Najera [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vanessa-najera-44b179bb/)
 - Bruno Sandoval [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bruno-sandoval-5b8b83173/)
 - Milena Ajerez [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/milenajerez/)
 - Héctor Laguna [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-lag/)
 
-QA:
+#### QA:
 
 - Nicolas Theumer [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicotheumer27/)
-- Matías Saucedo [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/), [![GitHub](https://img.shields.io/badge/github-%23F0503C.svg?style=for-the-badge&logo=github)](https://github.com/matiasesaucedo)
+- Matías Saucedo [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matiasesaucedo/)
 
 
 ## 💻 Tecnologias
