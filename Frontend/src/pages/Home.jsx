@@ -26,12 +26,10 @@ const Home = () => {
   const inViewb = useInView(refb);
   const inViewc = useInView(refc);
 
-  const refS0 = useRef(null);
   const refS1 = useRef(null);
   const refS2 = useRef(null);
   const refS3 = useRef(null);
   const refS4 = useRef(null);
-  const isInViewS0 = useInView(refS0, { once: false });
   const isInViewS1 = useInView(refS1, { once: false });
   const isInViewS2 = useInView(refS2, { once: false });
   const isInViewS3 = useInView(refS3, { once: false });
@@ -50,55 +48,47 @@ const Home = () => {
 
   return (
     <div className={styles.Home}>
-      <motion.section
-        className={styles.seccion0}
-        ref={refS0}
-        initial={"isOff"}
-        animate={isInViewS0 === true ? "isOn" : "isOff"}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        variants={estilosDeCarga}
-      >
-        <div className={styles.panel0}>
-          <div className={styles.articulo0}>
-            <div className={styles.articulo0Cont}>
-              <div className={styles.presentacion0Cont}>
-                <h2 className={styles.titulo0}>Potenciá tu futuro:</h2>
-                <p className={styles.descripcion0}>
-                  Descubrí la primera plataforma P2P que te guía para sacar tu
-                  primer préstamo personal y hacer crecer tu dinero.
-                </p>
-                <div className={styles.boton0Cont}>
-                  <div to="/prestamos" className={styles.bCont}>
-                    <button
-                      className="buttonB"
-                      onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/prestamos")}
-                    >
-                      Simular préstamo
-                    </button>
-                    <button onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/inversiones")}>
-                      Invertir
-                    </button>
-                  </div>
+      <div className={styles.panel0}>
+        <div className={styles.articulo0}>
+          <div className={styles.articulo0Cont}>
+            <div className={styles.presentacion0Cont}>
+              <h2 className={styles.titulo0}>Potenciá tu futuro:</h2>
+              <p className={styles.descripcion0}>
+                Descubrí la primera plataforma P2P que te guía para sacar tu
+                primer préstamo personal y hacer crecer tu dinero.
+              </p>
+              <div className={styles.boton0Cont}>
+                <div to="/prestamos" className={styles.bCont}>
+                  <button
+                    className="buttonB"
+                    onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/prestamos")}
+                  >
+                    Simular préstamo
+                  </button>
+                  <button onClick={() => user === null ? navigate("/iniciar-sesion") : navigate("/inversiones")}>
+                    Invertir
+                  </button>
                 </div>
               </div>
-              <div className={styles.imagen0Cont}>
-                <div className={styles.hero}>
-                  <img src="Aro.svg" alt="" className={styles.aro} />
-                  <img src="FotoChico.png" alt="" className={styles.fchico} />
-                  <img src="FotoChica.png" alt="" className={styles.fchica} />
-                  <img src="estrella.svg" alt="" className={styles.estrella} />
-                  <img src="estrella.svg" alt="" className={styles.estrella2} />
-                  <img
-                    src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313166/Cashfly/Group_64_veqynh.svg"
-                    className={styles.eye}
-                    alt=""
-                  />
-                </div>
+            </div>
+            <div className={styles.imagen0Cont}>
+              <div className={styles.hero}>
+                <img src="Aro.svg" alt="" className={styles.aro} />
+                <img src="FotoChico.png" alt="" className={styles.fchico} />
+                <img src="FotoChica.png" alt="" className={styles.fchica} />
+                <img src="estrella.svg" alt="" className={styles.estrella} />
+                <img src="estrella.svg" alt="" className={styles.estrella2} />
+                <img
+                  src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713313166/Cashfly/Group_64_veqynh.svg"
+                  className={styles.eye}
+                  alt=""
+                />
               </div>
             </div>
           </div>
         </div>
-      </motion.section>
+      </div>
+
       <motion.section
         className={styles.seccion1}
         initial={"isOff"}
@@ -274,7 +264,7 @@ const Home = () => {
           <div className={styles.tittleCont3}>
             <div className={styles.tCont3}>
               <h2 ref={refS3}>Usuarios felices</h2>
-              <p>
+              <p className={styles.descripcion3}>
                 Nuestros usuarios demuestran su conformidad y felicidad al poder
                 usar una aplicación que lo ayude a simplificar su vida.
               </p>
