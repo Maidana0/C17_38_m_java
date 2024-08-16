@@ -13,7 +13,7 @@ function UserPanel() {
     <div className={styles.UserPanel}>
       <div className={styles.PanelCont}>
         <div className={styles.headerCont} >
-          <h2 className={styles.titulo}>{`¡Hola ${user.name}!`}</h2>
+          <h2 className={styles.titulo}>{`¡Hola ${user?.name ?? "Franco"}!`}</h2>
           <p className={styles.titulo2}>Pedí préstamos o invertí en sólo minutos!</p>
         </div>
         {userP === 0 && <UserHome></UserHome>}

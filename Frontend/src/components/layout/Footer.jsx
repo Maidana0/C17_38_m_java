@@ -12,11 +12,6 @@ const Footer = () => {
         <img src="images/social-media/vector-twitter.svg" alt="twitter-social-media-icon" />
       </div>
 
-      <div>
-        <small>No Country 2024 - <strong>CashFly</strong></small>
-      </div>
-
-      <span>C17-38-M-JAVA</span>
     </footer>
   )
 }

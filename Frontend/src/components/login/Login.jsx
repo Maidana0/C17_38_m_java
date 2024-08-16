@@ -1,12 +1,14 @@
 import "./login.css";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import { UseContext } from "../context/Context";
+import { fake_user, UseContext } from "../context/Context";
 import { useInView, motion } from "framer-motion";
 import cIA from "../../data/contacts.json";
 
 function Login() {
+  const MODE = import.meta.env.VITE_MODE
+
   const {
     setUser,
     setContactosIA,
@@ -37,6 +39,17 @@ function Login() {
   }
 
   function findData(info) {
+    if (MODE === "only-front") {
+      setUser(fake_user)
+      setContactosIA(cIA);
+      setData({ ...data, nombre: fake_user.name, email: fake_user.email });
+      setDataPr([{ amount: 5000 }])
+      setDataIn([{
+        invested_amount: 5000,
+        available_amount: 5000
+      }])
+      return
+    }
     fetch("http://localhost:5000/users/login", {
       method: "POST",
       body: JSON.stringify({ email: info[0].value, password: info[1].value }),
@@ -56,7 +69,7 @@ function Login() {
           throw new Error("No hay prestamos");
         }
       })
-      .catch((error) => {console.log(error); setErrorL(true)});
+      .catch((error) => { console.log(error); setErrorL(true) });
   }
 
   function cargarDatos() {
@@ -94,32 +107,32 @@ function Login() {
   useEffect(() => {
     if (dataIn[0] == null) {
     } else {
-        dataIn.map((inv) =>
-          data.movimientos.push({
-            tipo: "Inversión",
-            monto: inv.invested_amount,
-            fecha: getDate(),
-            saldo: inv.available_amount,
-            estado: true,
-          })
-        );
+      dataIn.map((inv) =>
+        data.movimientos.push({
+          tipo: "Inversión",
+          monto: inv.invested_amount,
+          fecha: getDate(),
+          saldo: inv.available_amount,
+          estado: true,
+        })
+      );
     }
   }, [dataIn]);
 
   useEffect(() => {
     if (dataPr[0] == null) {
     } else {
-        dataPr.map((pr) =>
-          data.movimientos.push({
-            tipo: "Préstamo",
-            monto: pr.amount,
-            fecha: getDate(),
-            saldo: data.saldo,
-            estado: true,
-          })
-        );
+      dataPr.map((pr) =>
+        data.movimientos.push({
+          tipo: "Préstamo",
+          monto: pr.amount,
+          fecha: getDate(),
+          saldo: data.saldo,
+          estado: true,
+        })
+      );
 
-        navigate("/userpanel");      
+      navigate("/userpanel");
     }
   }, [dataPr]);
 
@@ -154,10 +167,7 @@ function Login() {
 
             <form
               className="formL"
-              onSubmit={(e) => {
-                e.preventDefault();
-                onSubmit(e.target);
-              }}
+              onSubmit={onSubmit}
             >
               <div className="formLoginCont">
                 <input
@@ -219,19 +229,21 @@ function Login() {
                 </div>
                 <div className="linkRegLogin">
                   <p>¿Aún no estás registrado? </p>
-                  <a href="/registrarme"> Registrate aquí</a>
+                  <Link to="/registrarme"> Registrate aquí</Link >
                 </div>
               </div>
 
-              {confirmL === false ? (
-                <button type="submit" onClick={() => errorL === true ? setConfirmL(false) : setConfirmL(true)}>
-                  Iniciar Sesión
-                </button>
-              ) : (
+              {/* {confirmL === false ? ( */}
+              <button type="submit"
+              // onClick={() => errorL === true ? setConfirmL(false) : setConfirmL(true)}
+              >
+                Iniciar Sesión
+              </button>
+              {/* ) : (
                 <button onClick={() => cargarDatos()}>Ingresar</button>
-              )}
+              )} */}
 
-              {errorL === true && <p style={{color: "red"}}>Datos incorrectos, revise su correo y contraseña.</p>}
+              {errorL === true && <p style={{ color: "red" }}>Datos incorrectos, revise su correo y contraseña.</p>}
             </form>
           </div>
         </motion.div>

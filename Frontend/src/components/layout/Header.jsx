@@ -53,10 +53,7 @@ const Header = () => {
                       setEstadoUsuario(1);
                       setUser(null);
                     }}
-                    style={{
-                      borderRadius: "38px",
-                      padding: ".5rem 1rem", border: "solid 1px #000"
-                    }}>cerrar sesión</Link>
+                    >cerrar sesión</Link>
                 </li>
               </ul>
             </nav>
