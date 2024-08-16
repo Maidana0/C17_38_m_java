@@ -1,42 +1,39 @@
-.Home{
+.Home {
     background-color: white;
     color: black;
 }
 
 /*----------- Seccion 0 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.seccion0{
+
+.panel0 {
     width: 100%;
-    height: 100vh;
+    height: 99vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-.panel0{
-    width: 100%;
-    height: calc(100% - 50px);
-    display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
-.articulo0{
-    width: calc(100% - 10vh);
-    height: calc(100% - 10vh);
-    background: rgb(222,223,251);
-    background: linear-gradient(0deg, rgba(222,223,251,1) 0%, rgba(244,244,255,1) 100%);
+
+.articulo0 {
+    width: 100%;
+    height: 100%;
+    background: rgb(222, 223, 251);
+    background: linear-gradient(0deg, rgba(222, 223, 251, 1) 0%, rgba(244, 244, 255, 1) 100%);
     /*border: solid 1px var(--colorLine1);*/
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 6px;
 }
-.articulo0Cont{
+
+.articulo0Cont {
     width: calc(100% - 20vh);
     height: calc(100% - 20vh);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.presentacion0Cont{
+
+.presentacion0Cont {
     width: 45%;
     height: 100%;
     display: flex;
@@ -45,26 +42,32 @@
     align-items: flex-start;
     gap: 6%;
 }
-.titulo0{
+
+.titulo0 {
     width: 100%;
     height: auto;
     font-size: 3.6rem;
     text-align: left;
+    text-wrap: nowrap;
 }
-.descripcion0{
+
+.descripcion0 {
     width: 100%;
     height: auto;
     font-size: 2rem;
     text-align: left;
+    line-height: 1.5em;
 }
-.boton0Cont{
+
+.boton0Cont {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.bCont{
+
+.bCont {
     width: 100%;
     height: 100%;
     display: flex;
@@ -73,14 +76,21 @@
     gap: 20px;
     text-decoration: none;
 }
-.imagen0Cont{
+
+.bCont button {
+    text-wrap: nowrap;
+    width: auto;
+}
+
+.imagen0Cont {
     width: 45%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.hero{
+
+.hero {
     width: 95%;
     height: auto;
     aspect-ratio: 1;
@@ -88,7 +98,8 @@
     background-size: cover;
     overflow: hidden;
 }
-.aro{
+
+.aro {
     position: relative;
     width: 82%;
     height: 82%;
@@ -96,66 +107,74 @@
     left: 9%;
     animation: rotacion 12s linear infinite;
 }
-.fchica{
+
+.fchica {
     position: relative;
     width: 20%;
     height: 20%;
     top: -60%;
-    left: 55%; 
+    left: 55%;
     animation: zoom 1s ease-in infinite;
 }
-.fchico{
+
+.fchico {
     position: relative;
     width: 20%;
     height: 20%;
     top: -28%;
-    left: 4%; 
+    left: 4%;
     animation: zoom2 1s ease-in infinite;
 }
-.estrella{
+
+.estrella {
     position: relative;
     width: 15%;
     height: 15%;
     top: -65%;
     left: -40%;
-    animation: rotacion 12s linear infinite;  
+    animation: rotacion 12s linear infinite;
 }
-.estrella2{
+
+.estrella2 {
     position: relative;
     width: 13%;
     height: 13%;
     top: -11%;
-    left: 19%; 
-    animation: rotacion 12s linear infinite; 
+    left: 19%;
+    animation: rotacion 12s linear infinite;
 }
-.eye{
+
+.eye {
     position: relative;
     width: 10%;
     height: 10%;
     top: -80%;
-    left: -42%; 
+    left: -42%;
     animation: zoom3 1s ease-in infinite;
 }
+
 /*----------- Seccion 0 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Seccion 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.seccion1{
+.seccion1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articulo1 {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.articulo1{
-    width: calc(100% - 10vh);
-    height: calc(100% - 20vh);
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10%;
 }
-.tittleCont1, .tittleCont4{
+
+.tittleCont1,
+.tittleCont4 {
     width: 80%;
     height: 20%;
     display: flex;
@@ -164,18 +183,21 @@
     align-items: center;
     gap: 20px;
 }
-.titulo1{
+
+.titulo1 {
     width: 100%;
     height: auto;
     text-align: center;
     font-size: 2.8rem;
 }
-.tittleCont1 p{
+
+.tittleCont1 p {
     font-weight: 500;
     text-align: center;
     font-size: 1.6rem;
 }
-.carrucelCont{
+
+.carrucelCont {
     width: 90%;
     height: 60%;
     min-height: 430px;
@@ -185,17 +207,21 @@
     align-items: flex-start;
     overflow-x: scroll;
 }
-.carrucelCont::-webkit-scrollbar{
-    display: none; 
+
+.carrucelCont::-webkit-scrollbar {
+    display: none;
 }
-.carrucel1, .carrucel4{
+
+.carrucel1,
+.carrucel4 {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.paginaCont{
+
+.paginaCont {
     width: 100%;
     height: 3%;
     display: none;
@@ -203,14 +229,16 @@
     align-items: center;
     gap: 10px;
 }
-.pagina{
+
+.pagina {
     width: 10px;
     height: 10px;
     border-radius: 5px;
     background-color: rgb(189, 189, 189);
     transition: all 0.5s ease-in-out;
 }
-.tipCont{
+
+.tipCont {
     width: 22%;
     height: auto;
     aspect-ratio: 9/12;
@@ -218,16 +246,22 @@
     justify-content: center;
     align-items: center;
 }
-.tip{
+
+.tip {
     width: 95%;
     height: 95%;
-    border-radius: 30px; 
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
 }
-.imgCont1a, .imgCont1b, .imgCont1c, .imgCont1d, .imgCont1e{
+
+.imgCont1a,
+.imgCont1b,
+.imgCont1c,
+.imgCont1d,
+.imgCont1e {
     width: 60%;
     height: auto;
     aspect-ratio: 1;
@@ -238,46 +272,58 @@
     justify-content: center;
     align-items: center;
 }
-.imgCont1a{
+
+.imgCont1a {
     animation: colorA1 10s ease-out infinite;
     animation-delay: 0;
 }
-.imgCont1b{
+
+.imgCont1b {
     animation: colorA1 10s ease-out infinite;
     animation-delay: 2s;
 }
-.imgCont1c{
+
+.imgCont1c {
     animation: colorA1 10s ease-out infinite;
     animation-delay: 4s;
 }
-.imgCont1d{
+
+.imgCont1d {
     animation: colorA1 10s ease-out infinite;
     animation-delay: 6s;
 }
-.imgCont1e{
+
+.imgCont1e {
     animation: colorA1 10s ease-out infinite;
     animation-delay: 8s;
 }
-.imgCont1 img{
+
+.imgCont1 img {
     width: 50%;
     height: 50%;
 }
-.step1img{
+
+.step1img {
     animation: zoomA1 4s linear infinite;
 }
-.step2img{
+
+.step2img {
     animation: zoomA1 4s linear infinite;
 }
-.step3img{
+
+.step3img {
     animation: zoomA1 4s linear infinite;
 }
-.step4img{
+
+.step4img {
     animation: zoomA1 4s linear infinite;
 }
-.step5img{
+
+.step5img {
     animation: zoomA1 4s linear infinite;
 }
-.tipTCont{
+
+.tipTCont {
     width: 100%;
     height: 50%;
     display: flex;
@@ -286,66 +332,71 @@
     align-items: center;
     gap: 10px;
 }
-.tipTCont h2{
+
+.tipTCont h2 {
     text-align: center;
 }
-.tip p{
+
+.tip p {
     width: 80%;
     height: auto;
     font-weight: 500;
     text-align: center;
     font-size: 1.2rem;
 }
+
 /*----------- Seccion 1 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Seccion 2 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.seccion2{
+.seccion2 {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.articulo2{
-    width: calc(100% - 10vh);
-    height: 70%;
+
+.articulo2 {
+    width: 70%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    gap: 35px;
+    margin: 1rem auto;
+    padding: 2rem 0;
     /*background-color: var(--color1);*/
     border: solid 1px var(--colorLine1);
     background-image: url("https://res.cloudinary.com/dabb8jxxh/image/upload/v1713755471/Cashfly/fondo2_m4ffyw.webp");
     background-size: cover;
     background-position: center;
 }
-.articulo2 p{
+
+.articulo2 p {
     font-size: 1.8rem;
     font-weight: 500;
-    width: 50%;
+    width: 85%;
     text-align: center;
 }
-.titulo2{
-    width: 50%;
+
+.titulo2 {
+    width: 85%;
     height: auto;
     text-align: center;
     font-size: 3rem;
 }
+
 /*----------- Seccion 2 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Seccion 3 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.seccion3{
+.seccion3 {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.articulo3{
-    width: calc(100% - 10vh);
-    height: calc(100% - 10vh);
+
+.articulo3 {
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -353,14 +404,16 @@
     align-items: center;
     gap: 10%;
 }
-.tittleCont3{
+
+.tittleCont3 {
     width: 90%;
     height: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.tCont3{
+
+.tCont3 {
     width: 80%;
     height: 100%;
     display: flex;
@@ -369,26 +422,30 @@
     align-items: flex-start;
     gap: 20px;
 }
-.tCont3 h2{
+
+.tCont3 h2 {
     font-size: 2.4rem;
 }
-.tCont3 p{
+
+.tCont3 p {
     font-size: 1.6rem;
     font-weight: 500;
 }
-.tCont3b{
+
+.tCont3b {
     width: 10%;
     height: 100%;
 }
 
-.panel3{
-    width: 80%;
+.panel3 {
+    width: 98%;
     height: 70%;
-    display:-webkit-inline-box;
+    display: -webkit-inline-box;
     align-items: center;
     overflow-x: hidden;
 }
-.carrucel3{
+
+.carrucel3 {
     width: 300%;
     height: 100%;
     display: flex;
@@ -396,10 +453,12 @@
     align-items: center;
     animation: scrollX3 20s linear infinite;
 }
-.carrucel3:hover{
+
+.carrucel3:hover {
     animation-play-state: paused;
 }
-.card{
+
+.card {
     width: 10%;
     height: 80%;
     display: flex;
@@ -409,22 +468,26 @@
     background-color: var(--color1);
     border-radius: 20px;
 }
-.card img{
-    width: 50%;
+
+.card img {
+    width: 35%;
     height: auto;
     aspect-ratio: 1;
 }
-.card h2{
+
+.card h2 {
     width: 80%;
     height: auto;
     text-align: center;
 }
-.card p{
+
+.card p {
     width: 80%;
     height: auto;
     text-align: center;
 }
-.estrellasCont{
+
+.estrellasCont {
     width: 80%;
     height: 10%;
     display: flex;
@@ -432,14 +495,16 @@
     align-items: center;
     gap: 10px;
 }
-.estrellasCont img{
+
+.estrellasCont img {
     height: auto;
     width: 10%;
 }
+
 /*----------- Seccion 3---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.seccion4{
+.seccion4 {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -447,21 +512,24 @@
     align-items: center;
 }
 
-.linkGuide img:hover{
+.linkGuide img:hover {
     scale: 1.1;
 }
-.imgCont4{
+
+.imgCont4 {
     width: 90%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.imgCont4 img{
+
+.imgCont4 img {
     width: 100%;
     height: 100%;
 }
-.tipTCont4{
+
+.tipTCont4 {
     width: 90%;
     height: 60%;
     display: flex;
@@ -469,37 +537,43 @@
     justify-content: space-evenly;
     align-items: center;
 }
-.tipTCont4 h2{
+
+.tipTCont4 h2 {
     font-size: 0.8rem;
     text-align: left;
     width: 100%;
     height: auto;
 }
-.tipTCont4 p{
+
+.tipTCont4 p {
     width: 100%;
     height: auto;
     font-size: 0.9rem;
     text-align: left;
 }
-.linkGuide{
+
+.linkGuide {
     width: 100%;
     height: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.linkGuide h2{
+
+.linkGuide h2 {
     font-size: 1.1rem;
     width: 80%;
     height: auto;
 }
-.linkGuide img{
+
+.linkGuide img {
     height: auto;
     width: 10%;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.tipCont{
+
+.tipCont {
     width: 25%;
     min-width: 320px;
     height: auto;
@@ -508,271 +582,327 @@
     justify-content: center;
     align-items: center;
 }
-.tittleCont4 p{
+
+.tittleCont4 p {
     width: 100%;
     height: auto;
     text-align: center;
     font-size: 1.2rem;
 }
+
 /*----------- Seccion 4 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*----------- Animacion ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @keyframes scrollX3 {
-    0%{
+    0% {
         transform: translateX(0);
     }
-    100%{
+
+    100% {
         transform: translateX(-67.5%);
     }
 }
 
 @keyframes rotacion {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    50%{
+
+    50% {
         transform: rotate(180deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
+
 @keyframes zoom {
-    0%{
+    0% {
         transform: scale(1);
     }
-    25%{
+
+    25% {
         transform: scale(0.9);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
+
 @keyframes zoom2 {
-    0%{
+    0% {
         transform: scale(0.9);
     }
-    50%{
+
+    50% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(0.9);
     }
 }
+
 @keyframes zoom3 {
-    0%{
+    0% {
         transform: scale(0.8);
     }
-    75%{
+
+    75% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(0.8);
     }
 }
+
 @keyframes zoomA1 {
-    0%{
-        transform: rotate(0) ;
+    0% {
+        transform: rotate(0);
     }
-    2%{
-        transform: scaleX(1) ;
+
+    2% {
+        transform: scaleX(1);
     }
-    49%{
-        transform: scaleX(-1) ;
+
+    49% {
+        transform: scaleX(-1);
     }
-    51%{
-        transform: scaleX(-1) ;
+
+    51% {
+        transform: scaleX(-1);
     }
-    98%{
-        transform: scaleX(1) ;
+
+    98% {
+        transform: scaleX(1);
     }
-    100%{
-        transform: scaleX(1) ;
+
+    100% {
+        transform: scaleX(1);
     }
 }
+
 @keyframes colorA1 {
-    0%{
+    0% {
         background-color: var(--colorViolet);
         scale: 1;
     }
-    10%{
+
+    10% {
         background-color: var(--colorViolet);
         scale: 1;
     }
-    15%{
+
+    15% {
         background-color: rgb(160, 161, 204);
         scale: 1.1;
     }
-    20%{
+
+    20% {
         background-color: var(--colorViolet);
         scale: 1;
     }
-    100%{
+
+    100% {
         background-color: var(--colorViolet);
         scale: 1;
     }
 }
+
 /*----------- Animacion ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 @media screen and (width < 1200px) {
-    .titulo0{
+    .titulo0 {
         font-size: 3rem;
     }
-    .descripcion0{
+
+    .descripcion0 {
         font-size: 1.6rem;
     }
-    
-    .titulo1{
+
+    .titulo1 {
         font-size: 2.6rem;
     }
 
-    .articulo1{
+    .articulo1 {
         gap: 0%;
     }
-    .titulo2{
+
+    .titulo2 {
         font-size: 2.6rem;
     }
-    .tip p{
+
+    .tip p {
         font-size: 1rem;
     }
-    .tCont3 h2{
+
+    .tCont3 h2 {
         font-size: 2rem;
     }
-    .tCont3 p{
+
+    .tCont3 p {
         font-size: 1.2rem;
     }
 }
 
 @media screen and (aspect-ratio < 12/10) {
-    .articulo0Cont{
+    .articulo0Cont {
         flex-direction: column-reverse;
         justify-content: space-evenly;
         align-items: center;
     }
-    .presentacion0Cont{
+
+    .presentacion0Cont {
         width: 100%;
         height: 45%;
     }
-    .imagen0Cont{
+
+    .imagen0Cont {
         width: 100%;
         height: 45%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .boton0Cont{
+
+    .boton0Cont {
         justify-content: center;
         align-items: center;
     }
-    .boton0Cont button{
+
+    .boton0Cont button {
         font-size: 0.8rem;
     }
-    
+
 }
 
 @media screen and ((width < 800px) or (height < 640px)) {
-    .titulo0{
+    .titulo0 {
         font-size: 2rem;
     }
-    .descripcion0{
+
+    .descripcion0 {
         font-size: 1.2rem;
     }
-    
-    .titulo1{
+
+    .titulo1 {
         font-size: 1.6rem;
     }
 
-    .articulo1{
+    .articulo1 {
         gap: 5%;
     }
-    .titulo2{
+
+    .titulo2 {
         font-size: 1.8rem;
         width: 80%;
     }
-    .articulo0{
+
+    .articulo0 {
         width: calc(100% - 5vh);
         height: calc(100% - 5vh);
     }
-    .articulo0Cont{
+
+    .articulo0Cont {
         width: calc(100% - 5vh);
         height: calc(100% - 5vh);
     }
-    .card h2{
+
+    .card h2 {
         font-size: 0.8rem;
     }
-    .card p{
+
+    .card p {
         font-size: 0.8rem;
     }
-    .tCont3{
+
+    .tCont3 {
         width: 100%;
     }
-    .tCont3 h2{
+
+    .tCont3 h2 {
         font-size: 1.8rem;
     }
-    .tCont3 p{
+
+    .tCont3 p {
         font-size: 1rem;
     }
-    .articulo2 p{
+
+    .articulo2 p {
         font-size: 1.2rem;
         font-weight: 500;
         width: 80%;
         text-align: center;
     }
-    .tipTCont4 p{
+
+    .tipTCont4 p {
         font-size: 0.8rem;
     }
-    .tittleCont4{
+
+    .tittleCont4 {
         gap: 10px;
     }
-    .tittleCont4 p{
+
+    .tittleCont4 p {
         font-size: 1rem;
     }
 }
 
 @media screen and (aspect-ratio < 1) {
-    .carrucelCont{
+    .carrucelCont {
         width: 320px;
         height: 60%;
         display: block;
-        scroll-behavior: smooth;  
+        scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
     }
-    .carrucel1{
+
+    .carrucel1 {
         width: 500%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
-    .carrucel4{
+
+    .carrucel4 {
         width: 300%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
-    .paginaCont{
+
+    .paginaCont {
         display: flex;
     }
-    .tipCont{
+
+    .tipCont {
         width: 100%;
         height: auto;
         scroll-snap-align: center;
     }
-    .tipTCont{
+
+    .tipTCont {
         width: 100%;
         height: 30%;
     }
-    .tittleCont1 p{
+
+    .tittleCont1 p {
         font-size: 1rem;
     }
-    .articulo1{
+
+    .articulo1 {
         width: calc(100% - 10vh);
         height: calc(100% - 10vh);
         gap: 0;
     }
-    .carrucel3{
+
+    .carrucel3 {
         width: 900%;
     }
 }

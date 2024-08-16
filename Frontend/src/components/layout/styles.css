@@ -14,7 +14,7 @@ header a {
   color: inherit;
 }
 
-header > div {
+header>div {
   margin: auto 0;
 }
 
@@ -24,6 +24,11 @@ header > div {
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
+  padding-left: 1rem;
+}
+
+.title-app img {
+  margin-right: 0.5rem;
 }
 
 .nav-items {
@@ -68,11 +73,16 @@ header > div {
   padding-right: 0.5rem;
 }
 
-.link-signup {
+.link-signup,
+.nav-items li:nth-child(4) a {
+  background-color: black;
+  color: #fff;
+  border-radius: 20px;
+  padding: .5rem 1rem;
+  border: solid 1px #000;
 }
 
-.link-login {
-}
+.link-login {}
 
 @media (max-width: 890px) {
   header {
@@ -86,6 +96,7 @@ header > div {
 
   .hamburger-react {
     display: block;
+    margin-left: 1rem;
   }
 
   .navbar {
@@ -96,11 +107,6 @@ header > div {
     padding: 5rem 0 3rem;
     background-color: inherit;
     transition: left ease 0.3s;
-  }
-
-  .nav-items {
-    flex-direction: column;
-    padding: 0;
   }
 
   .navbar {
@@ -115,10 +121,10 @@ header > div {
 
   .nav-items {
     flex-direction: column;
-    padding: 0;
-    padding-top: 4rem;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    gap: 1rem;
+    gap: 1.8rem;
   }
 
   .hidden {
@@ -128,8 +134,10 @@ header > div {
   }
 
   .backdrop {
+    display: block;
+    margin-top: 4rem;
     position: fixed;
-    height: 100vh;
+    min-height: calc(100vh - 4rem);
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
@@ -189,4 +197,10 @@ footer .social-media img {
 
 footer .social-media img:hover {
   transform: scale(1.1);
+}
+
+.nav-active {
+  z-index: 5;
+  left: 0;
+  bottom: 0;
 }

@@ -1,7 +1,17 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import dt from "../../data/data.json"
-
+import cia from "../../data/contacts.json"
 export const Context = createContext();
+
+export const fake_user = {
+  name: "Franco",
+  surname: "Maidana",
+  dni: "30030666",
+  email: "user@test.cm",
+  cellphone: "1122334455",
+  consent: "",
+  password: "userTest#"
+}
 
 export const ContextProvider = ({ children }) => {
   const [estadoUsuario, setEstadoUsuario] = useState(0);
@@ -12,20 +22,12 @@ export const ContextProvider = ({ children }) => {
   const [data, setData] = useState(dt)
   const [dataIn, setDataIn] = useState([])
   const [dataPr, setDataPr] = useState([])
-  const [banco, setBanco] = useState('');
-  const [cbu, setCbu] = useState('');
-  const [userCreated, setUserCreated] = useState({
-    name: "",
-    surname: "",
-    dni: "",
-    email: "",
-    cellphone: "",
-    consent: "",
-    password: ""
-  });
-  const [contactosIA, setContactosIA] = useState([]);
+  const [banco, setBanco] = useState('Galicia');
+  const [cbu, setCbu] = useState('112543587811');
+  const [userCreated, setUserCreated] = useState(fake_user);
+  const [contactosIA, setContactosIA] = useState(cia);
 
-  useEffect(()=>{
+  useEffect(() => {
     data.movimientos.sort(function (b, a) {
       if (a.fecha > b.fecha) {
         return 1;
@@ -38,7 +40,7 @@ export const ContextProvider = ({ children }) => {
     });
   }, [data])
 
-  function getDate (){
+  function getDate() {
     let fecha = new Date();
     let mes = fecha.getUTCMonth() + 1;
     let dia = fecha.getUTCDate();

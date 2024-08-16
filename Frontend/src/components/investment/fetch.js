@@ -1,9 +1,9 @@
 export const transformDto = ({ fondos, inversion, interes, prestamo, name, plazo, user_id }) => (
     {
-        available_amount: Number(fondos) * 1.0,
-        invested_amount: Number(inversion) * 1.0,
-        remaining_amount: (Number(fondos) - Number(inversion)) * 1.0,
-        profitability: Number(interes) * 1.0,
+        available_amount: Number(fondos),
+        invested_amount: Number(inversion),
+        remaining_amount: (Number(fondos) - Number(inversion)),
+        profitability: Number(interes),
         investment_type: prestamo,
         company_name: name,
         minimum_withdrawal_period: Number(plazo),

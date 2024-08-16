@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/registrarme" element={<Register />} />
             <Route exact path="/iniciar-sesion" element={<Login />} />
-            <Route exact path="/userpanel" element={<UserPanel />} />
+            <Route exact path="/userPanel" element={<UserPanel />} />
 
             <Route exact path="/prestamos" element={<RequestLoan />} />
 
