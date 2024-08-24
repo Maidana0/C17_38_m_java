@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 import { UseContext } from "../components/context/Context"
 import { createInvestment, transformDto } from "../components/investment/fetch"
 
-const SERVER_ACTIVE = true
 
 const Investment = () => {
+    const MODE = import.meta.env.VITE_MODE
     const [currentStep, setCurrentStep] = useState(1)
     const [totalFunds, setTotalFunds] = useState(100)
     const [message, setMessage] = useState({ success: false, message: "" })
@@ -31,7 +31,7 @@ const Investment = () => {
     }
 
     const finishInvert = async () => {
-        if (invertTo && SERVER_ACTIVE) {
+        if (invertTo && MODE != "only-front") {
             const dataInvestment = transformDto(invertTo)
             const data = await createInvestment(dataInvestment)
             if (data.success) {
@@ -40,6 +40,8 @@ const Investment = () => {
                 console.log(data);
                 setMessage({ success: true, message: data?.mensaje ?? "Ocurrio un error" })
             }
+        } else {
+            setMessage({ success: true, message: "Inversion ficticia realizada!" })
         }
     }
 

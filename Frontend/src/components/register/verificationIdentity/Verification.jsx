@@ -14,11 +14,11 @@ function Verification() {
           Verificar mi identidad
         </button>
 
-        <p className="info_to_userL">
+        <small className="info_to_userL">
           Utilizamos Veriff, un servicio de verificación de identidad en línea
           rápido y seguro. Requiere acceso a la cámara web o al teléfono y a un
           documento de identificación.
-        </p>
+        </small>
       </div>
     </>
   );

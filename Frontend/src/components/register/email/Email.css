@@ -1,12 +1,11 @@
 .email-container{
   width: 45vw;
-  height: 54vh;
+  height: 65vh;
   min-width: 300px;
   min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
 }
 .column-1-email{
   width: 100%;

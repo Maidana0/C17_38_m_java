@@ -6,7 +6,7 @@ const ProgressBar = ({ moreButtons, handleSubmitButton, textButton, currentStep,
 
 
   for (let i = 1; i <= (totalSteps); i++) {
-    const isActive = i <= currentStep ? styles.step_active : ""
+    const isActive = i < currentStep ? styles.step_active : ""
     steps.push(
       <div key={`${i}-img`} className={`${styles.step_image_contain} ${i < currentStep && styles.step_active} ${currentStep == i && styles.current_step_image}`}>
         {(i < currentStep)
