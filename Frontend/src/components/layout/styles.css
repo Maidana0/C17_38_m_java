@@ -6,7 +6,8 @@ header {
   background-color: #fff;
   color: black;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 header a {
@@ -82,12 +83,7 @@ header>div {
   border: solid 1px #000;
 }
 
-.link-login {}
-
 @media (max-width: 890px) {
-  header {
-    justify-content: space-between;
-  }
 
   .title-app,
   .hamburger-react {
@@ -96,7 +92,6 @@ header>div {
 
   .hamburger-react {
     display: block;
-    margin-left: 1rem;
   }
 
   .navbar {

@@ -74,13 +74,6 @@ const Register = () => {
       );
   }
 
-  const back = () => {
-    if (currentStep === 1) {
-      navigate("/");
-    } else {
-      setCurrentStep(currentStep - 1);
-    }
-  };
 
   return (
     <div className="register_page " style={{ width: "100%" }}>
@@ -96,22 +89,7 @@ const Register = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="side-navigation-bar">
-          <div className="navigation-bar">
-            <span onClick={back}>
-              {" "}
-              <img
-                src="images/icons/arrow_back.svg"
-                alt="Volver (arrow_back)"
-              />{" "}
-              Volver atrás
-            </span>{" "}
-            <span>
-              <img
-                src="https://res.cloudinary.com/dabb8jxxh/image/upload/v1713280918/Cashfly/help_cdyxt2.svg"
-                alt="Ayuda"
-              />
-            </span>
-          </div>
+         
           <div className="registerPanel">
             <ProgressBar
               currentStep={currentStep}

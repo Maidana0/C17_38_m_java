@@ -14,10 +14,8 @@
 
 .verifyContainer {
   color: black;
-  width: 45vw;
-  height: 55vh;
-  padding: 2rem;
-  margin: 0 auto;
+  min-height: 65vh;
+  margin: .5rem auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -31,13 +29,15 @@
   height: auto;
   text-align: center;
 }
-.context_verification{
+
+.context_verification {
   font-size: 1rem;
   font-weight: 700;
   width: 65%;
   height: auto;
   text-align: center;
 }
+
 .logoLeftSide {
   font-size: 18px;
   font-weight: bold;
@@ -65,8 +65,7 @@
   width: 65%;
   height: auto;
   text-align: center;
-  font-weight: 500;
-  font-size: 1rem;
+  margin: 1rem auto;
 }
 
 @media (aspect-ratio < 12/10) {
@@ -79,13 +78,12 @@
     width: 90vw;
     height: 55vh;
   }
+
   .title-verification {
     font-size: 1.5rem;
   }
-  .context_verification{
-    font-size: 0.9rem;
-  }
-  .info_to_userL {
+
+  .context_verification {
     font-size: 0.9rem;
   }
 }

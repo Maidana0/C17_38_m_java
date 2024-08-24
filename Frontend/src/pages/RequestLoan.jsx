@@ -18,13 +18,13 @@ const RequestLoan = () => {
     { id: 2, text: "6 cuotas", value: Math.ceil(amount / 6) },
     { id: 3, text: "3 cuotas", value: Math.ceil(amount / 3) },
   ];
-  
+
   // const [userData, setUserData] = useState({});
   // const {user } = UseContext(useState);
-  const { banco, cbu,  user } = UseContext(useState);
+  const { banco, cbu, user } = UseContext(useState);
   // const fileToBinaryString = (file) => {
   //   const reader = new FileReader();
-  
+
   //   return new Promise((resolve, reject) => {
   //     reader.onload = () => {
   //       resolve(reader.result);
@@ -35,14 +35,14 @@ const RequestLoan = () => {
   //     reader.readAsBinaryString(file);
   //   });
   // };
-  
+
   async function saveFile() {
     //const binaryString = await fileToBinaryString(archivoDNI);
     // const formdata = new FormData();
     // formdata.append("userId", user.id);
     // formdata.append("file", archivoDNI);
 
-    
+
     //console.log(binaryString); // console
 
 
@@ -58,10 +58,10 @@ const RequestLoan = () => {
     //     console.log("data: ", data);
     //   })
     //   .catch((error) => console.log(error));
-    
+
   }
   function datosPrestamo(userId) {  // Asumiendo que tienes el ID del usuario como un argumento
-    
+
     let option = options.find((o) => o.id === selectedOption);
     const prestamoData = {
       bank: banco,
@@ -71,8 +71,8 @@ const RequestLoan = () => {
       userId: user.id,
       cbu: cbu,
     };
-    
-   
+
+
     const url = new URL("http://localhost:5000/loan/Create");
     url.searchParams.append('id', user.id); // Asegúrate de que este es el valor correcto para 'id'
 
@@ -85,23 +85,23 @@ const RequestLoan = () => {
         Accept: "application/json",
       },
     })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("data: ", data);
-    })
-    .catch((error) => console.log(error));
-}
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data: ", data);
+      })
+      .catch((error) => console.log(error));
+  }
 
 
   return (
-    <div style={{ backgroundColor: "#fff", marginTop: "3rem" }}>
+    <div style={{ margin: "3rem auto 0", width: "80%" }}>
       <ProgressBar
         currentStep={step}
         totalSteps={4}
         setStep={setStep}
         textButton={step == 3 ? "Sacar prestamo" : false}
         moreButtons={step > 1 && <CustomButton />}
-        handleSubmitButton={step == 3 ? datosPrestamo : step == 2 && saveFile }
+        handleSubmitButton={step == 3 ? datosPrestamo : step == 2 && saveFile}
       >
         {step == 1 && (
           <FormularioPrestamo
@@ -115,7 +115,7 @@ const RequestLoan = () => {
           />
         )}
 
-        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} banco={banco} cbu={cbu}  />}
+        {step == 2 && <ValidateDatePrest setArchivoDNI={setArchivoDNI} banco={banco} cbu={cbu} />}
 
         {step == 3 && (
           <ResumePrest
@@ -127,8 +127,8 @@ const RequestLoan = () => {
             startDate={startDate}
             setStartDate={setStartDate}
           />
-          
-          
+
+
         )}
 
         {step == 4 && <Finalprest />

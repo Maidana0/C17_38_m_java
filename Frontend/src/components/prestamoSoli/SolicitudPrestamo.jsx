@@ -13,7 +13,6 @@ function FormularioPrestamo(props) {
   const max = 150000;
   const {selectedOption, setSelectedOption} = props
   const {options} = props
-  const [isButtonActive, setIsButtonActive] = useState(false);
 
   useEffect(() => {
     // Calcula la fecha actual más diez días

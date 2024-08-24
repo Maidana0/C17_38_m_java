@@ -33,21 +33,33 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  function onSubmit(info) {
-    // Realiza acciones adicionales, como enviar datos al servidor
-    findData(info);
-  }
+  const onSubmit = handleSubmit((info) => {
+    findData(info)
+    dataPr.map((pr) =>
+      data.movimientos.push({
+        tipo: "Préstamo",
+        monto: pr.amount,
+        fecha: getDate(),
+        saldo: data.saldo,
+        estado: true,
+      }))
+    dataIn.map((inv) =>
+      data.movimientos.push({
+        tipo: "Inversión",
+        monto: inv.invested_amount,
+        fecha: getDate(),
+        saldo: inv.available_amount,
+        estado: true,
+      }))
+    if (!errorL) navigate("/userpanel")
+  })
 
   function findData(info) {
     if (MODE === "only-front") {
       setUser(fake_user)
       setContactosIA(cIA);
       setData({ ...data, nombre: fake_user.name, email: fake_user.email });
-      setDataPr([{ amount: 5000 }])
-      setDataIn([{
-        invested_amount: 5000,
-        available_amount: 5000
-      }])
+      cargarDatos()
       return
     }
     fetch("http://localhost:5000/users/login", {
@@ -73,6 +85,15 @@ function Login() {
   }
 
   function cargarDatos() {
+    if (MODE === "only-front") {
+      setDataPr([{ amount: 5000 }])
+      setDataIn([{
+        invested_amount: 5000,
+        available_amount: 5000
+      }])
+      return
+    }
+
     fetch("http://localhost:5000/loan", {
       method: "GET",
       headers: {
@@ -103,38 +124,6 @@ function Login() {
         );
       });
   }
-
-  useEffect(() => {
-    if (dataIn[0] == null) {
-    } else {
-      dataIn.map((inv) =>
-        data.movimientos.push({
-          tipo: "Inversión",
-          monto: inv.invested_amount,
-          fecha: getDate(),
-          saldo: inv.available_amount,
-          estado: true,
-        })
-      );
-    }
-  }, [dataIn]);
-
-  useEffect(() => {
-    if (dataPr[0] == null) {
-    } else {
-      dataPr.map((pr) =>
-        data.movimientos.push({
-          tipo: "Préstamo",
-          monto: pr.amount,
-          fecha: getDate(),
-          saldo: data.saldo,
-          estado: true,
-        })
-      );
-
-      navigate("/userpanel");
-    }
-  }, [dataPr]);
 
   return (
     <div className="login">
@@ -172,6 +161,7 @@ function Login() {
               <div className="formLoginCont">
                 <input
                   className="inputP"
+                  value="user@test.com"
                   type="email"
                   placeholder="Correo electrónico"
                   {...register("email", {
@@ -183,6 +173,7 @@ function Login() {
 
                 <input
                   className="inputP"
+                  value="userTest#"
                   type="password"
                   placeholder="Contraseña"
                   {...register("password", {

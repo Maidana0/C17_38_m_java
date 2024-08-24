@@ -6,7 +6,7 @@ import { UseContext } from '../context/Context'
 const paths = Object.freeze([
   { name: "préstamos", path: "/prestamos" },
   { name: "inversiones" },
-  { name: "configuración", path: "#" }
+  { name: "resumen", path: "/userPanel" }
 ])
 
 const Header = () => {
