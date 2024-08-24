@@ -84,6 +84,14 @@ header>div {
 }
 
 @media (max-width: 890px) {
+  header{
+    padding: 0 .5rem;
+  }
+  .title-app{
+    font-size: 1.1em;
+    padding-left: 0;
+    gap: 0;
+  }
 
   .title-app,
   .hamburger-react {

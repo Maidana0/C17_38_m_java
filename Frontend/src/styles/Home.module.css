@@ -6,19 +6,15 @@
 /*----------- Seccion 0 ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .panel0 {
+    margin-top: 3rem;
     width: 100%;
-    height: 99vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    height: 100vh;
 }
 
 .articulo0 {
     width: 100%;
     height: 100%;
-    background: rgb(222, 223, 251);
     background: linear-gradient(0deg, rgba(222, 223, 251, 1) 0%, rgba(244, 244, 255, 1) 100%);
-    /*border: solid 1px var(--colorLine1);*/
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -61,7 +57,6 @@
 
 .boton0Cont {
     width: 100%;
-    height: 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -71,7 +66,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     text-decoration: none;
@@ -785,6 +780,15 @@
         font-size: 2rem;
     }
 
+    .bCont{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .bCont button{
+      width: 70%;
+    }
+
     .descripcion0 {
         font-size: 1.2rem;
     }
@@ -804,6 +808,7 @@
 
     .articulo0 {
         width: calc(100% - 5vh);
+        margin: auto;
         height: calc(100% - 5vh);
     }
 
