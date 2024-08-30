@@ -1,7 +1,7 @@
 import "./login.css";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { fake_user, UseContext } from "../context/Context";
 import { useInView, motion } from "framer-motion";
 import cIA from "../../data/contacts.json";
@@ -10,6 +10,7 @@ function Login() {
   const MODE = import.meta.env.VITE_MODE
 
   const {
+    user,
     setUser,
     setContactosIA,
     data,
@@ -124,6 +125,7 @@ function Login() {
         );
       });
   }
+  if (user != null) navigate("/userPanel")
 
   return (
     <div className="login">

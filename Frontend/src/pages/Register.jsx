@@ -10,7 +10,7 @@ import { useInView, motion } from "framer-motion";
 import "../styles/Register.css";
 
 const Register = () => {
-  const { setUserCreated, userCreated } = useContext(Context);
+  const { setUserCreated, userCreated, user } = useContext(Context);
   const [currentStep, setCurrentStep] = useState(1);
   const [textRight, setTextRight] = useState("");
 
@@ -74,6 +74,7 @@ const Register = () => {
       );
   }
 
+  if (user != null) navigate("/userPanel")
 
   return (
     <div className="register_page " style={{ width: "100%" }}>
@@ -89,7 +90,7 @@ const Register = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="side-navigation-bar">
-         
+
           <div className="registerPanel">
             <ProgressBar
               currentStep={currentStep}

@@ -4,19 +4,21 @@ import ProgressBar from "../components/progressBar/ProgressBar"
 import StepOne from "../components/investment/StepOne"
 import StepTwo from "../components/investment/StepTwo"
 import StepThree from "../components/investment/StepThree"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UseContext } from "../components/context/Context"
 import { createInvestment, transformDto } from "../components/investment/fetch"
 
 
 const Investment = () => {
     const MODE = import.meta.env.VITE_MODE
+    const navigate = useNavigate();
     const [currentStep, setCurrentStep] = useState(1)
     const [totalFunds, setTotalFunds] = useState(100)
     const [message, setMessage] = useState({ success: false, message: "" })
     const [investmentValue, setInvestmentValue] = useState(0)
     const [invertTo, setInvertTo] = useState(false)
     const { user } = UseContext()
+
 
     const handleInvertToClick = (objInvert) => {
         if (investmentValue <= 100) {
@@ -46,6 +48,9 @@ const Investment = () => {
     }
 
     const stepsName = ["Elegí tus fondos", "Elegí cuanto y donde invertir", "Confirma los detalles", "Inversion realizada"]
+
+    if (user === null) navigate("/iniciar-sesion")
+
     return (
         <div className={styles.investment_contain}>
             <ProgressBar

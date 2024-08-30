@@ -4,10 +4,14 @@ import AddContact from './components/addContact/AddContact';
 import Contacts from './components/contacts/Contacts';
 import UserHome from './components/userHome/UserHome';
 import Movements from './components/movements/Movements';
+import { useNavigate } from "react-router-dom";
+
 
 function UserPanel() {
-
+  const navigate = useNavigate();
   const { user, userP, data } = UseContext();
+
+  if (user === null) navigate("/iniciar-sesion")
 
   return (
     <div className={styles.UserPanel}>

@@ -6,8 +6,11 @@ import ResumePrest from "../components/confirmPrest/ResumePrest";
 import Finalprest from "../components/endPrest/Finalprest";
 import CustomButton from "../components/general/Button";
 import { UseContext } from "../components/context/Context";
+import { useNavigate } from "react-router-dom";
+
 
 const RequestLoan = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [amount, setAmount] = useState(70000);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -92,6 +95,7 @@ const RequestLoan = () => {
       .catch((error) => console.log(error));
   }
 
+  if (user === null) navigate("/iniciar-sesion")
 
   return (
     <div style={{ margin: "3rem auto 0", width: "80%" }}>
